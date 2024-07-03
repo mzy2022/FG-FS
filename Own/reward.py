@@ -1,13 +1,18 @@
 import logging
 import numpy as np
+import pandas as pd
 from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor
 from sklearn.metrics import make_scorer, f1_score
+from sklearn.preprocessing import LabelEncoder
+
 from model_based import ModelBase
 from sklearn.model_selection import StratifiedKFold, KFold, cross_val_score
 import warnings
+import xgboost as xgb
 from Own.Evolutionary_FE.DNA_Fitness import relative_absolute_error
 
 warnings.filterwarnings("ignore")
+
 
 def sub_rae(y, y_hat):
     y = np.array(y).reshape(-1)
@@ -18,13 +23,13 @@ def sub_rae(y, y_hat):
     res = 1 - rae
     return res
 
+
 class GetReward(object):
     def __init__(self, args):
         self.args = args
         self.target_col = args.target_col
         self.task_type = args.task_type
         self.eval_method = args.eval_method
-
 
     def get_model(self):
         if self.args.model == 'rf':
@@ -33,8 +38,6 @@ class GetReward(object):
             return self.get_lr_model()
         elif self.args.model == 'xgb':
             return self.get_xgb_model()
-
-
 
     def get_lr_model(self):
         if self.task_type == 'classifier':
@@ -57,15 +60,23 @@ class GetReward(object):
             model = None
         return model
 
+    # def get_rf_model(self, hyper_param):
+    #     #
+    #     if self.task_type == 'classifier':
+    #         model = ModelBase.rf_classify(self.args.seed)
+    #     elif self.task_type == 'regression':
+    #         model = ModelBase.rf_regeression(self.args.seed)
+    #     else:
+    #         logging.info(f'er')
+    #         model = None
+    #     if hyper_param is not None and model is not None:
+    #         model.set_params(**hyper_param)
+    #     return model
+
     def get_rf_model(self, hyper_param):
-        #
-        if self.task_type == 'classifier':
-            model = ModelBase.rf_classify(self.args.seed)
-        elif self.task_type == 'regression':
-            model = ModelBase.rf_regeression(self.args.seed)
-        else:
-            logging.info(f'er')
-            model = None
+
+        model = ModelBase.rf_classify(self.args.seed)
+
         if hyper_param is not None and model is not None:
             model.set_params(**hyper_param)
         return model
@@ -88,7 +99,7 @@ class GetReward(object):
                 scoring_name = "accuracy"
             elif self.eval_method == 'f1_score':
                 scoring_name = "f1_micro"
-            score_list = cross_val_score(self.get_lr_model(), search_fes, search_label, scoring=scoring_name,cv=5)
+            score_list = cross_val_score(self.get_lr_model(), search_fes, search_label, scoring=scoring_name, cv=5)
 
         else:
             if self.eval_method == 'sub_rae':
@@ -102,16 +113,23 @@ class GetReward(object):
                     score_list[i] = np.sqrt(score_list[i])
             elif self.eval_method == 'mae':
                 score_list = -cross_val_score(self.get_model(), search_fes, search_label,
-                                              scoring="neg_mean_absolute_error",cv=5)
+                                              scoring="neg_mean_absolute_error", cv=5)
 
             score = np.mean(score_list)
             return score
 
-    def downstream_task_new(self,search_fes, search_label,task_type):
-        X = search_fes
-        y = search_label
+
+    def downstream_task_new(self,f_data,target, task_type):
+        # score_list = cross_val_score(self.get_rf_model(None), f_data, target, scoring="f1_micro", cv=5)
+        # return np.mean(score_list)
+        X = f_data
+        y = target
+        label_encoder = LabelEncoder()
+        y = label_encoder.fit_transform(y)
+        y = pd.Series(y)
         if task_type == 'cls':
             clf = RandomForestClassifier(random_state=0)
+            # clf = xgb.XGBClassifier(random_state=0)
             f1_list = []
             skf = StratifiedKFold(n_splits=5, random_state=0, shuffle=True)
             for train, test in skf.split(X, y):
@@ -132,3 +150,35 @@ class GetReward(object):
             return np.mean(rae_list)
         else:
             return -1
+
+    def test_task_new(self,Dg, task='cls'):
+        X = Dg.iloc[:, :-1]
+        y = Dg.iloc[:, -1].astype(int)
+        if task == 'cls':
+            clf = RandomForestClassifier(random_state=0)
+            pre_list, rec_list, f1_list = [], [], []
+            skf = StratifiedKFold(n_splits=5, random_state=0, shuffle=True)
+            for train, test in skf.split(X, y):
+                X_train, y_train, X_test, y_test = X.iloc[train, :], y.iloc[train], X.iloc[test, :], y.iloc[test]
+                clf.fit(X_train, y_train)
+                y_predict = clf.predict(X_test)
+                pre_list.append(precision_score(y_test, y_predict, average='weighted'))
+                rec_list.append(recall_score(y_test, y_predict, average='weighted'))
+                f1_list.append(f1_score(y_test, y_predict, average='weighted'))
+            return np.mean(pre_list), np.mean(rec_list), np.mean(f1_list)
+        elif task == 'reg':
+            kf = KFold(n_splits=5, random_state=0, shuffle=True)
+            reg = RandomForestRegressor(random_state=0)
+            mae_list, mse_list, rae_list = [], [], []
+            for train, test in kf.split(X):
+                X_train, y_train, X_test, y_test = X.iloc[train, :], y.iloc[train], X.iloc[test, :], y.iloc[test]
+                reg.fit(X_train, y_train)
+                y_predict = reg.predict(X_test)
+                mae_list.append(1 - mean_absolute_error(y_test, y_predict))
+                mse_list.append(1 - mean_squared_error(y_test, y_predict))
+                rae_list.append(1 - relative_absolute_error(y_test, y_predict))
+            return np.mean(mae_list), np.mean(mse_list), np.mean(rae_list)
+        else:
+            return -1
+
+

@@ -1,0 +1,42 @@
+2024-03-23 11:46:06,039 AutoFE.py:30 __init__ INFO | Namespace(cuda='0', epochs=100, ppo_epochs=20, episodes=3, file_name='SPECTF', mode='classify', model='rf', metric='f1', seed=1, train_size=0.7, cv=5, shuffle=False, d_model=128, d_k=32, d_v=32, d_ff=64, n_heads=6, worker=1, steps_num=3, lr=0.0001, entropy_weight=0.0001, baseline_weight=0.95, gama=0.9, gae_lambda=0.95, batch_size=4, c_columns=['V0', 'V1', 'V2', 'V3', 'V4', 'V5', 'V6', 'V7', 'V8', 'V9', 'V10', 'V11', 'V12', 'V13', 'V14', 'V15', 'V16', 'V17', 'V18', 'V19', 'V20', 'V21', 'V22', 'V23', 'V24', 'V25', 'V26', 'V27', 'V28', 'V29', 'V30', 'V31', 'V32', 'V33', 'V34', 'V35', 'V36', 'V37', 'V38', 'V39', 'V40', 'V41', 'V42', 'V43'], d_columns=[], target='label')
+2024-03-23 11:46:06,039 AutoFE.py:31 __init__ INFO | File name: SPECTF
+2024-03-23 11:46:06,039 AutoFE.py:32 __init__ INFO | Data shape: (267, 45)
+2024-03-23 11:46:07,560 AutoFE.py:85 set_cuda INFO | Use device: 0, cuda:0, NVIDIA GeForce RTX 4060 Laptop GPU
+2024-03-23 11:46:07,560 AutoFE.py:75 __init__ INFO | Done AutoFE initialization.
+2024-03-23 11:46:07,751 AutoFE.py:98 fit_attention INFO | score_b=0.8277428371767994, scores_b=[0.7962963  0.85185185 0.88679245 0.71698113 0.88679245]
+2024-03-23 11:46:12,557 main_ppo.py:80 <module> INFO | Traceback (most recent call last):
+  File "D:\python files\pythonProject3\PPO_transformer_lstm1\main_ppo.py", line 76, in <module>
+    autofe.fit_attention(args)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm1\AutoFE.py", line 144, in fit_attention
+    w_c = sample(args, self.ppo, pipline_args_train, df_c_encode, df_d_encode, df_t_norm, c_ops,d_ops,epoch, i, self.device)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm1\feature_engineer\training_ops.py", line 51, in sample
+    df_c_encode, df_d_encode = pipline_ff.process_data(fe)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm1\process_data\update_data.py", line 27, in process_data
+    self.feature_combine()
+  File "D:\python files\pythonProject3\PPO_transformer_lstm1\process_data\update_data.py", line 116, in feature_combine
+    ori_fe1 = self.combine.iloc[:, index]
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\core\indexing.py", line 1067, in __getitem__
+    return self._getitem_tuple(key)
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\core\indexing.py", line 1563, in _getitem_tuple
+    tup = self._validate_tuple_indexer(tup)
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\core\indexing.py", line 873, in _validate_tuple_indexer
+    self._validate_key(k, i)
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\core\indexing.py", line 1466, in _validate_key
+    self._validate_integer(key, axis)
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\core\indexing.py", line 1557, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+
+2024-03-23 11:46:12,557 main_ppo.py:82 <module> INFO | Total cost time: 6.5199 s.
+2024-03-23 11:46:19,179 AutoFE.py:30 __init__ INFO | Namespace(cuda='0', epochs=100, ppo_epochs=20, episodes=3, file_name='SPECTF', mode='classify', model='rf', metric='f1', seed=1, train_size=0.7, cv=5, shuffle=False, d_model=128, d_k=32, d_v=32, d_ff=64, n_heads=6, worker=1, steps_num=3, lr=0.0001, entropy_weight=0.0001, baseline_weight=0.95, gama=0.9, gae_lambda=0.95, batch_size=4, c_columns=['V0', 'V1', 'V2', 'V3', 'V4', 'V5', 'V6', 'V7', 'V8', 'V9', 'V10', 'V11', 'V12', 'V13', 'V14', 'V15', 'V16', 'V17', 'V18', 'V19', 'V20', 'V21', 'V22', 'V23', 'V24', 'V25', 'V26', 'V27', 'V28', 'V29', 'V30', 'V31', 'V32', 'V33', 'V34', 'V35', 'V36', 'V37', 'V38', 'V39', 'V40', 'V41', 'V42', 'V43'], d_columns=[], target='label')
+2024-03-23 11:46:19,187 AutoFE.py:31 __init__ INFO | File name: SPECTF
+2024-03-23 11:46:19,187 AutoFE.py:32 __init__ INFO | Data shape: (267, 45)
+2024-03-23 11:46:20,747 AutoFE.py:85 set_cuda INFO | Use device: 0, cuda:0, NVIDIA GeForce RTX 4060 Laptop GPU
+2024-03-23 11:46:20,747 AutoFE.py:75 __init__ INFO | Done AutoFE initialization.
+2024-03-23 11:46:20,947 AutoFE.py:98 fit_attention INFO | score_b=0.8277428371767994, scores_b=[0.7962963  0.85185185 0.88679245 0.71698113 0.88679245]
+2024-03-23 11:46:53,777 AutoFE.py:30 __init__ INFO | Namespace(cuda='0', epochs=100, ppo_epochs=20, episodes=3, file_name='SPECTF', mode='classify', model='rf', metric='f1', seed=1, train_size=0.7, cv=5, shuffle=False, d_model=128, d_k=32, d_v=32, d_ff=64, n_heads=6, worker=1, steps_num=3, lr=0.0001, entropy_weight=0.0001, baseline_weight=0.95, gama=0.9, gae_lambda=0.95, batch_size=4, c_columns=['V0', 'V1', 'V2', 'V3', 'V4', 'V5', 'V6', 'V7', 'V8', 'V9', 'V10', 'V11', 'V12', 'V13', 'V14', 'V15', 'V16', 'V17', 'V18', 'V19', 'V20', 'V21', 'V22', 'V23', 'V24', 'V25', 'V26', 'V27', 'V28', 'V29', 'V30', 'V31', 'V32', 'V33', 'V34', 'V35', 'V36', 'V37', 'V38', 'V39', 'V40', 'V41', 'V42', 'V43'], d_columns=[], target='label')
+2024-03-23 11:46:53,777 AutoFE.py:31 __init__ INFO | File name: SPECTF
+2024-03-23 11:46:53,777 AutoFE.py:32 __init__ INFO | Data shape: (267, 45)
+2024-03-23 11:46:54,254 AutoFE.py:85 set_cuda INFO | Use device: 0, cuda:0, NVIDIA GeForce RTX 4060 Laptop GPU
+2024-03-23 11:46:54,254 AutoFE.py:75 __init__ INFO | Done AutoFE initialization.
+2024-03-23 11:46:54,449 AutoFE.py:98 fit_attention INFO | score_b=0.8277428371767994, scores_b=[0.7962963  0.85185185 0.88679245 0.71698113 0.88679245]

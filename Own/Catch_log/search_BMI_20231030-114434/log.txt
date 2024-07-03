@@ -1,0 +1,1602 @@
+2023/10/30 11:44:34 - INFO : args : Namespace(data='BMI', model='rf', cuda=0, is_select=50, seed=0, target_col='packyrs', dataset_path='data/BMI.csv', task_type='reg', continuous_col=['bmi'], discrete_col=['age', 'age_cat', 'gender', 'smoke'], eval_method='mae', exp_log_dir=WindowsPath('Catch_log/search_BMI_20231030-114434'))
+2023-10-30 11:44:34,779 - INFO : args : Namespace(data='BMI', model='rf', cuda=0, is_select=50, seed=0, target_col='packyrs', dataset_path='data/BMI.csv', task_type='reg', continuous_col=['bmi'], discrete_col=['age', 'age_cat', 'gender', 'smoke'], eval_method='mae', exp_log_dir=WindowsPath('Catch_log/search_BMI_20231030-114434'))
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,355 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,371 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,376 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : epoch: 0, loss: -7.767179012298584
+2023-10-30 11:45:19,377 - INFO : epoch: 0, loss: -7.767179012298584
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,411 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,416 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,420 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : epoch: 1, loss: -7.773477077484131
+2023-10-30 11:45:19,421 - INFO : epoch: 1, loss: -7.773477077484131
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,449 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,457 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,461 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : epoch: 2, loss: -7.779876708984375
+2023-10-30 11:45:19,462 - INFO : epoch: 2, loss: -7.779876708984375
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,491 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,500 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,505 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : epoch: 3, loss: -7.786545753479004
+2023-10-30 11:45:19,505 - INFO : epoch: 3, loss: -7.786545753479004
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,530 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,535 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,539 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : epoch: 4, loss: -7.793651580810547
+2023-10-30 11:45:19,539 - INFO : epoch: 4, loss: -7.793651580810547
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,566 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,570 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,576 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : epoch: 5, loss: -7.801374435424805
+2023-10-30 11:45:19,577 - INFO : epoch: 5, loss: -7.801374435424805
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,604 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,608 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,612 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : epoch: 6, loss: -7.809906005859375
+2023-10-30 11:45:19,612 - INFO : epoch: 6, loss: -7.809906005859375
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,632 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,636 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,639 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : epoch: 7, loss: -7.819459438323975
+2023-10-30 11:45:19,640 - INFO : epoch: 7, loss: -7.819459438323975
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,658 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,662 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,665 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : epoch: 8, loss: -7.83026123046875
+2023-10-30 11:45:19,666 - INFO : epoch: 8, loss: -7.83026123046875
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,690 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,695 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,698 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : epoch: 9, loss: -7.8425726890563965
+2023-10-30 11:45:19,698 - INFO : epoch: 9, loss: -7.8425726890563965
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,717 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,720 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,725 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : epoch: 10, loss: -7.856692790985107
+2023-10-30 11:45:19,725 - INFO : epoch: 10, loss: -7.856692790985107
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,746 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,749 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,753 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : epoch: 11, loss: -7.872966289520264
+2023-10-30 11:45:19,754 - INFO : epoch: 11, loss: -7.872966289520264
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,773 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,777 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,781 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : epoch: 12, loss: -7.891793727874756
+2023-10-30 11:45:19,781 - INFO : epoch: 12, loss: -7.891793727874756
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,802 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,806 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,810 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : epoch: 13, loss: -7.913604736328125
+2023-10-30 11:45:19,810 - INFO : epoch: 13, loss: -7.913604736328125
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,828 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,831 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,835 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : epoch: 14, loss: -7.938837051391602
+2023-10-30 11:45:19,835 - INFO : epoch: 14, loss: -7.938837051391602
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,853 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,857 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,860 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : epoch: 15, loss: -7.967897415161133
+2023-10-30 11:45:19,861 - INFO : epoch: 15, loss: -7.967897415161133
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,878 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,881 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,885 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : epoch: 16, loss: -8.001070976257324
+2023-10-30 11:45:19,885 - INFO : epoch: 16, loss: -8.001070976257324
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,902 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,905 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,909 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : epoch: 17, loss: -8.025442123413086
+2023-10-30 11:45:19,909 - INFO : epoch: 17, loss: -8.025442123413086
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,926 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,929 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,933 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : epoch: 18, loss: -8.049346923828125
+2023-10-30 11:45:19,933 - INFO : epoch: 18, loss: -8.049346923828125
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,957 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,961 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,965 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : epoch: 19, loss: -8.061826705932617
+2023-10-30 11:45:19,965 - INFO : epoch: 19, loss: -8.061826705932617
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,982 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,985 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : incre defaut
+2023-10-30 11:45:19,988 - INFO : incre defaut
+2023/10/30 11:45:19 - INFO : epoch: 20, loss: -8.088767051696777
+2023-10-30 11:45:19,989 - INFO : epoch: 20, loss: -8.088767051696777
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,009 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,012 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,016 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : epoch: 21, loss: -8.088153839111328
+2023-10-30 11:45:20,016 - INFO : epoch: 21, loss: -8.088153839111328
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,035 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,038 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,041 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : epoch: 22, loss: -8.12121868133545
+2023-10-30 11:45:20,042 - INFO : epoch: 22, loss: -8.12121868133545
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,060 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,063 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,066 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : epoch: 23, loss: -8.134313583374023
+2023-10-30 11:45:20,066 - INFO : epoch: 23, loss: -8.134313583374023
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,084 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,087 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,090 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : epoch: 24, loss: -8.142585754394531
+2023-10-30 11:45:20,091 - INFO : epoch: 24, loss: -8.142585754394531
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,107 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,111 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,114 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : epoch: 25, loss: -8.160395622253418
+2023-10-30 11:45:20,114 - INFO : epoch: 25, loss: -8.160395622253418
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,132 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,135 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,138 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : epoch: 26, loss: -8.150981903076172
+2023-10-30 11:45:20,138 - INFO : epoch: 26, loss: -8.150981903076172
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,155 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,158 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,160 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : epoch: 27, loss: -8.177034378051758
+2023-10-30 11:45:20,161 - INFO : epoch: 27, loss: -8.177034378051758
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,178 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,180 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,183 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : epoch: 28, loss: -8.160978317260742
+2023-10-30 11:45:20,183 - INFO : epoch: 28, loss: -8.160978317260742
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,202 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,206 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,209 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : epoch: 29, loss: -8.185806274414062
+2023-10-30 11:45:20,210 - INFO : epoch: 29, loss: -8.185806274414062
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,229 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,232 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,238 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : epoch: 30, loss: -8.169164657592773
+2023-10-30 11:45:20,239 - INFO : epoch: 30, loss: -8.169164657592773
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,255 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,258 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,261 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : epoch: 31, loss: -8.198732376098633
+2023-10-30 11:45:20,261 - INFO : epoch: 31, loss: -8.198732376098633
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,277 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,280 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,283 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : epoch: 32, loss: -8.181411743164062
+2023-10-30 11:45:20,283 - INFO : epoch: 32, loss: -8.181411743164062
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,298 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,301 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,304 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : epoch: 33, loss: -8.198006629943848
+2023-10-30 11:45:20,304 - INFO : epoch: 33, loss: -8.198006629943848
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,320 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,322 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,325 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : epoch: 34, loss: -8.186347007751465
+2023-10-30 11:45:20,325 - INFO : epoch: 34, loss: -8.186347007751465
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,341 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,344 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,346 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : epoch: 35, loss: -8.208540916442871
+2023-10-30 11:45:20,347 - INFO : epoch: 35, loss: -8.208540916442871
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,365 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,367 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,370 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : epoch: 36, loss: -8.211856842041016
+2023-10-30 11:45:20,371 - INFO : epoch: 36, loss: -8.211856842041016
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,392 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,394 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,397 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : epoch: 37, loss: -8.216756820678711
+2023-10-30 11:45:20,397 - INFO : epoch: 37, loss: -8.216756820678711
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,413 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,416 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,419 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : epoch: 38, loss: -8.213652610778809
+2023-10-30 11:45:20,419 - INFO : epoch: 38, loss: -8.213652610778809
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,437 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,440 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,445 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : epoch: 39, loss: -8.193300247192383
+2023-10-30 11:45:20,445 - INFO : epoch: 39, loss: -8.193300247192383
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,461 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,464 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,467 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : epoch: 40, loss: -8.22730541229248
+2023-10-30 11:45:20,467 - INFO : epoch: 40, loss: -8.22730541229248
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,486 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,490 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,494 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : epoch: 41, loss: -8.206255912780762
+2023-10-30 11:45:20,494 - INFO : epoch: 41, loss: -8.206255912780762
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,510 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,513 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,515 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : epoch: 42, loss: -8.221540451049805
+2023-10-30 11:45:20,516 - INFO : epoch: 42, loss: -8.221540451049805
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,531 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,534 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,537 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : epoch: 43, loss: -8.227831840515137
+2023-10-30 11:45:20,538 - INFO : epoch: 43, loss: -8.227831840515137
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,553 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,556 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,559 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : epoch: 44, loss: -8.227991104125977
+2023-10-30 11:45:20,559 - INFO : epoch: 44, loss: -8.227991104125977
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,575 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,578 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,581 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : epoch: 45, loss: -8.231618881225586
+2023-10-30 11:45:20,581 - INFO : epoch: 45, loss: -8.231618881225586
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,597 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,600 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,603 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : epoch: 46, loss: -8.231661796569824
+2023-10-30 11:45:20,603 - INFO : epoch: 46, loss: -8.231661796569824
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,619 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,622 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,625 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : epoch: 47, loss: -8.234867095947266
+2023-10-30 11:45:20,626 - INFO : epoch: 47, loss: -8.234867095947266
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,645 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,648 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,651 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : epoch: 48, loss: -8.228164672851562
+2023-10-30 11:45:20,651 - INFO : epoch: 48, loss: -8.228164672851562
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,668 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,671 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : incre defaut
+2023-10-30 11:45:20,675 - INFO : incre defaut
+2023/10/30 11:45:20 - INFO : epoch: 49, loss: -8.2264986038208
+2023-10-30 11:45:20,675 - INFO : epoch: 49, loss: -8.2264986038208
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,399 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,400 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,403 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : epoch: 0, loss: 1.017486333847046
+2023-10-30 11:45:43,403 - INFO : epoch: 0, loss: 1.017486333847046
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,418 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,421 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,424 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : epoch: 1, loss: 1.0153238773345947
+2023-10-30 11:45:43,425 - INFO : epoch: 1, loss: 1.0153238773345947
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,438 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,440 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,442 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : epoch: 2, loss: 1.0131475925445557
+2023-10-30 11:45:43,442 - INFO : epoch: 2, loss: 1.0131475925445557
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,456 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,458 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,460 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : epoch: 3, loss: 1.0109021663665771
+2023-10-30 11:45:43,460 - INFO : epoch: 3, loss: 1.0109021663665771
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,471 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,473 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,476 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : epoch: 4, loss: 1.008537769317627
+2023-10-30 11:45:43,476 - INFO : epoch: 4, loss: 1.008537769317627
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,487 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,489 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,491 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : epoch: 5, loss: 1.0060102939605713
+2023-10-30 11:45:43,491 - INFO : epoch: 5, loss: 1.0060102939605713
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,504 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,506 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,508 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : epoch: 6, loss: 1.0032752752304077
+2023-10-30 11:45:43,508 - INFO : epoch: 6, loss: 1.0032752752304077
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,522 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,524 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,526 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : epoch: 7, loss: 1.0002866983413696
+2023-10-30 11:45:43,526 - INFO : epoch: 7, loss: 1.0002866983413696
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,537 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,539 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,541 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : epoch: 8, loss: 0.9970017671585083
+2023-10-30 11:45:43,541 - INFO : epoch: 8, loss: 0.9970017671585083
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,552 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,554 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,556 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : epoch: 9, loss: 0.9933866262435913
+2023-10-30 11:45:43,557 - INFO : epoch: 9, loss: 0.9933866262435913
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,569 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,572 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,576 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : epoch: 10, loss: 0.9894156455993652
+2023-10-30 11:45:43,576 - INFO : epoch: 10, loss: 0.9894156455993652
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,587 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,589 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,591 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : epoch: 11, loss: 0.9850810766220093
+2023-10-30 11:45:43,591 - INFO : epoch: 11, loss: 0.9850810766220093
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,602 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,604 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,606 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : epoch: 12, loss: 0.9804114103317261
+2023-10-30 11:45:43,606 - INFO : epoch: 12, loss: 0.9804114103317261
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,615 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,616 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,618 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : epoch: 13, loss: 0.9754818677902222
+2023-10-30 11:45:43,618 - INFO : epoch: 13, loss: 0.9754818677902222
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,628 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,629 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,630 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : epoch: 14, loss: 0.9704226851463318
+2023-10-30 11:45:43,631 - INFO : epoch: 14, loss: 0.9704226851463318
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,639 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,641 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,643 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : epoch: 15, loss: 0.9654154777526855
+2023-10-30 11:45:43,643 - INFO : epoch: 15, loss: 0.9654154777526855
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,652 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,653 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,655 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : epoch: 16, loss: 0.9606623649597168
+2023-10-30 11:45:43,655 - INFO : epoch: 16, loss: 0.9606623649597168
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,664 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,665 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,668 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : epoch: 17, loss: 0.9563381671905518
+2023-10-30 11:45:43,668 - INFO : epoch: 17, loss: 0.9563381671905518
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,677 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,679 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,680 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : epoch: 18, loss: 0.9525531530380249
+2023-10-30 11:45:43,680 - INFO : epoch: 18, loss: 0.9525531530380249
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,692 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,694 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,696 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : epoch: 19, loss: 0.9493400454521179
+2023-10-30 11:45:43,696 - INFO : epoch: 19, loss: 0.9493400454521179
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,707 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,708 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,710 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : epoch: 20, loss: 0.9466714859008789
+2023-10-30 11:45:43,710 - INFO : epoch: 20, loss: 0.9466714859008789
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,719 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,720 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,721 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : epoch: 21, loss: 0.9444912672042847
+2023-10-30 11:45:43,722 - INFO : epoch: 21, loss: 0.9444912672042847
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,729 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,731 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,732 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : epoch: 22, loss: 0.9427325129508972
+2023-10-30 11:45:43,733 - INFO : epoch: 22, loss: 0.9427325129508972
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,741 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,742 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,744 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : epoch: 23, loss: 0.9413280487060547
+2023-10-30 11:45:43,744 - INFO : epoch: 23, loss: 0.9413280487060547
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,752 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,754 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,755 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : epoch: 24, loss: 0.9402147531509399
+2023-10-30 11:45:43,756 - INFO : epoch: 24, loss: 0.9402147531509399
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,764 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,766 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,767 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : epoch: 25, loss: 0.9393373727798462
+2023-10-30 11:45:43,767 - INFO : epoch: 25, loss: 0.9393373727798462
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,775 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,776 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,778 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : epoch: 26, loss: 0.9386500120162964
+2023-10-30 11:45:43,778 - INFO : epoch: 26, loss: 0.9386500120162964
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,787 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,788 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,790 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : epoch: 27, loss: 0.9381162524223328
+2023-10-30 11:45:43,790 - INFO : epoch: 27, loss: 0.9381162524223328
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,798 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,800 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,802 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : epoch: 28, loss: 0.9377059936523438
+2023-10-30 11:45:43,802 - INFO : epoch: 28, loss: 0.9377059936523438
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,810 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,811 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,813 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : epoch: 29, loss: 0.9373952746391296
+2023-10-30 11:45:43,813 - INFO : epoch: 29, loss: 0.9373952746391296
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,820 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,822 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,824 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : epoch: 30, loss: 0.9371632933616638
+2023-10-30 11:45:43,824 - INFO : epoch: 30, loss: 0.9371632933616638
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,831 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,833 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,834 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : epoch: 31, loss: 0.9369931221008301
+2023-10-30 11:45:43,834 - INFO : epoch: 31, loss: 0.9369931221008301
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,842 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,844 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,845 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : epoch: 32, loss: 0.9368704557418823
+2023-10-30 11:45:43,845 - INFO : epoch: 32, loss: 0.9368704557418823
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,853 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,854 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,856 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : epoch: 33, loss: 0.936783492565155
+2023-10-30 11:45:43,856 - INFO : epoch: 33, loss: 0.936783492565155
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,866 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,867 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,868 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : epoch: 34, loss: 0.936722993850708
+2023-10-30 11:45:43,868 - INFO : epoch: 34, loss: 0.936722993850708
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,877 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,878 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,880 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : epoch: 35, loss: 0.9366817474365234
+2023-10-30 11:45:43,880 - INFO : epoch: 35, loss: 0.9366817474365234
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,891 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,893 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,895 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : epoch: 36, loss: 0.9366539716720581
+2023-10-30 11:45:43,895 - INFO : epoch: 36, loss: 0.9366539716720581
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,906 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,907 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,908 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : epoch: 37, loss: 0.9366354942321777
+2023-10-30 11:45:43,909 - INFO : epoch: 37, loss: 0.9366354942321777
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,917 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,918 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,920 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : epoch: 38, loss: 0.9366235136985779
+2023-10-30 11:45:43,920 - INFO : epoch: 38, loss: 0.9366235136985779
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,927 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,929 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,930 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : epoch: 39, loss: 0.9366156458854675
+2023-10-30 11:45:43,930 - INFO : epoch: 39, loss: 0.9366156458854675
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,938 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,940 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,941 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : epoch: 40, loss: 0.9366104602813721
+2023-10-30 11:45:43,941 - INFO : epoch: 40, loss: 0.9366104602813721
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,948 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,950 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,950 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : epoch: 41, loss: 0.9366072416305542
+2023-10-30 11:45:43,951 - INFO : epoch: 41, loss: 0.9366072416305542
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,958 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,959 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,961 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : epoch: 42, loss: 0.9366049766540527
+2023-10-30 11:45:43,961 - INFO : epoch: 42, loss: 0.9366049766540527
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,972 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,975 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,978 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : epoch: 43, loss: 0.9366035461425781
+2023-10-30 11:45:43,979 - INFO : epoch: 43, loss: 0.9366035461425781
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,986 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,987 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,988 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : epoch: 44, loss: 0.9366025328636169
+2023-10-30 11:45:43,988 - INFO : epoch: 44, loss: 0.9366025328636169
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,998 - INFO : incre defaut
+2023/10/30 11:45:43 - INFO : incre defaut
+2023-10-30 11:45:43,999 - INFO : incre defaut
+2023/10/30 11:45:44 - INFO : incre defaut
+2023-10-30 11:45:44,000 - INFO : incre defaut
+2023/10/30 11:45:44 - INFO : epoch: 45, loss: 0.9366018772125244
+2023-10-30 11:45:44,001 - INFO : epoch: 45, loss: 0.9366018772125244
+2023/10/30 11:45:44 - INFO : incre defaut
+2023-10-30 11:45:44,009 - INFO : incre defaut
+2023/10/30 11:45:44 - INFO : incre defaut
+2023-10-30 11:45:44,010 - INFO : incre defaut
+2023/10/30 11:45:44 - INFO : incre defaut
+2023-10-30 11:45:44,011 - INFO : incre defaut
+2023/10/30 11:45:44 - INFO : epoch: 46, loss: 0.9366014003753662
+2023-10-30 11:45:44,012 - INFO : epoch: 46, loss: 0.9366014003753662
+2023/10/30 11:45:44 - INFO : incre defaut
+2023-10-30 11:45:44,019 - INFO : incre defaut
+2023/10/30 11:45:44 - INFO : incre defaut
+2023-10-30 11:45:44,020 - INFO : incre defaut
+2023/10/30 11:45:44 - INFO : incre defaut
+2023-10-30 11:45:44,022 - INFO : incre defaut
+2023/10/30 11:45:44 - INFO : epoch: 47, loss: 0.9366010427474976
+2023-10-30 11:45:44,022 - INFO : epoch: 47, loss: 0.9366010427474976
+2023/10/30 11:45:44 - INFO : incre defaut
+2023-10-30 11:45:44,030 - INFO : incre defaut
+2023/10/30 11:45:44 - INFO : incre defaut
+2023-10-30 11:45:44,031 - INFO : incre defaut
+2023/10/30 11:45:44 - INFO : incre defaut
+2023-10-30 11:45:44,032 - INFO : incre defaut
+2023/10/30 11:45:44 - INFO : epoch: 48, loss: 0.9366008639335632
+2023-10-30 11:45:44,033 - INFO : epoch: 48, loss: 0.9366008639335632
+2023/10/30 11:45:44 - INFO : incre defaut
+2023-10-30 11:45:44,040 - INFO : incre defaut
+2023/10/30 11:45:44 - INFO : incre defaut
+2023-10-30 11:45:44,042 - INFO : incre defaut
+2023/10/30 11:45:44 - INFO : incre defaut
+2023-10-30 11:45:44,044 - INFO : incre defaut
+2023/10/30 11:45:44 - INFO : epoch: 49, loss: 0.9366006851196289
+2023-10-30 11:45:44,044 - INFO : epoch: 49, loss: 0.9366006851196289
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,527 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,529 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,530 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : epoch: 0, loss: 1.091585636138916
+2023-10-30 11:46:28,531 - INFO : epoch: 0, loss: 1.091585636138916
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,545 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,547 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,549 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : epoch: 1, loss: 1.0897127389907837
+2023-10-30 11:46:28,549 - INFO : epoch: 1, loss: 1.0897127389907837
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,561 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,563 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,565 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : epoch: 2, loss: 1.087871789932251
+2023-10-30 11:46:28,565 - INFO : epoch: 2, loss: 1.087871789932251
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,578 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,580 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,582 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : epoch: 3, loss: 1.086016058921814
+2023-10-30 11:46:28,582 - INFO : epoch: 3, loss: 1.086016058921814
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,599 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,602 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,605 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : epoch: 4, loss: 1.084104061126709
+2023-10-30 11:46:28,605 - INFO : epoch: 4, loss: 1.084104061126709
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,619 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,622 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,625 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : epoch: 5, loss: 1.0820960998535156
+2023-10-30 11:46:28,625 - INFO : epoch: 5, loss: 1.0820960998535156
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,638 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,641 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,644 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : epoch: 6, loss: 1.0799520015716553
+2023-10-30 11:46:28,645 - INFO : epoch: 6, loss: 1.0799520015716553
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,656 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,657 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,659 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : epoch: 7, loss: 1.0776329040527344
+2023-10-30 11:46:28,660 - INFO : epoch: 7, loss: 1.0776329040527344
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,672 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,675 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,678 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : epoch: 8, loss: 1.0751018524169922
+2023-10-30 11:46:28,679 - INFO : epoch: 8, loss: 1.0751018524169922
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,690 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,692 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,694 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : epoch: 9, loss: 1.0723198652267456
+2023-10-30 11:46:28,694 - INFO : epoch: 9, loss: 1.0723198652267456
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,707 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,709 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,710 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : epoch: 10, loss: 1.0692473649978638
+2023-10-30 11:46:28,712 - INFO : epoch: 10, loss: 1.0692473649978638
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,728 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,730 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,732 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : epoch: 11, loss: 1.065840721130371
+2023-10-30 11:46:28,732 - INFO : epoch: 11, loss: 1.065840721130371
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,745 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,746 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,748 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : epoch: 12, loss: 1.0620567798614502
+2023-10-30 11:46:28,748 - INFO : epoch: 12, loss: 1.0620567798614502
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,760 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,762 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,763 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : epoch: 13, loss: 1.0578522682189941
+2023-10-30 11:46:28,764 - INFO : epoch: 13, loss: 1.0578522682189941
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,779 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,780 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,782 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : epoch: 14, loss: 1.0532106161117554
+2023-10-30 11:46:28,783 - INFO : epoch: 14, loss: 1.0532106161117554
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,793 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,796 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,797 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : epoch: 15, loss: 1.0481752157211304
+2023-10-30 11:46:28,797 - INFO : epoch: 15, loss: 1.0481752157211304
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,813 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,815 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,819 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : epoch: 16, loss: 1.0428767204284668
+2023-10-30 11:46:28,819 - INFO : epoch: 16, loss: 1.0428767204284668
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,828 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,831 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,834 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : epoch: 17, loss: 1.0375369787216187
+2023-10-30 11:46:28,834 - INFO : epoch: 17, loss: 1.0375369787216187
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,846 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,847 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,849 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : epoch: 18, loss: 1.0324243307113647
+2023-10-30 11:46:28,849 - INFO : epoch: 18, loss: 1.0324243307113647
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,857 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,859 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,862 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : epoch: 19, loss: 1.027768611907959
+2023-10-30 11:46:28,863 - INFO : epoch: 19, loss: 1.027768611907959
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,873 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,874 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,876 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : epoch: 20, loss: 1.0236923694610596
+2023-10-30 11:46:28,876 - INFO : epoch: 20, loss: 1.0236923694610596
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,887 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,889 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,890 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : epoch: 21, loss: 1.0202140808105469
+2023-10-30 11:46:28,890 - INFO : epoch: 21, loss: 1.0202140808105469
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,906 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,907 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,909 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : epoch: 22, loss: 1.0172924995422363
+2023-10-30 11:46:28,909 - INFO : epoch: 22, loss: 1.0172924995422363
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,924 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,926 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,927 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : epoch: 23, loss: 1.0148680210113525
+2023-10-30 11:46:28,928 - INFO : epoch: 23, loss: 1.0148680210113525
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,941 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,943 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,945 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : epoch: 24, loss: 1.0128767490386963
+2023-10-30 11:46:28,945 - INFO : epoch: 24, loss: 1.0128767490386963
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,959 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,961 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,964 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : epoch: 25, loss: 1.0112583637237549
+2023-10-30 11:46:28,965 - INFO : epoch: 25, loss: 1.0112583637237549
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,975 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,978 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,981 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : epoch: 26, loss: 1.0099519491195679
+2023-10-30 11:46:28,982 - INFO : epoch: 26, loss: 1.0099519491195679
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,996 - INFO : incre defaut
+2023/10/30 11:46:28 - INFO : incre defaut
+2023-10-30 11:46:28,998 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,000 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : epoch: 27, loss: 1.0089013576507568
+2023-10-30 11:46:29,000 - INFO : epoch: 27, loss: 1.0089013576507568
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,014 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,017 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,020 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : epoch: 28, loss: 1.0080593824386597
+2023-10-30 11:46:29,020 - INFO : epoch: 28, loss: 1.0080593824386597
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,029 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,030 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,031 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : epoch: 29, loss: 1.0073878765106201
+2023-10-30 11:46:29,031 - INFO : epoch: 29, loss: 1.0073878765106201
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,044 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,046 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,047 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : epoch: 30, loss: 1.0068564414978027
+2023-10-30 11:46:29,047 - INFO : epoch: 30, loss: 1.0068564414978027
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,056 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,059 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,061 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : epoch: 31, loss: 1.00644052028656
+2023-10-30 11:46:29,061 - INFO : epoch: 31, loss: 1.00644052028656
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,078 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,079 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,081 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : epoch: 32, loss: 1.0061190128326416
+2023-10-30 11:46:29,081 - INFO : epoch: 32, loss: 1.0061190128326416
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,091 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,093 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,094 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : epoch: 33, loss: 1.0058741569519043
+2023-10-30 11:46:29,094 - INFO : epoch: 33, loss: 1.0058741569519043
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,106 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,108 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,109 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : epoch: 34, loss: 1.0056904554367065
+2023-10-30 11:46:29,109 - INFO : epoch: 34, loss: 1.0056904554367065
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,124 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,126 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,127 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : epoch: 35, loss: 1.0055546760559082
+2023-10-30 11:46:29,127 - INFO : epoch: 35, loss: 1.0055546760559082
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,137 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,139 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,141 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : epoch: 36, loss: 1.0054562091827393
+2023-10-30 11:46:29,141 - INFO : epoch: 36, loss: 1.0054562091827393
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,156 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,159 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,162 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : epoch: 37, loss: 1.0053856372833252
+2023-10-30 11:46:29,163 - INFO : epoch: 37, loss: 1.0053856372833252
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,172 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,173 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,174 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : epoch: 38, loss: 1.0053359270095825
+2023-10-30 11:46:29,175 - INFO : epoch: 38, loss: 1.0053359270095825
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,191 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,192 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,194 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : epoch: 39, loss: 1.0053014755249023
+2023-10-30 11:46:29,194 - INFO : epoch: 39, loss: 1.0053014755249023
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,209 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,212 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,213 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : epoch: 40, loss: 1.0052775144577026
+2023-10-30 11:46:29,214 - INFO : epoch: 40, loss: 1.0052775144577026
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,228 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,231 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,233 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : epoch: 41, loss: 1.0052613019943237
+2023-10-30 11:46:29,233 - INFO : epoch: 41, loss: 1.0052613019943237
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,242 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,245 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,248 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : epoch: 42, loss: 1.0052504539489746
+2023-10-30 11:46:29,249 - INFO : epoch: 42, loss: 1.0052504539489746
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,258 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,260 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,261 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : epoch: 43, loss: 1.0052430629730225
+2023-10-30 11:46:29,261 - INFO : epoch: 43, loss: 1.0052430629730225
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,271 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,274 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,277 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : epoch: 44, loss: 1.0052380561828613
+2023-10-30 11:46:29,278 - INFO : epoch: 44, loss: 1.0052380561828613
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,290 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,291 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,293 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : epoch: 45, loss: 1.0052348375320435
+2023-10-30 11:46:29,293 - INFO : epoch: 45, loss: 1.0052348375320435
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,301 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,302 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,304 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : epoch: 46, loss: 1.005232572555542
+2023-10-30 11:46:29,304 - INFO : epoch: 46, loss: 1.005232572555542
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,312 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,313 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,314 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : epoch: 47, loss: 1.0052309036254883
+2023-10-30 11:46:29,314 - INFO : epoch: 47, loss: 1.0052309036254883
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,324 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,327 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,330 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : epoch: 48, loss: 1.0052299499511719
+2023-10-30 11:46:29,331 - INFO : epoch: 48, loss: 1.0052299499511719
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,341 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,342 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : incre defaut
+2023-10-30 11:46:29,343 - INFO : incre defaut
+2023/10/30 11:46:29 - INFO : epoch: 49, loss: 1.0052292346954346
+2023-10-30 11:46:29,343 - INFO : epoch: 49, loss: 1.0052292346954346
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,699 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,701 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,704 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : epoch: 0, loss: 1.9987027645111084
+2023-10-30 11:47:00,704 - INFO : epoch: 0, loss: 1.9987027645111084
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,716 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,717 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,720 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : epoch: 1, loss: 1.9942325353622437
+2023-10-30 11:47:00,720 - INFO : epoch: 1, loss: 1.9942325353622437
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,731 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,733 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,734 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : epoch: 2, loss: 1.9898126125335693
+2023-10-30 11:47:00,735 - INFO : epoch: 2, loss: 1.9898126125335693
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,746 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,748 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,749 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : epoch: 3, loss: 1.98533296585083
+2023-10-30 11:47:00,750 - INFO : epoch: 3, loss: 1.98533296585083
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,760 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,763 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,764 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : epoch: 4, loss: 1.9806900024414062
+2023-10-30 11:47:00,765 - INFO : epoch: 4, loss: 1.9806900024414062
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,776 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,778 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,779 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : epoch: 5, loss: 1.9757905006408691
+2023-10-30 11:47:00,780 - INFO : epoch: 5, loss: 1.9757905006408691
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,791 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,793 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,795 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : epoch: 6, loss: 1.9705491065979004
+2023-10-30 11:47:00,795 - INFO : epoch: 6, loss: 1.9705491065979004
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,805 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,807 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,809 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : epoch: 7, loss: 1.9648911952972412
+2023-10-30 11:47:00,809 - INFO : epoch: 7, loss: 1.9648911952972412
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,820 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,822 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,823 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : epoch: 8, loss: 1.9587466716766357
+2023-10-30 11:47:00,824 - INFO : epoch: 8, loss: 1.9587466716766357
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,835 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,837 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,839 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : epoch: 9, loss: 1.9520615339279175
+2023-10-30 11:47:00,839 - INFO : epoch: 9, loss: 1.9520615339279175
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,849 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,851 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,853 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : epoch: 10, loss: 1.9447989463806152
+2023-10-30 11:47:00,853 - INFO : epoch: 10, loss: 1.9447989463806152
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,865 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,867 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,869 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : epoch: 11, loss: 1.9369513988494873
+2023-10-30 11:47:00,869 - INFO : epoch: 11, loss: 1.9369513988494873
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,880 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,882 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,884 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : epoch: 12, loss: 1.928575873374939
+2023-10-30 11:47:00,884 - INFO : epoch: 12, loss: 1.928575873374939
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,895 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,897 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,898 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : epoch: 13, loss: 1.9198143482208252
+2023-10-30 11:47:00,899 - INFO : epoch: 13, loss: 1.9198143482208252
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,909 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,911 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,913 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : epoch: 14, loss: 1.9109066724777222
+2023-10-30 11:47:00,913 - INFO : epoch: 14, loss: 1.9109066724777222
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,926 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,928 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,929 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : epoch: 15, loss: 1.9021638631820679
+2023-10-30 11:47:00,930 - INFO : epoch: 15, loss: 1.9021638631820679
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,940 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,942 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,944 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : epoch: 16, loss: 1.8939149379730225
+2023-10-30 11:47:00,945 - INFO : epoch: 16, loss: 1.8939149379730225
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,955 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,957 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,958 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : epoch: 17, loss: 1.8864142894744873
+2023-10-30 11:47:00,959 - INFO : epoch: 17, loss: 1.8864142894744873
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,971 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,973 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,974 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : epoch: 18, loss: 1.879772424697876
+2023-10-30 11:47:00,974 - INFO : epoch: 18, loss: 1.879772424697876
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,983 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,985 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,986 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : epoch: 19, loss: 1.8739590644836426
+2023-10-30 11:47:00,986 - INFO : epoch: 19, loss: 1.8739590644836426
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,994 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,995 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : incre defaut
+2023-10-30 11:47:00,996 - INFO : incre defaut
+2023/10/30 11:47:00 - INFO : epoch: 20, loss: 1.8688796758651733
+2023-10-30 11:47:00,996 - INFO : epoch: 20, loss: 1.8688796758651733
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,003 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,004 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,006 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : epoch: 21, loss: 1.8644412755966187
+2023-10-30 11:47:01,006 - INFO : epoch: 21, loss: 1.8644412755966187
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,012 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,013 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,015 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : epoch: 22, loss: 1.860563039779663
+2023-10-30 11:47:01,015 - INFO : epoch: 22, loss: 1.860563039779663
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,023 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,024 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,025 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : epoch: 23, loss: 1.8571847677230835
+2023-10-30 11:47:01,025 - INFO : epoch: 23, loss: 1.8571847677230835
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,032 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,034 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,035 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : epoch: 24, loss: 1.8542613983154297
+2023-10-30 11:47:01,035 - INFO : epoch: 24, loss: 1.8542613983154297
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,042 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,043 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,044 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : epoch: 25, loss: 1.851754069328308
+2023-10-30 11:47:01,044 - INFO : epoch: 25, loss: 1.851754069328308
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,050 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,053 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,054 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : epoch: 26, loss: 1.849626064300537
+2023-10-30 11:47:01,054 - INFO : epoch: 26, loss: 1.849626064300537
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,061 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,062 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,063 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : epoch: 27, loss: 1.8478435277938843
+2023-10-30 11:47:01,063 - INFO : epoch: 27, loss: 1.8478435277938843
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,070 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,070 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,073 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : epoch: 28, loss: 1.8463720083236694
+2023-10-30 11:47:01,073 - INFO : epoch: 28, loss: 1.8463720083236694
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,080 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,080 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,081 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : epoch: 29, loss: 1.8451766967773438
+2023-10-30 11:47:01,081 - INFO : epoch: 29, loss: 1.8451766967773438
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,088 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,089 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,091 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : epoch: 30, loss: 1.8442225456237793
+2023-10-30 11:47:01,091 - INFO : epoch: 30, loss: 1.8442225456237793
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,098 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,100 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,101 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : epoch: 31, loss: 1.8434743881225586
+2023-10-30 11:47:01,101 - INFO : epoch: 31, loss: 1.8434743881225586
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,107 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,109 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,110 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : epoch: 32, loss: 1.8428986072540283
+2023-10-30 11:47:01,110 - INFO : epoch: 32, loss: 1.8428986072540283
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,119 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,120 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,122 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : epoch: 33, loss: 1.8424639701843262
+2023-10-30 11:47:01,122 - INFO : epoch: 33, loss: 1.8424639701843262
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,132 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,133 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,135 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : epoch: 34, loss: 1.8421423435211182
+2023-10-30 11:47:01,135 - INFO : epoch: 34, loss: 1.8421423435211182
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,145 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,146 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,147 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : epoch: 35, loss: 1.8419084548950195
+2023-10-30 11:47:01,147 - INFO : epoch: 35, loss: 1.8419084548950195
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,153 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,155 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,156 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : epoch: 36, loss: 1.8417415618896484
+2023-10-30 11:47:01,156 - INFO : epoch: 36, loss: 1.8417415618896484
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,163 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,164 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,166 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : epoch: 37, loss: 1.8416246175765991
+2023-10-30 11:47:01,166 - INFO : epoch: 37, loss: 1.8416246175765991
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,173 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,175 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,176 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : epoch: 38, loss: 1.8415439128875732
+2023-10-30 11:47:01,176 - INFO : epoch: 38, loss: 1.8415439128875732
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,182 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,184 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,185 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : epoch: 39, loss: 1.8414891958236694
+2023-10-30 11:47:01,185 - INFO : epoch: 39, loss: 1.8414891958236694
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,192 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,194 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,195 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : epoch: 40, loss: 1.8414525985717773
+2023-10-30 11:47:01,195 - INFO : epoch: 40, loss: 1.8414525985717773
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,202 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,203 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,204 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : epoch: 41, loss: 1.841428518295288
+2023-10-30 11:47:01,204 - INFO : epoch: 41, loss: 1.841428518295288
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,210 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,212 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,214 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : epoch: 42, loss: 1.8414125442504883
+2023-10-30 11:47:01,214 - INFO : epoch: 42, loss: 1.8414125442504883
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,221 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,222 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,223 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : epoch: 43, loss: 1.841402292251587
+2023-10-30 11:47:01,223 - INFO : epoch: 43, loss: 1.841402292251587
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,230 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,230 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,233 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : epoch: 44, loss: 1.841395378112793
+2023-10-30 11:47:01,233 - INFO : epoch: 44, loss: 1.841395378112793
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,240 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,244 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,247 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : epoch: 45, loss: 1.8413913249969482
+2023-10-30 11:47:01,247 - INFO : epoch: 45, loss: 1.8413913249969482
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,254 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,255 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,257 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : epoch: 46, loss: 1.841388463973999
+2023-10-30 11:47:01,257 - INFO : epoch: 46, loss: 1.841388463973999
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,266 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,268 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,270 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : epoch: 47, loss: 1.8413865566253662
+2023-10-30 11:47:01,270 - INFO : epoch: 47, loss: 1.8413865566253662
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,277 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,279 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,280 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : epoch: 48, loss: 1.8413852453231812
+2023-10-30 11:47:01,280 - INFO : epoch: 48, loss: 1.8413852453231812
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,287 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,289 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : incre defaut
+2023-10-30 11:47:01,290 - INFO : incre defaut
+2023/10/30 11:47:01 - INFO : epoch: 49, loss: 1.8413844108581543
+2023-10-30 11:47:01,290 - INFO : epoch: 49, loss: 1.8413844108581543

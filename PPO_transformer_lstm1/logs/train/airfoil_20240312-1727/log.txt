@@ -1,0 +1,40 @@
+2024-03-12 17:27:32,177 AutoFE.py:35 __init__ INFO | Namespace(cuda='0', epochs=300, ppo_epochs=20, episodes=5, file_name='airfoil', mode='regression', model='rf', metric='rae', seed=1, train_size=0.7, cv=5, shuffle=False, d_model=128, d_k=32, d_v=32, d_ff=64, n_heads=6, worker=1, steps_num=3, lr=0.0001, entropy_weight=0.0001, baseline_weight=0.95, gama=0.9, gae_lambda=0.95, batch_size=4, c_columns=['V0', 'V1', 'V2', 'V3', 'V4'], d_columns=[], target='label')
+2024-03-12 17:27:32,177 AutoFE.py:36 __init__ INFO | File name: airfoil
+2024-03-12 17:27:32,177 AutoFE.py:37 __init__ INFO | Data shape: (1503, 6)
+2024-03-12 17:27:33,696 AutoFE.py:90 set_cuda INFO | Use device: 0, cuda:0, NVIDIA GeForce RTX 4060 Laptop GPU
+2024-03-12 17:27:33,696 AutoFE.py:80 __init__ INFO | Done AutoFE initialization.
+2024-03-12 17:27:33,869 AutoFE.py:103 fit_attention INFO | score_b=0.5082536437890061, scores_b=[0.61519569 0.63651844 0.53160598 0.27777502 0.48017309]
+2024-03-12 17:27:36,079 main_ppo.py:80 <module> INFO | Traceback (most recent call last):
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\main_ppo.py", line 76, in <module>
+    autofe.fit_attention(args)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\AutoFE.py", line 148, in fit_attention
+    w_c = sample(args, self.ppo, pipline_args_train, df_c_encode, df_d_encode, df_t_norm, c_ops,d_ops,epoch, i, self.device)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\feature_engineer\training_ops.py", line 51, in sample
+    x_encode_c = np.hstack((x_c, x_d,df_t_norm.values.reshape(-1, 1)))
+  File "<__array_function__ internals>", line 200, in hstack
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\numpy\core\shape_base.py", line 370, in hstack
+    return _nx.concatenate(arrs, 1, dtype=dtype, casting=casting)
+  File "<__array_function__ internals>", line 200, in concatenate
+ValueError: all the input arrays must have same number of dimensions, but the array at index 0 has 2 dimension(s) and the array at index 1 has 1 dimension(s)
+
+2024-03-12 17:27:36,079 main_ppo.py:82 <module> INFO | Total cost time: 3.904 s.
+2024-03-12 17:27:50,322 AutoFE.py:35 __init__ INFO | Namespace(cuda='0', epochs=300, ppo_epochs=20, episodes=5, file_name='airfoil', mode='regression', model='rf', metric='rae', seed=1, train_size=0.7, cv=5, shuffle=False, d_model=128, d_k=32, d_v=32, d_ff=64, n_heads=6, worker=1, steps_num=3, lr=0.0001, entropy_weight=0.0001, baseline_weight=0.95, gama=0.9, gae_lambda=0.95, batch_size=4, c_columns=['V0', 'V1', 'V2', 'V3', 'V4'], d_columns=[], target='label')
+2024-03-12 17:27:50,322 AutoFE.py:36 __init__ INFO | File name: airfoil
+2024-03-12 17:27:50,322 AutoFE.py:37 __init__ INFO | Data shape: (1503, 6)
+2024-03-12 17:27:51,853 AutoFE.py:90 set_cuda INFO | Use device: 0, cuda:0, NVIDIA GeForce RTX 4060 Laptop GPU
+2024-03-12 17:27:51,853 AutoFE.py:80 __init__ INFO | Done AutoFE initialization.
+2024-03-12 17:27:52,058 AutoFE.py:103 fit_attention INFO | score_b=0.5082536437890061, scores_b=[0.61519569 0.63651844 0.53160598 0.27777502 0.48017309]
+2024-03-12 17:28:10,817 main_ppo.py:80 <module> INFO | Traceback (most recent call last):
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\main_ppo.py", line 76, in <module>
+    autofe.fit_attention(args)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\AutoFE.py", line 148, in fit_attention
+    w_c = sample(args, self.ppo, pipline_args_train, df_c_encode, df_d_encode, df_t_norm, c_ops,d_ops,epoch, i, self.device)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\feature_engineer\training_ops.py", line 51, in sample
+    x_encode_c = np.hstack((x_c, x_d,df_t_norm.values.reshape(-1, 1)))
+  File "<__array_function__ internals>", line 200, in hstack
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\numpy\core\shape_base.py", line 370, in hstack
+    return _nx.concatenate(arrs, 1, dtype=dtype, casting=casting)
+  File "<__array_function__ internals>", line 200, in concatenate
+ValueError: all the input arrays must have same number of dimensions, but the array at index 0 has 2 dimension(s) and the array at index 1 has 1 dimension(s)
+
+2024-03-12 17:28:11,595 main_ppo.py:82 <module> INFO | Total cost time: 20.9027 s.

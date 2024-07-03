@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 from sklearn.utils.estimator_checks import check_estimator
-from autofeat import AutoFeatRegressor, AutoFeatClassifier
+from autofeat.autofeat import AutoFeatRegressor, AutoFeatClassifier
 import matplotlib.pyplot as plt
 
 np.random.seed(10)

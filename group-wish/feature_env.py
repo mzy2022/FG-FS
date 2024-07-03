@@ -3,14 +3,16 @@ from utils.logger import error, info
 from utils.tools import feature_state_generation, downstream_task_new, test_task_new, cluster_features
 
 TASK_DICT = {'airfoil': 'reg', 'amazon_employee': 'cls', 'ap_omentum_ovary': 'cls',
-             'bike_share': 'reg', 'german_credit': 'cls', 'higgs': 'cls',
-             'housing_boston': 'reg', 'ionosphere': 'cls', 'lymphography': 'cls',
-             'messidor_features': 'cls', 'openml_620': 'reg', 'pima_indian': 'cls',
+             'bike_share': 'reg', 'german_credit_24': 'cls', 'higgs': 'cls',
+             'housing_boston': 'reg', 'ionosphere': 'cls', 'lymphography': 'cls','hepatitis':'cls',
+             'messidor_features': 'cls', 'Openml_620': 'reg', 'PimaIndian': 'cls',
              'spam_base': 'cls', 'spectf': 'cls', 'svmguide3': 'cls',
              'uci_credit_card': 'cls', 'wine_red': 'cls', 'wine_white': 'cls',
-             'Openml_586': 'reg', 'openml_589': 'reg', 'openml_607': 'reg',
-             'openml_616': 'reg', 'openml_618': 'reg', 'openml_637': 'reg'
-             }
+             'Openml_586': 'reg', 'Openml_589': 'reg', 'Openml_607': 'reg',
+             'Openml_616': 'reg', 'Openml_618': 'reg', 'Openml_637': 'reg','output':'cls','fertility_Diagnosis':'cls'
+             ,'NPHA':'cls','autoUniv':'cls','breast-w':"cls","cmc":'cls',"collins":'cls',"credit_g":'cls',"ilpd":'cls',"kc1":'cls',
+             'letter':'cls',"pc1":'cls',"pc3":'cls',"segment":"cls",'vehicle':"cls","cps_85_wages":'reg',"liver_disorders":'reg','meta':'reg',
+             'Openml_583':'reg','Openml_592':'reg','Openml_598':'reg','Openml_657':'reg','AP':'cls'}
 
 MEASUREMENT = {
     'cls': ['precision', 'recall', 'f1_score'],
@@ -33,6 +35,7 @@ class FeatureEnv:
             self.mode = 'c'
         else:
             self.mode = ''
+            
 
     '''
             input a Dataframe (cluster or feature set)

@@ -1,0 +1,38 @@
+2024-03-12 15:22:00,490 AutoFE.py:35 __init__ INFO | Namespace(cuda='0', epochs=300, ppo_epochs=20, episodes=2, file_name='SPECTF', mode='classify', model='xgb', metric='f1', seed=1, train_size=0.7, cv=5, shuffle=False, d_model=128, d_k=32, d_v=32, d_ff=64, n_heads=6, worker=1, steps_num=3, lr=0.0001, entropy_weight=0.0001, baseline_weight=0.95, gama=0.9, gae_lambda=0.95, batch_size=4, c_columns=['V0', 'V1', 'V2', 'V3', 'V4', 'V5', 'V6', 'V7', 'V8', 'V9', 'V10', 'V11', 'V12', 'V13', 'V14', 'V15', 'V16', 'V17', 'V18', 'V19', 'V20', 'V21', 'V22', 'V23', 'V24', 'V25', 'V26', 'V27', 'V28', 'V29', 'V30', 'V31', 'V32', 'V33', 'V34', 'V35', 'V36', 'V37', 'V38', 'V39', 'V40', 'V41', 'V42', 'V43'], d_columns=[], target='label')
+2024-03-12 15:22:00,490 AutoFE.py:36 __init__ INFO | File name: SPECTF
+2024-03-12 15:22:00,490 AutoFE.py:37 __init__ INFO | Data shape: (267, 45)
+2024-03-12 15:22:02,005 AutoFE.py:90 set_cuda INFO | Use device: 0, cuda:0, NVIDIA GeForce RTX 4060 Laptop GPU
+2024-03-12 15:22:02,005 AutoFE.py:80 __init__ INFO | Done AutoFE initialization.
+2024-03-12 15:22:02,208 AutoFE.py:103 fit_attention INFO | score_b=0.7976939203354297, scores_b=[0.83333333 0.77777778 0.77358491 0.75471698 0.8490566 ]
+2024-03-12 15:22:07,574 AutoFE.py:158 fit_attention INFO | worker1 ,results:[0.7974, 0.8203, 0.7184],cv:[ 0.          0.          0.05660377 -0.0754717   0.        ],
+2024-03-12 15:22:07,574 AutoFE.py:158 fit_attention INFO | worker2 ,results:[0.7017, 0.8428, 0.5959],cv:[-0.09259259  0.03703704  0.0754717  -0.09433962  0.        ],
+2024-03-12 15:22:07,574 AutoFE.py:172 fit_attention INFO | epoch:0,baseline:[0.74955 0.83155 0.65715],score_b:0.7976939203354297,scores_b:[0.83333333 0.77777778 0.77358491 0.75471698 0.8490566 ]
+2024-03-12 15:22:07,574 AutoFE.py:178 fit_attention INFO | top_1:score:0.8428371767994409
+2024-03-12 15:22:07,574 AutoFE.py:178 fit_attention INFO | top_2:score:0.820335429769392
+2024-03-12 15:22:07,574 AutoFE.py:178 fit_attention INFO | top_3:score:0.816282320055905
+2024-03-12 15:22:07,574 AutoFE.py:178 fit_attention INFO | top_4:score:0.7942697414395529
+2024-03-12 15:22:07,574 AutoFE.py:178 fit_attention INFO | top_5:score:0.7939203354297695
+2024-03-12 15:22:07,574 main_ppo.py:80 <module> INFO | Traceback (most recent call last):
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\main_ppo.py", line 76, in <module>
+    autofe.fit_attention(args)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\AutoFE.py", line 181, in fit_attention
+    self.ppo.update(workers)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\feature_engineer\ppo.py", line 91, in update
+    for j, item in enumerate(x):
+TypeError: 'float' object is not iterable
+
+2024-03-12 15:22:07,574 main_ppo.py:82 <module> INFO | Total cost time: 7.0836 s.
+2024-03-12 15:22:39,182 AutoFE.py:35 __init__ INFO | Namespace(cuda='0', epochs=300, ppo_epochs=20, episodes=2, file_name='SPECTF', mode='classify', model='xgb', metric='f1', seed=1, train_size=0.7, cv=5, shuffle=False, d_model=128, d_k=32, d_v=32, d_ff=64, n_heads=6, worker=1, steps_num=3, lr=0.0001, entropy_weight=0.0001, baseline_weight=0.95, gama=0.9, gae_lambda=0.95, batch_size=4, c_columns=['V0', 'V1', 'V2', 'V3', 'V4', 'V5', 'V6', 'V7', 'V8', 'V9', 'V10', 'V11', 'V12', 'V13', 'V14', 'V15', 'V16', 'V17', 'V18', 'V19', 'V20', 'V21', 'V22', 'V23', 'V24', 'V25', 'V26', 'V27', 'V28', 'V29', 'V30', 'V31', 'V32', 'V33', 'V34', 'V35', 'V36', 'V37', 'V38', 'V39', 'V40', 'V41', 'V42', 'V43'], d_columns=[], target='label')
+2024-03-12 15:22:39,182 AutoFE.py:36 __init__ INFO | File name: SPECTF
+2024-03-12 15:22:39,182 AutoFE.py:37 __init__ INFO | Data shape: (267, 45)
+2024-03-12 15:22:40,719 AutoFE.py:90 set_cuda INFO | Use device: 0, cuda:0, NVIDIA GeForce RTX 4060 Laptop GPU
+2024-03-12 15:22:40,719 AutoFE.py:80 __init__ INFO | Done AutoFE initialization.
+2024-03-12 15:22:40,922 AutoFE.py:103 fit_attention INFO | score_b=0.7976939203354297, scores_b=[0.83333333 0.77777778 0.77358491 0.75471698 0.8490566 ]
+2024-03-12 15:22:46,288 AutoFE.py:158 fit_attention INFO | worker1 ,results:[0.7974, 0.8203, 0.7184],cv:[ 0.          0.          0.05660377 -0.0754717   0.        ],
+2024-03-12 15:22:46,291 AutoFE.py:158 fit_attention INFO | worker2 ,results:[0.7017, 0.8428, 0.5959],cv:[-0.09259259  0.03703704  0.0754717  -0.09433962  0.        ],
+2024-03-12 15:22:46,291 AutoFE.py:172 fit_attention INFO | epoch:0,baseline:[0.74955 0.83155 0.65715],score_b:0.7976939203354297,scores_b:[0.83333333 0.77777778 0.77358491 0.75471698 0.8490566 ]
+2024-03-12 15:22:46,291 AutoFE.py:178 fit_attention INFO | top_1:score:0.8428371767994409
+2024-03-12 15:22:46,291 AutoFE.py:178 fit_attention INFO | top_2:score:0.820335429769392
+2024-03-12 15:22:46,291 AutoFE.py:178 fit_attention INFO | top_3:score:0.816282320055905
+2024-03-12 15:22:46,291 AutoFE.py:178 fit_attention INFO | top_4:score:0.7942697414395529
+2024-03-12 15:22:46,291 AutoFE.py:178 fit_attention INFO | top_5:score:0.7939203354297695

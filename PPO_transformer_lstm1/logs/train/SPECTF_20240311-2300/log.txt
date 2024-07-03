@@ -1,0 +1,24 @@
+2024-03-11 23:00:18,027 AutoFE.py:35 __init__ INFO | Namespace(cuda='0', epochs=300, ppo_epochs=20, episodes=2, file_name='SPECTF', mode='classify', model='xgb', metric='f1', seed=1, train_size=0.7, cv=5, shuffle=False, d_model=128, d_k=32, d_v=32, d_ff=64, n_heads=6, worker=1, steps_num=3, lr=0.0001, entropy_weight=0.0001, baseline_weight=0.95, gama=0.9, gae_lambda=0.95, batch_size=4, c_columns=['V0', 'V1', 'V2', 'V3', 'V4', 'V5', 'V6', 'V7', 'V8', 'V9', 'V10', 'V11', 'V12', 'V13', 'V14', 'V15', 'V16', 'V17', 'V18', 'V19', 'V20', 'V21', 'V22', 'V23', 'V24', 'V25', 'V26', 'V27', 'V28', 'V29', 'V30', 'V31', 'V32', 'V33', 'V34', 'V35', 'V36', 'V37', 'V38', 'V39', 'V40', 'V41', 'V42', 'V43'], d_columns=[], target='label')
+2024-03-11 23:00:18,027 AutoFE.py:36 __init__ INFO | File name: SPECTF
+2024-03-11 23:00:18,027 AutoFE.py:37 __init__ INFO | Data shape: (267, 45)
+2024-03-11 23:00:19,549 AutoFE.py:90 set_cuda INFO | Use device: 0, cuda:0, NVIDIA GeForce RTX 4060 Laptop GPU
+2024-03-11 23:00:19,549 AutoFE.py:80 __init__ INFO | Done AutoFE initialization.
+2024-03-11 23:00:19,760 AutoFE.py:103 fit_attention INFO | score_b=0.7976939203354297, scores_b=[0.83333333 0.77777778 0.77358491 0.75471698 0.8490566 ]
+2024-03-11 23:00:25,119 AutoFE.py:158 fit_attention INFO | worker1 ,results:[0.7974, 0.8203, 0.7184],cv:[ 0.          0.          0.05660377 -0.0754717   0.        ],
+2024-03-11 23:00:53,983 AutoFE.py:35 __init__ INFO | Namespace(cuda='0', epochs=300, ppo_epochs=20, episodes=2, file_name='SPECTF', mode='classify', model='xgb', metric='f1', seed=1, train_size=0.7, cv=5, shuffle=False, d_model=128, d_k=32, d_v=32, d_ff=64, n_heads=6, worker=1, steps_num=3, lr=0.0001, entropy_weight=0.0001, baseline_weight=0.95, gama=0.9, gae_lambda=0.95, batch_size=4, c_columns=['V0', 'V1', 'V2', 'V3', 'V4', 'V5', 'V6', 'V7', 'V8', 'V9', 'V10', 'V11', 'V12', 'V13', 'V14', 'V15', 'V16', 'V17', 'V18', 'V19', 'V20', 'V21', 'V22', 'V23', 'V24', 'V25', 'V26', 'V27', 'V28', 'V29', 'V30', 'V31', 'V32', 'V33', 'V34', 'V35', 'V36', 'V37', 'V38', 'V39', 'V40', 'V41', 'V42', 'V43'], d_columns=[], target='label')
+2024-03-11 23:00:53,983 AutoFE.py:36 __init__ INFO | File name: SPECTF
+2024-03-11 23:00:53,983 AutoFE.py:37 __init__ INFO | Data shape: (267, 45)
+2024-03-11 23:00:54,459 AutoFE.py:90 set_cuda INFO | Use device: 0, cuda:0, NVIDIA GeForce RTX 4060 Laptop GPU
+2024-03-11 23:00:54,459 AutoFE.py:80 __init__ INFO | Done AutoFE initialization.
+2024-03-11 23:00:54,664 AutoFE.py:103 fit_attention INFO | score_b=0.7976939203354297, scores_b=[0.83333333 0.77777778 0.77358491 0.75471698 0.8490566 ]
+2024-03-11 23:00:59,959 AutoFE.py:158 fit_attention INFO | worker1 ,results:[0.7974, 0.8203, 0.7184],cv:[ 0.          0.          0.05660377 -0.0754717   0.        ],
+2024-03-11 23:01:18,507 AutoFE.py:158 fit_attention INFO | worker2 ,results:[0.7017, 0.8428, 0.5959],cv:[-0.09259259  0.03703704  0.0754717  -0.09433962  0.        ],
+2024-03-11 23:01:27,894 AutoFE.py:172 fit_attention INFO | epoch:0,baseline:[0.74955 0.83155 0.65715],score_b:0.7976939203354297,scores_b:[0.83333333 0.77777778 0.77358491 0.75471698 0.8490566 ]
+2024-03-11 23:01:40,310 main_ppo.py:80 <module> INFO | Traceback (most recent call last):
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\main_ppo.py", line 76, in <module>
+    autofe.fit_attention(args)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\AutoFE.py", line 179, in fit_attention
+    logging.info(f"top_{i + 1}:score:{self.workers_top5[i].scores.mean()},feature_nums:{new_nums / ori_nums, new_nums, ori_nums}, repeat_nums:{self.workers_top5[i].repeat_fe_nums},{self.workers_top5[i].ff}")
+TypeError: unsupported operand type(s) for /: 'NoneType' and 'int'
+
+2024-03-11 23:01:40,962 main_ppo.py:82 <module> INFO | Total cost time: 46.6977 s.

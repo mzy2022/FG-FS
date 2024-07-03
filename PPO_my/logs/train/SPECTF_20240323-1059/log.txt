@@ -1,0 +1,18 @@
+2024-03-23 10:59:53,196 AutoFE.py:30 __init__ INFO | Namespace(cuda='0', epochs=100, ppo_epochs=20, episodes=3, file_name='SPECTF', mode='classify', model='rf', metric='f1', seed=1, train_size=0.7, cv=5, shuffle=False, d_model=128, d_k=32, d_v=32, d_ff=64, n_heads=6, worker=1, steps_num=3, lr=0.0001, entropy_weight=0.0001, baseline_weight=0.95, gama=0.9, gae_lambda=0.95, batch_size=4, c_columns=['V0', 'V1', 'V2', 'V3', 'V4', 'V5', 'V6', 'V7', 'V8', 'V9', 'V10', 'V11', 'V12', 'V13', 'V14', 'V15', 'V16', 'V17', 'V18', 'V19', 'V20', 'V21', 'V22', 'V23', 'V24', 'V25', 'V26', 'V27', 'V28', 'V29', 'V30', 'V31', 'V32', 'V33', 'V34', 'V35', 'V36', 'V37', 'V38', 'V39', 'V40', 'V41', 'V42', 'V43'], d_columns=[], target='label')
+2024-03-23 10:59:53,196 AutoFE.py:31 __init__ INFO | File name: SPECTF
+2024-03-23 10:59:53,196 AutoFE.py:32 __init__ INFO | Data shape: (267, 45)
+2024-03-23 10:59:53,670 AutoFE.py:85 set_cuda INFO | Use device: 0, cuda:0, NVIDIA GeForce RTX 4060 Laptop GPU
+2024-03-23 10:59:53,670 AutoFE.py:75 __init__ INFO | Done AutoFE initialization.
+2024-03-23 10:59:53,865 AutoFE.py:98 fit_attention INFO | score_b=0.8277428371767994, scores_b=[0.7962963  0.85185185 0.88679245 0.71698113 0.88679245]
+2024-03-23 11:02:49,104 main_ppo.py:80 <module> INFO | Traceback (most recent call last):
+  File "D:\python files\pythonProject3\PPO_transformer_lstm1\main_ppo.py", line 76, in <module>
+    autofe.fit_attention(args)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm1\AutoFE.py", line 142, in fit_attention
+    w_c = sample(args, self.ppo, pipline_args_train, df_c_encode, df_d_encode, df_t_norm, c_ops,d_ops,epoch, i, self.device)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm1\feature_engineer\training_ops.py", line 46, in sample
+    actions_ops, log_ops_probs, res_h_c_t_list = ppo.choose_action(state, step, epoch,c_ops,res_h_c_t_list)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm1\feature_engineer\ppo.py", line 38, in choose_action
+    ops_softmax, otp_softmax,res_h_c_t_list = self.actor(input_c.to(self.device), step,res_h_c_t_list)
+ValueError: not enough values to unpack (expected 3, got 2)
+
+2024-03-23 11:02:49,803 main_ppo.py:82 <module> INFO | Total cost time: 176.3466 s.

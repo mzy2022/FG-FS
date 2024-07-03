@@ -1,0 +1,28 @@
+2023-11-06 21:28:50,010 autofe.py:53 __init__ INFO | Namespace(cuda='0', train_size=0.7, epochs=120, ppo_epochs=20, episodes=10, lr=0.0001, entropy_weight=0.0001, baseline_weight=0.95, gama=0.9, gae_lambda=0.95, batch_size=4, d_model=128, d_k=32, d_v=32, d_ff=64, n_heads=6, worker=1, steps_num=3, combine=True, preprocess=False, seed=1, cv=5, cv_train_size=0.7, cv_seed=1, split_train_test=False, shuffle=False, enc_c_pth='', enc_d_pth='', mode='regression', model='xgb', metric='rae', file_name='Openml_616', c_columns=['oz1', 'oz2', 'oz3', 'oz4', 'oz5', 'oz6', 'oz7', 'oz8', 'oz9', 'oz10', 'oz11', 'oz12', 'oz13', 'oz14', 'oz15', 'oz16', 'oz17', 'oz18', 'oz19', 'oz20', 'oz21', 'oz22', 'oz23', 'oz24', 'oz25', 'oz26', 'oz27', 'oz28', 'oz29', 'oz30', 'oz31', 'oz32', 'oz33', 'oz34', 'oz35', 'oz36', 'oz37', 'oz38', 'oz39', 'oz40', 'oz41', 'oz42', 'oz43', 'oz44', 'oz45', 'oz46', 'oz47', 'oz48', 'oz49', 'oz50'], d_columns=[], target='oz51')
+2023-11-06 21:28:50,010 autofe.py:54 __init__ INFO | File name: Openml_616
+2023-11-06 21:28:50,010 autofe.py:55 __init__ INFO | Data shape: (500, 51)
+2023-11-06 21:28:51,532 autofe.py:123 set_cuda INFO | Use device: 0, cuda:0, NVIDIA GeForce RTX 4060 Laptop GPU
+2023-11-06 21:28:51,532 autofe.py:113 __init__ INFO | Done AutoFE initialization.
+2023-11-06 21:28:51,538 autofe.py:436 _get_cv_baseline INFO | Start getting CV baseline...
+2023-11-06 21:28:51,543 main_attention.py:90 <module> INFO | Traceback (most recent call last):
+  File "D:\python files\pythonProject3\FETCH\main_attention.py", line 87, in <module>
+    autofe.fit_attention(args)
+  File "D:\python files\pythonProject3\FETCH\autofe.py", line 142, in fit_attention
+    score_b, scores_b = self._get_cv_baseline(df, args, mode, model, metric)
+  File "D:\python files\pythonProject3\FETCH\autofe.py", line 501, in _get_cv_baseline
+    X = df.drop(columns=[target])
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\util\_decorators.py", line 331, in wrapper
+    return func(*args, **kwargs)
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\core\frame.py", line 5399, in drop
+    return super().drop(
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\util\_decorators.py", line 331, in wrapper
+    return func(*args, **kwargs)
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\core\generic.py", line 4505, in drop
+    obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\core\generic.py", line 4546, in _drop_axis
+    new_axis = axis.drop(labels, errors=errors)
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\core\indexes\base.py", line 6934, in drop
+    raise KeyError(f"{list(labels[mask])} not found in axis")
+KeyError: "['oz51'] not found in axis"
+
+2023-11-06 21:28:51,545 main_attention.py:92 <module> INFO | Total cost time: 1.5365 s.

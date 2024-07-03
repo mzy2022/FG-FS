@@ -5,10 +5,12 @@ import logging
 import copy
 import pandas as pd
 import numpy as np
+from sklearn.ensemble import RandomForestClassifier
+
 from pipline_thread_2N_batch_singlevalue import Pipline
 from sklearn.model_selection import cross_val_score
 
-from sklearn.metrics import make_scorer
+from sklearn.metrics import make_scorer, f1_score
 from pathlib import Path
 # from constant import Operation
 from feature_engineering.model_base import ModelBase
@@ -167,7 +169,19 @@ class GetReward(object):
             elif self.eval_method == 'f1_score':
                 scoring_name = "f1_micro"
 
-            score_list = cross_val_score(self.get_lr_model(), search_fes, search_label, scoring="f1_micro",cv=5)
+            # f1_list = []
+            # x = pd.DataFrame(search_fes)
+            # y = pd.DataFrame(search_label)
+            # clf = RandomForestClassifier(random_state=0)
+            # my_cv = StratifiedKFold(n_splits=5, random_state=None)
+            # for train, test in my_cv.split(x, y):
+            #     X_train, y_train, X_test, y_test = x.iloc[train, :], y.iloc[train], x.iloc[test, :], y.iloc[
+            #         test]
+            #     clf.fit(X_train, y_train)
+            #     y_predict = clf.predict(X_test)
+            #     f1_list.append(f1_score(y_test, y_predict, average='weighted'))
+            # score_list = np.array(f1_list)
+            score_list = cross_val_score(self.get_model(), search_fes, search_label, scoring="f1_micro",cv=5)
 
         else:
             if self.eval_method == 'sub_rae':

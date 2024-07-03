@@ -1,0 +1,38 @@
+2024-03-10 21:51:14,606 AutoFE.py:35 __init__ INFO | Namespace(cuda='0', epochs=300, ppo_epochs=20, episodes=3, file_name='SPECTF', mode='classify', model='xgb', metric='f1', seed=1, train_size=0.7, cv=5, shuffle=False, d_model=128, d_k=32, d_v=32, d_ff=64, n_heads=6, worker=1, steps_num=10, lr=0.0001, entropy_weight=0.0001, baseline_weight=0.95, gama=0.9, gae_lambda=0.95, batch_size=4, c_columns=['V0', 'V1', 'V2', 'V3', 'V4', 'V5', 'V6', 'V7', 'V8', 'V9', 'V10', 'V11', 'V12', 'V13', 'V14', 'V15', 'V16', 'V17', 'V18', 'V19', 'V20', 'V21', 'V22', 'V23', 'V24', 'V25', 'V26', 'V27', 'V28', 'V29', 'V30', 'V31', 'V32', 'V33', 'V34', 'V35', 'V36', 'V37', 'V38', 'V39', 'V40', 'V41', 'V42', 'V43'], d_columns=[], target='label')
+2024-03-10 21:51:14,606 AutoFE.py:36 __init__ INFO | File name: SPECTF
+2024-03-10 21:51:14,606 AutoFE.py:37 __init__ INFO | Data shape: (267, 45)
+2024-03-10 21:51:16,151 AutoFE.py:91 set_cuda INFO | Use device: 0, cuda:0, NVIDIA GeForce RTX 4060 Laptop GPU
+2024-03-10 21:51:16,151 AutoFE.py:81 __init__ INFO | Done AutoFE initialization.
+2024-03-10 21:51:16,360 AutoFE.py:104 fit_attention INFO | score_b=0.7976939203354297, scores_b=[0.83333333 0.77777778 0.77358491 0.75471698 0.8490566 ]
+2024-03-10 21:51:24,352 main_ppo.py:80 <module> INFO | Traceback (most recent call last):
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\main_ppo.py", line 76, in <module>
+    autofe.fit_attention(args)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\AutoFE.py", line 119, in fit_attention
+    self.ppo = PPO(args, data_nums, operations_c, operations_d, d_model, d_k, d_v, d_ff, n_heads, self.device)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\feature_engineer\ppo.py", line 21, in __init__
+    self.actor = Actor(args, data_nums, operations_c,operations_d, d_model, d_k, d_v, d_ff, n_heads, rnn_hidden_size=300,dropout=dropout, enc_load_pth=args.enc_c_pth).to(self.device)
+AttributeError: 'Namespace' object has no attribute 'enc_c_pth'
+
+2024-03-10 21:51:24,352 main_ppo.py:82 <module> INFO | Total cost time: 9.7456 s.
+2024-03-10 21:51:50,418 AutoFE.py:35 __init__ INFO | Namespace(cuda='0', epochs=300, ppo_epochs=20, episodes=3, file_name='SPECTF', mode='classify', model='xgb', metric='f1', seed=1, train_size=0.7, cv=5, shuffle=False, d_model=128, d_k=32, d_v=32, d_ff=64, n_heads=6, worker=1, steps_num=10, lr=0.0001, entropy_weight=0.0001, baseline_weight=0.95, gama=0.9, gae_lambda=0.95, batch_size=4, c_columns=['V0', 'V1', 'V2', 'V3', 'V4', 'V5', 'V6', 'V7', 'V8', 'V9', 'V10', 'V11', 'V12', 'V13', 'V14', 'V15', 'V16', 'V17', 'V18', 'V19', 'V20', 'V21', 'V22', 'V23', 'V24', 'V25', 'V26', 'V27', 'V28', 'V29', 'V30', 'V31', 'V32', 'V33', 'V34', 'V35', 'V36', 'V37', 'V38', 'V39', 'V40', 'V41', 'V42', 'V43'], d_columns=[], target='label')
+2024-03-10 21:51:50,418 AutoFE.py:36 __init__ INFO | File name: SPECTF
+2024-03-10 21:51:50,418 AutoFE.py:37 __init__ INFO | Data shape: (267, 45)
+2024-03-10 21:51:51,960 AutoFE.py:91 set_cuda INFO | Use device: 0, cuda:0, NVIDIA GeForce RTX 4060 Laptop GPU
+2024-03-10 21:51:51,960 AutoFE.py:81 __init__ INFO | Done AutoFE initialization.
+2024-03-10 21:51:52,176 AutoFE.py:104 fit_attention INFO | score_b=0.7976939203354297, scores_b=[0.83333333 0.77777778 0.77358491 0.75471698 0.8490566 ]
+2024-03-10 21:52:26,047 main_ppo.py:80 <module> INFO | Traceback (most recent call last):
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\main_ppo.py", line 76, in <module>
+    autofe.fit_attention(args)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\AutoFE.py", line 119, in fit_attention
+    self.ppo = PPO(args, data_nums, operations_c, operations_d, d_model, d_k, d_v, d_ff, n_heads, self.device)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\feature_engineer\ppo.py", line 21, in __init__
+    self.actor = Actor(args, data_nums, operations_c,operations_d, d_model, d_k, d_v, d_ff, n_heads, rnn_hidden_size=300,dropout=dropout).to(self.device)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\feature_engineer\self_attention_rnn.py", line 13, in __init__
+    self.select_operation = SelectOperations(d_model, rnn_hidden_size,operations_c)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\feature_engineer\self_attention_rnn.py", line 60, in __init__
+    state_size = (1, self.hidden_size)
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\torch\nn\modules\module.py", line 1269, in __getattr__
+    raise AttributeError("'{}' object has no attribute '{}'".format(
+AttributeError: 'SelectOperations' object has no attribute 'hidden_size'
+
+2024-03-10 21:52:26,047 main_ppo.py:82 <module> INFO | Total cost time: 35.6289 s.

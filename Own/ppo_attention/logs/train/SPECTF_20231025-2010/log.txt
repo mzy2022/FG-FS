@@ -1,0 +1,9 @@
+2023-10-25 20:10:59,753 autofe.py:51 __init__ INFO | Namespace(cuda='0', train_size=0.7, epochs=30, ppo_epochs=10, episodes=24, lr=0.0001, entropy_weight=0.0001, baseline_weight=0.95, gama=0.9, gae_lambda=0.95, batch_size=4, d_model=128, d_k=32, d_v=32, d_ff=64, n_heads=6, worker=1, steps_num=3, combine=True, preprocess=False, seed=1, cv=5, cv_train_size=0.7, cv_seed=1, split_train_test=False, shuffle=False, enc_c_pth='', enc_d_pth='', mode='classify', model='xgb', metric='f1', file_name='SPECTF', c_columns=['V0', 'V1', 'V2', 'V3', 'V4', 'V5', 'V6', 'V7', 'V8', 'V9', 'V10', 'V11', 'V12', 'V13', 'V14', 'V15', 'V16', 'V17', 'V18', 'V19', 'V20', 'V21', 'V22', 'V23', 'V24', 'V25', 'V26', 'V27', 'V28', 'V29', 'V30', 'V31', 'V32', 'V33', 'V34', 'V35', 'V36', 'V37', 'V38', 'V39', 'V40', 'V41', 'V42', 'V43'], d_columns=[], target='label')
+2023-10-25 20:10:59,753 autofe.py:52 __init__ INFO | File name: SPECTF
+2023-10-25 20:10:59,753 autofe.py:53 __init__ INFO | Data shape: (267, 45)
+2023-10-25 20:11:00,231 autofe.py:120 set_cuda INFO | Use device: 0, cuda:0, NVIDIA GeForce RTX 4060 Laptop GPU
+2023-10-25 20:11:00,231 autofe.py:110 __init__ INFO | Done AutoFE initialization.
+2023-10-25 20:11:00,246 autofe.py:422 _get_cv_baseline INFO | Start getting CV baseline...
+2023-10-25 20:11:00,355 autofe.py:140 fit_attention INFO | score_b=0.8015373864430468, scores_b=[0.81481481 0.77777778 0.75471698 0.81132075 0.8490566 ]
+2023-10-25 20:11:00,361 model_rl.py:14 __init__ INFO | Randomly initial encoder
+2023-10-25 20:11:00,405 model_rl.py:14 __init__ INFO | Randomly initial encoder

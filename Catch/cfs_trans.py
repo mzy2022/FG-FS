@@ -8,8 +8,7 @@ class Multi_p(object):
 
     def pool_produce(self,tmp):
         actions_trans = tmp[0]
-        score_list, columns_name, fe_num = self.get_reward_ins.k_fold_score(
-            self.search_data, actions_trans)
+        score_list, columns_name, fe_num = self.get_reward_ins.k_fold_score(self.search_data, actions_trans)
         tmp[0] = score_list
         tmp.append(self.get_reward_ins.rep_num)
         tmp.append(columns_name)

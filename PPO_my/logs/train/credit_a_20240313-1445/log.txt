@@ -1,0 +1,64 @@
+2024-03-13 14:45:06,722 AutoFE.py:35 __init__ INFO | Namespace(cuda='0', epochs=100, ppo_epochs=20, episodes=4, file_name='credit_a', mode='classify', model='rf', metric='f1', seed=1, train_size=0.7, cv=5, shuffle=False, d_model=128, d_k=32, d_v=32, d_ff=64, n_heads=6, worker=1, steps_num=5, lr=0.0001, entropy_weight=0.0001, baseline_weight=0.95, gama=0.9, gae_lambda=0.95, batch_size=4, c_columns=['A2', 'A3', 'A8', 'A11', 'A14', 'A15'], d_columns=['A1', 'A4', 'A5', 'A6', 'A7', 'A9', 'A10', 'A12', 'A13'], target='label')
+2024-03-13 14:45:06,722 AutoFE.py:36 __init__ INFO | File name: credit_a
+2024-03-13 14:45:06,722 AutoFE.py:37 __init__ INFO | Data shape: (690, 16)
+2024-03-13 14:45:07,191 AutoFE.py:90 set_cuda INFO | Use device: 0, cuda:0, NVIDIA GeForce RTX 4060 Laptop GPU
+2024-03-13 14:45:07,192 AutoFE.py:80 __init__ INFO | Done AutoFE initialization.
+2024-03-13 14:45:07,272 AutoFE.py:103 fit_attention INFO | score_b=0.8130434782608695, scores_b=[0.63043478 0.91304348 0.89130435 0.73188406 0.89855072]
+2024-03-13 14:45:08,664 main_ppo.py:80 <module> INFO | Traceback (most recent call last):
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\main_ppo.py", line 76, in <module>
+    autofe.fit_attention(args)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\AutoFE.py", line 146, in fit_attention
+    w_c = sample(args, self.ppo, pipline_args_train, df_c_encode, df_d_encode, df_t_norm, c_ops,d_ops,epoch, i, self.device)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\feature_engineer\training_ops.py", line 44, in sample
+    df_c_encode, df_d_encode = pipline_ff.process_data(fe)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\process_data\pipeline_data.py", line 65, in process_data
+    self.delete()
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\process_data\pipeline_data.py", line 70, in delete
+    self.continuous = self.continuous.drop(self.continuous.columns[self.continuous_drop_list], axis=1)
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\util\_decorators.py", line 331, in wrapper
+    return func(*args, **kwargs)
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\core\frame.py", line 5399, in drop
+    return super().drop(
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\util\_decorators.py", line 331, in wrapper
+    return func(*args, **kwargs)
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\core\generic.py", line 4505, in drop
+    obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\core\generic.py", line 4546, in _drop_axis
+    new_axis = axis.drop(labels, errors=errors)
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\core\indexes\base.py", line 6934, in drop
+    raise KeyError(f"{list(labels[mask])} not found in axis")
+KeyError: "[('A11',)] not found in axis"
+
+2024-03-13 14:45:08,666 main_ppo.py:82 <module> INFO | Total cost time: 1.9449 s.
+2024-03-13 14:45:31,082 AutoFE.py:35 __init__ INFO | Namespace(cuda='0', epochs=100, ppo_epochs=20, episodes=4, file_name='credit_a', mode='classify', model='rf', metric='f1', seed=1, train_size=0.7, cv=5, shuffle=False, d_model=128, d_k=32, d_v=32, d_ff=64, n_heads=6, worker=1, steps_num=5, lr=0.0001, entropy_weight=0.0001, baseline_weight=0.95, gama=0.9, gae_lambda=0.95, batch_size=4, c_columns=['A2', 'A3', 'A8', 'A11', 'A14', 'A15'], d_columns=['A1', 'A4', 'A5', 'A6', 'A7', 'A9', 'A10', 'A12', 'A13'], target='label')
+2024-03-13 14:45:31,082 AutoFE.py:36 __init__ INFO | File name: credit_a
+2024-03-13 14:45:31,082 AutoFE.py:37 __init__ INFO | Data shape: (690, 16)
+2024-03-13 14:45:32,601 AutoFE.py:90 set_cuda INFO | Use device: 0, cuda:0, NVIDIA GeForce RTX 4060 Laptop GPU
+2024-03-13 14:45:32,601 AutoFE.py:80 __init__ INFO | Done AutoFE initialization.
+2024-03-13 14:45:32,743 AutoFE.py:103 fit_attention INFO | score_b=0.8130434782608695, scores_b=[0.63043478 0.91304348 0.89130435 0.73188406 0.89855072]
+2024-03-13 14:46:01,773 main_ppo.py:80 <module> INFO | Traceback (most recent call last):
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\main_ppo.py", line 76, in <module>
+    autofe.fit_attention(args)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\AutoFE.py", line 146, in fit_attention
+    w_c = sample(args, self.ppo, pipline_args_train, df_c_encode, df_d_encode, df_t_norm, c_ops,d_ops,epoch, i, self.device)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\feature_engineer\training_ops.py", line 44, in sample
+    df_c_encode, df_d_encode = pipline_ff.process_data(fe)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\process_data\pipeline_data.py", line 65, in process_data
+    self.delete()
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\process_data\pipeline_data.py", line 70, in delete
+    self.continuous = self.continuous.drop(self.continuous.columns[self.continuous_drop_list], axis=1)
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\util\_decorators.py", line 331, in wrapper
+    return func(*args, **kwargs)
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\core\frame.py", line 5399, in drop
+    return super().drop(
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\util\_decorators.py", line 331, in wrapper
+    return func(*args, **kwargs)
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\core\generic.py", line 4505, in drop
+    obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\core\generic.py", line 4546, in _drop_axis
+    new_axis = axis.drop(labels, errors=errors)
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\core\indexes\base.py", line 6934, in drop
+    raise KeyError(f"{list(labels[mask])} not found in axis")
+KeyError: "[('A11',)] not found in axis"
+
+2024-03-13 14:46:02,537 main_ppo.py:82 <module> INFO | Total cost time: 31.1348 s.

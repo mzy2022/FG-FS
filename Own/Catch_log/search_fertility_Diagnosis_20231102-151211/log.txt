@@ -1,0 +1,30 @@
+2023/11/02 15:12:11 - INFO : args : Namespace(data='fertility_Diagnosis', model='rf', cuda=0, is_select=50, seed=0, target_col='label', dataset_path='data/fertility_Diagnosis.csv', task_type='cls', continuous_col=['V1', 'V6', 'V8'], discrete_col=['V0', 'V2', 'V3', 'V4', 'V5', 'V7'], eval_method='f1_score', f1_average='micro', exp_log_dir=WindowsPath('Catch_log/search_fertility_Diagnosis_20231102-151211'))
+2023-11-02 15:12:11,647 - INFO : args : Namespace(data='fertility_Diagnosis', model='rf', cuda=0, is_select=50, seed=0, target_col='label', dataset_path='data/fertility_Diagnosis.csv', task_type='cls', continuous_col=['V1', 'V6', 'V8'], discrete_col=['V0', 'V2', 'V3', 'V4', 'V5', 'V7'], eval_method='f1_score', f1_average='micro', exp_log_dir=WindowsPath('Catch_log/search_fertility_Diagnosis_20231102-151211'))
+2023/11/02 15:12:23 - INFO : epoch: 0, loss: -1.4656809568405151
+2023-11-02 15:12:23,896 - INFO : epoch: 0, loss: -1.4656809568405151
+2023/11/02 15:12:24 - INFO : epoch: 1, loss: -1.465605616569519
+2023-11-02 15:12:24,356 - INFO : epoch: 1, loss: -1.465605616569519
+2023/11/02 15:12:24 - INFO : epoch: 2, loss: -1.4658282995224
+2023-11-02 15:12:24,737 - INFO : epoch: 2, loss: -1.4658282995224
+2023/11/02 15:12:25 - INFO : epoch: 3, loss: -1.4657963514328003
+2023-11-02 15:12:25,132 - INFO : epoch: 3, loss: -1.4657963514328003
+2023/11/02 15:12:25 - INFO : epoch: 4, loss: -1.4658035039901733
+2023-11-02 15:12:25,499 - INFO : epoch: 4, loss: -1.4658035039901733
+2023/11/02 15:12:25 - INFO : epoch: 5, loss: -1.4659212827682495
+2023-11-02 15:12:25,877 - INFO : epoch: 5, loss: -1.4659212827682495
+2023/11/02 15:12:26 - INFO : epoch: 6, loss: -1.4660279750823975
+2023-11-02 15:12:26,250 - INFO : epoch: 6, loss: -1.4660279750823975
+2023/11/02 15:12:26 - INFO : epoch: 7, loss: -1.4659063816070557
+2023-11-02 15:12:26,624 - INFO : epoch: 7, loss: -1.4659063816070557
+2023/11/02 15:12:27 - INFO : epoch: 8, loss: -1.4659479856491089
+2023-11-02 15:12:27,010 - INFO : epoch: 8, loss: -1.4659479856491089
+2023/11/02 15:12:27 - INFO : epoch: 9, loss: -1.466029405593872
+2023-11-02 15:12:27,371 - INFO : epoch: 9, loss: -1.466029405593872
+2023/11/02 15:12:27 - INFO : epoch: 10, loss: -1.4662388563156128
+2023-11-02 15:12:27,757 - INFO : epoch: 10, loss: -1.4662388563156128
+2023/11/02 15:12:28 - INFO : epoch: 11, loss: -1.4666165113449097
+2023-11-02 15:12:28,137 - INFO : epoch: 11, loss: -1.4666165113449097
+2023/11/02 15:12:28 - INFO : epoch: 12, loss: -1.4673261642456055
+2023-11-02 15:12:28,513 - INFO : epoch: 12, loss: -1.4673261642456055
+2023/11/02 15:12:28 - INFO : epoch: 13, loss: -1.4708175659179688
+2023-11-02 15:12:28,897 - INFO : epoch: 13, loss: -1.4708175659179688

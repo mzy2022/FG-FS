@@ -1,0 +1,90 @@
+2024-03-13 14:34:09,660 AutoFE.py:35 __init__ INFO | Namespace(cuda='0', epochs=100, ppo_epochs=20, episodes=4, file_name='credit_a', mode='classify', model='rf', metric='f1', seed=1, train_size=0.7, cv=5, shuffle=False, d_model=128, d_k=32, d_v=32, d_ff=64, n_heads=6, worker=1, steps_num=5, lr=0.0001, entropy_weight=0.0001, baseline_weight=0.95, gama=0.9, gae_lambda=0.95, batch_size=4, c_columns=['A2', 'A3', 'A8', 'A11', 'A14', 'A15'], d_columns=['A1', 'A4', 'A5', 'A6', 'A7', 'A9', 'A10', 'A12', 'A13'], target='label')
+2024-03-13 14:34:09,661 AutoFE.py:36 __init__ INFO | File name: credit_a
+2024-03-13 14:34:09,661 AutoFE.py:37 __init__ INFO | Data shape: (690, 16)
+2024-03-13 14:34:11,179 AutoFE.py:90 set_cuda INFO | Use device: 0, cuda:0, NVIDIA GeForce RTX 4060 Laptop GPU
+2024-03-13 14:34:11,180 AutoFE.py:80 __init__ INFO | Done AutoFE initialization.
+2024-03-13 14:34:11,259 AutoFE.py:103 fit_attention INFO | score_b=0.8130434782608695, scores_b=[0.63043478 0.91304348 0.89130435 0.73188406 0.89855072]
+2024-03-13 14:34:12,753 main_ppo.py:80 <module> INFO | Traceback (most recent call last):
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\main_ppo.py", line 76, in <module>
+    autofe.fit_attention(args)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\AutoFE.py", line 146, in fit_attention
+    w_c = sample(args, self.ppo, pipline_args_train, df_c_encode, df_d_encode, df_t_norm, c_ops,d_ops,epoch, i, self.device)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\feature_engineer\training_ops.py", line 44, in sample
+    df_c_encode, df_d_encode = pipline_ff.process_data(fe)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\process_data\pipeline_data.py", line 60, in process_data
+    self.arithmetic_operations()
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\process_data\pipeline_data.py", line 80, in arithmetic_operations
+    col1 = self.continuous.iloc[:, col1_index]
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\core\indexing.py", line 1067, in __getitem__
+    return self._getitem_tuple(key)
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\core\indexing.py", line 1563, in _getitem_tuple
+    tup = self._validate_tuple_indexer(tup)
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\core\indexing.py", line 873, in _validate_tuple_indexer
+    self._validate_key(k, i)
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\core\indexing.py", line 1466, in _validate_key
+    self._validate_integer(key, axis)
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\core\indexing.py", line 1557, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+
+2024-03-13 14:34:12,754 main_ppo.py:82 <module> INFO | Total cost time: 3.0939 s.
+2024-03-13 14:34:30,532 AutoFE.py:35 __init__ INFO | Namespace(cuda='0', epochs=100, ppo_epochs=20, episodes=4, file_name='credit_a', mode='classify', model='rf', metric='f1', seed=1, train_size=0.7, cv=5, shuffle=False, d_model=128, d_k=32, d_v=32, d_ff=64, n_heads=6, worker=1, steps_num=5, lr=0.0001, entropy_weight=0.0001, baseline_weight=0.95, gama=0.9, gae_lambda=0.95, batch_size=4, c_columns=['A2', 'A3', 'A8', 'A11', 'A14', 'A15'], d_columns=['A1', 'A4', 'A5', 'A6', 'A7', 'A9', 'A10', 'A12', 'A13'], target='label')
+2024-03-13 14:34:30,532 AutoFE.py:36 __init__ INFO | File name: credit_a
+2024-03-13 14:34:30,532 AutoFE.py:37 __init__ INFO | Data shape: (690, 16)
+2024-03-13 14:34:32,057 AutoFE.py:90 set_cuda INFO | Use device: 0, cuda:0, NVIDIA GeForce RTX 4060 Laptop GPU
+2024-03-13 14:34:32,057 AutoFE.py:80 __init__ INFO | Done AutoFE initialization.
+2024-03-13 14:34:32,201 AutoFE.py:103 fit_attention INFO | score_b=0.8130434782608695, scores_b=[0.63043478 0.91304348 0.89130435 0.73188406 0.89855072]
+2024-03-13 14:34:51,427 main_ppo.py:80 <module> INFO | Traceback (most recent call last):
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\main_ppo.py", line 76, in <module>
+    autofe.fit_attention(args)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\AutoFE.py", line 146, in fit_attention
+    w_c = sample(args, self.ppo, pipline_args_train, df_c_encode, df_d_encode, df_t_norm, c_ops,d_ops,epoch, i, self.device)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\feature_engineer\training_ops.py", line 44, in sample
+    df_c_encode, df_d_encode = pipline_ff.process_data(fe)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\process_data\pipeline_data.py", line 60, in process_data
+    self.arithmetic_operations()
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\process_data\pipeline_data.py", line 80, in arithmetic_operations
+    col1 = self.continuous.iloc[:, col1_index]
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\core\indexing.py", line 1067, in __getitem__
+    return self._getitem_tuple(key)
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\core\indexing.py", line 1563, in _getitem_tuple
+    tup = self._validate_tuple_indexer(tup)
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\core\indexing.py", line 873, in _validate_tuple_indexer
+    self._validate_key(k, i)
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\core\indexing.py", line 1466, in _validate_key
+    self._validate_integer(key, axis)
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\core\indexing.py", line 1557, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+
+2024-03-13 14:34:51,431 main_ppo.py:82 <module> INFO | Total cost time: 20.8991 s.
+2024-03-13 14:34:56,621 AutoFE.py:35 __init__ INFO | Namespace(cuda='0', epochs=100, ppo_epochs=20, episodes=4, file_name='credit_a', mode='classify', model='rf', metric='f1', seed=1, train_size=0.7, cv=5, shuffle=False, d_model=128, d_k=32, d_v=32, d_ff=64, n_heads=6, worker=1, steps_num=5, lr=0.0001, entropy_weight=0.0001, baseline_weight=0.95, gama=0.9, gae_lambda=0.95, batch_size=4, c_columns=['A2', 'A3', 'A8', 'A11', 'A14', 'A15'], d_columns=['A1', 'A4', 'A5', 'A6', 'A7', 'A9', 'A10', 'A12', 'A13'], target='label')
+2024-03-13 14:34:56,621 AutoFE.py:36 __init__ INFO | File name: credit_a
+2024-03-13 14:34:56,621 AutoFE.py:37 __init__ INFO | Data shape: (690, 16)
+2024-03-13 14:34:57,091 AutoFE.py:90 set_cuda INFO | Use device: 0, cuda:0, NVIDIA GeForce RTX 4060 Laptop GPU
+2024-03-13 14:34:57,091 AutoFE.py:80 __init__ INFO | Done AutoFE initialization.
+2024-03-13 14:34:57,233 AutoFE.py:103 fit_attention INFO | score_b=0.8130434782608695, scores_b=[0.63043478 0.91304348 0.89130435 0.73188406 0.89855072]
+2024-03-13 14:35:01,381 main_ppo.py:80 <module> INFO | Traceback (most recent call last):
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\main_ppo.py", line 76, in <module>
+    autofe.fit_attention(args)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\AutoFE.py", line 146, in fit_attention
+    w_c = sample(args, self.ppo, pipline_args_train, df_c_encode, df_d_encode, df_t_norm, c_ops,d_ops,epoch, i, self.device)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\feature_engineer\training_ops.py", line 44, in sample
+    df_c_encode, df_d_encode = pipline_ff.process_data(fe)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\process_data\pipeline_data.py", line 60, in process_data
+    self.arithmetic_operations()
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\process_data\pipeline_data.py", line 80, in arithmetic_operations
+    col1 = self.continuous.iloc[:, col1_index]
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\core\indexing.py", line 1067, in __getitem__
+    return self._getitem_tuple(key)
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\core\indexing.py", line 1563, in _getitem_tuple
+    tup = self._validate_tuple_indexer(tup)
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\core\indexing.py", line 873, in _validate_tuple_indexer
+    self._validate_key(k, i)
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\core\indexing.py", line 1466, in _validate_key
+    self._validate_integer(key, axis)
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\core\indexing.py", line 1557, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+
+2024-03-13 14:35:01,381 main_ppo.py:82 <module> INFO | Total cost time: 4.7596 s.

@@ -1,0 +1,21 @@
+2024-03-12 17:29:03,518 AutoFE.py:35 __init__ INFO | Namespace(cuda='0', epochs=300, ppo_epochs=20, episodes=5, file_name='airfoil', mode='regression', model='rf', metric='rae', seed=1, train_size=0.7, cv=5, shuffle=False, d_model=128, d_k=32, d_v=32, d_ff=64, n_heads=6, worker=1, steps_num=3, lr=0.0001, entropy_weight=0.0001, baseline_weight=0.95, gama=0.9, gae_lambda=0.95, batch_size=4, c_columns=['V0', 'V1', 'V2', 'V3', 'V4'], d_columns=[], target='label')
+2024-03-12 17:29:03,518 AutoFE.py:36 __init__ INFO | File name: airfoil
+2024-03-12 17:29:03,518 AutoFE.py:37 __init__ INFO | Data shape: (1503, 6)
+2024-03-12 17:29:05,034 AutoFE.py:90 set_cuda INFO | Use device: 0, cuda:0, NVIDIA GeForce RTX 4060 Laptop GPU
+2024-03-12 17:29:05,034 AutoFE.py:80 __init__ INFO | Done AutoFE initialization.
+2024-03-12 17:29:05,202 AutoFE.py:103 fit_attention INFO | score_b=0.5082536437890061, scores_b=[0.61519569 0.63651844 0.53160598 0.27777502 0.48017309]
+2024-03-12 17:29:07,668 main_ppo.py:80 <module> INFO | Traceback (most recent call last):
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\main_ppo.py", line 76, in <module>
+    autofe.fit_attention(args)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\AutoFE.py", line 152, in fit_attention
+    w = multiprocess_reward(args, worker, c_columns, d_columns, scores_b, mode,model, metric, x_d_onehot, df_t.values, df_d_labelencode)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\feature_engineer\training_ops.py", line 91, in multiprocess_reward
+    x_d ,_ = remove_duplication(x_d)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\process_data\utils_memory.py", line 74, in remove_duplication
+    _, idx = np.unique(data, axis=1, return_index=True)
+  File "<__array_function__ internals>", line 200, in unique
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\numpy\lib\arraysetops.py", line 283, in unique
+    raise np.AxisError(axis, ar.ndim) from None
+numpy.AxisError: axis 1 is out of bounds for array of dimension 1
+
+2024-03-12 17:29:07,668 main_ppo.py:82 <module> INFO | Total cost time: 4.1511 s.

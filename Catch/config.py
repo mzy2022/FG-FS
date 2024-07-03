@@ -936,3 +936,42 @@ dataset_config['financial_train'] = {
     'eval_method': 'auc',
 }
 
+dataset_config['f8'] = {
+    'dataset_path': 'data/f8.csv',
+    'task_type': 'classifier',
+    'target_col': 'label',
+    'continuous_col': [f'V{num}' for num in list(range(1, 11))],
+    'discrete_col': [],
+    'eval_method': 'f1_score',
+    'f1_average': 'micro'
+}
+
+dataset_config['cleveland'] = {
+    'dataset_path': 'data/cleveland.csv',
+    'task_type': 'classifier',
+    'target_col': 'label',
+    'continuous_col': [f'V{num}' for num in list(range(1,7))],
+    'discrete_col': [f'D{num}' for num in list(range(1, 8))],
+    'eval_method': 'f1_score',
+    'f1_average': 'micro'
+}
+
+dataset_config['Aust'] = {
+    'dataset_path': 'data/Aust.csv',
+    'task_type': 'classifier',
+    'target_col': 'label',
+    'continuous_col': [f'V{num}' for num in list(range(1,7))],
+    'discrete_col': [f'D{num}' for num in list(range(1, 9))],
+    'eval_method': 'f1_score',
+    'f1_average': 'micro'
+}
+
+dataset_config['NPHA'] = {
+    'dataset_path': 'data/NPHA.csv',
+    'task_type': 'classifier',
+    'target_col': 'label',
+    'continuous_col': [],
+    'discrete_col': [f'D{num}' for num in list(range(1, 15))],
+    'eval_method': 'f1_score',
+    'f1_average': 'micro'
+}

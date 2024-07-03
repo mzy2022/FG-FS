@@ -1,0 +1,28 @@
+2024-03-19 20:01:40,932 AutoFE.py:37 __init__ INFO | Namespace(cuda='0', epochs=100, ppo_epochs=20, episodes=3, file_name='SPECTF', mode='classify', model='rf', metric='f1', seed=1, train_size=0.7, cv=5, shuffle=False, d_model=128, d_k=32, d_v=32, d_ff=64, n_heads=6, worker=1, steps_num=3, lr=0.0001, memory=8, batch_size=8, hidden_size=8, c_columns=['V0', 'V1', 'V2', 'V3', 'V4', 'V5', 'V6', 'V7', 'V8', 'V9', 'V10', 'V11', 'V12', 'V13', 'V14', 'V15', 'V16', 'V17', 'V18', 'V19', 'V20', 'V21', 'V22', 'V23', 'V24', 'V25', 'V26', 'V27', 'V28', 'V29', 'V30', 'V31', 'V32', 'V33', 'V34', 'V35', 'V36', 'V37', 'V38', 'V39', 'V40', 'V41', 'V42', 'V43'], d_columns=[], target='label')
+2024-03-19 20:01:40,932 AutoFE.py:38 __init__ INFO | File name: SPECTF
+2024-03-19 20:01:40,932 AutoFE.py:39 __init__ INFO | Data shape: (267, 45)
+2024-03-19 20:01:41,391 AutoFE.py:88 set_cuda INFO | Use device: 0, cuda:0, NVIDIA GeForce RTX 4060 Laptop GPU
+2024-03-19 20:01:41,590 AutoFE.py:100 fit_attention INFO | score_b=0.8277428371767994, scores_b=[0.7962963  0.85185185 0.88679245 0.71698113 0.88679245]
+2024-03-19 20:01:58,294 AutoFE.py:37 __init__ INFO | Namespace(cuda='0', epochs=100, ppo_epochs=20, episodes=3, file_name='SPECTF', mode='classify', model='rf', metric='f1', seed=1, train_size=0.7, cv=5, shuffle=False, d_model=128, d_k=32, d_v=32, d_ff=64, n_heads=6, worker=1, steps_num=3, lr=0.0001, memory=8, batch_size=8, hidden_size=8, c_columns=['V0', 'V1', 'V2', 'V3', 'V4', 'V5', 'V6', 'V7', 'V8', 'V9', 'V10', 'V11', 'V12', 'V13', 'V14', 'V15', 'V16', 'V17', 'V18', 'V19', 'V20', 'V21', 'V22', 'V23', 'V24', 'V25', 'V26', 'V27', 'V28', 'V29', 'V30', 'V31', 'V32', 'V33', 'V34', 'V35', 'V36', 'V37', 'V38', 'V39', 'V40', 'V41', 'V42', 'V43'], d_columns=[], target='label')
+2024-03-19 20:01:58,294 AutoFE.py:38 __init__ INFO | File name: SPECTF
+2024-03-19 20:01:58,294 AutoFE.py:39 __init__ INFO | Data shape: (267, 45)
+2024-03-19 20:01:58,771 AutoFE.py:88 set_cuda INFO | Use device: 0, cuda:0, NVIDIA GeForce RTX 4060 Laptop GPU
+2024-03-19 20:01:58,961 AutoFE.py:100 fit_attention INFO | score_b=0.8277428371767994, scores_b=[0.7962963  0.85185185 0.88679245 0.71698113 0.88679245]
+2024-03-19 20:02:06,543 DQN_main.py:77 <module> INFO | Traceback (most recent call last):
+  File "D:\python files\pythonProject3\DQN-2agents\DQN_main.py", line 73, in <module>
+    autofe.fit_attention(args)
+  File "D:\python files\pythonProject3\DQN-2agents\AutoFE.py", line 144, in fit_attention
+    worker_dqn = sample(args, self.dqn_ops, self.dqn_otp,pipline_data, df_c_encode, df_d_encode, df_t_norm, c_ops,d_ops,epoch, self.device,self.steps_done)
+  File "D:\python files\pythonProject3\DQN-2agents\feature_engineer\training_ops.py", line 34, in sample
+    actions_ops = dqn_ops.choose_action_ops(state, for_next,steps_done)
+  File "D:\python files\pythonProject3\DQN-2agents\feature_engineer\dqn.py", line 40, in choose_action_ops
+    ops_vals = self.agent1(input.to(self.device), for_next)
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\torch\nn\modules\module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "D:\python files\pythonProject3\DQN-2agents\feature_engineer\embedding_policy_network.py", line 43, in forward
+    encoder_mean = self.mean(encoder_output,self.feature_nums)
+  File "D:\python files\pythonProject3\DQN-2agents\feature_engineer\embedding_policy_network.py", line 62, in mean
+    result = torch.cat(result,dim=1)
+IndexError: Dimension out of range (expected to be in range of [-1, 0], but got 1)
+
+2024-03-19 20:02:07,256 DQN_main.py:79 <module> INFO | Total cost time: 8.6421 s.

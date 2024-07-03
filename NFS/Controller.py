@@ -27,8 +27,8 @@ class Controller:
     def _create_placeholder(self):
         self.concat_action = torch.zeros((self.num_batch, self.num_action), dtype=torch.int64)
         self.rewards = torch.zeros((self.num_batch, self.num_action), dtype=torch.float32)
-        self.state = torch.zeros((None, self.num_action), dtype=torch.int64)
-        self.value = torch.zeros((None, 1), dtype=torch.float32)
+        self.state = torch.empty(self.num_action, dtype=torch.int32)
+        self.value = torch.zeros(1, dtype=torch.float32)
 
     def _create_variable(self):
         self.input0 = torch.ones(
@@ -53,7 +53,7 @@ class Controller:
         for i in range(self.num_feature):
             tmp_h = torch.zeros(1, self.num_op)
             tmp_c = torch.zeros(1, self.num_op)
-            tmp_input = torch.nn.functional.embedding(self.input0[i], torch.ones(1))
+            tmp_input = nn.Embedding(self.input0[i], 8)
             for order in range(self.max_order):
                 tmp_input, (tmp_h, tmp_c) = self.rnns[f'rnn{i}'](tmp_input, (tmp_h, tmp_c))
                 if order == 0:
@@ -61,7 +61,7 @@ class Controller:
                 else:
                     self.outputs[f'output{i}'] = torch.cat(
                         [self.outputs[f'output{i}'], tmp_input], dim=0)
-        self.concat_output = torch.cat(list(self.outputs.values()), dim=0, name='concat_output')
+        self.concat_output = torch.cat(list(self.outputs.values()), dim=0)
 
     def _create_loss(self):
         self.loss = 0.0

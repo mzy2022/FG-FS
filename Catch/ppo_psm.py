@@ -23,11 +23,11 @@ class PPO_psm(object):
     def __init__(self, args, nlp_feature = None):
         self.args = args
         self.process_pool_num = 24
-        self.arch_epochs = 3
+        self.arch_epochs = 300
         self.arch_lr = 0.001
-        self.episodes = 3
+        self.episodes = 5            ##worker数量
         self.entropy_weight = 1e-3
-        self.policy_nums = 3
+        self.policy_nums = 1
         self.task_type = args.task_type
         self.eval_method = args.eval_method
         self.final_action_ori = None
@@ -36,8 +36,7 @@ class PPO_psm(object):
             'cpu')
         self.controller = Controller(self.args).to(device)
         self.get_reward_ins = GetReward(self.args)
-        self.adam = optim.Adam(params=self.controller.parameters(),
-                               lr=self.arch_lr)
+        self.adam = optim.Adam(params=self.controller.parameters(),lr=self.arch_lr)
         self.baseline = None
         self.final_action = None
         self.baseline_weight = 0.9
@@ -92,10 +91,13 @@ class PPO_psm(object):
 
     def feature_search(self):
         self.base_ori_score_list = self.get_ori_base_score()
+        print(f"原始的{np.mean(self.base_ori_score_list)}")
         # subsampling
         dataset_split = DatasetSplit(self.args)
+        best_best_best = 0
         for i in range(self.policy_nums):
-            train_i, test_i = dataset_split.split_dataset_with_ratio(self.search_data, 0.2, random_state=i)
+            # train_i, test_i = dataset_split.split_dataset_with_ratio(self.search_data, 0.2, random_state=i)
+            train_i = self.search_data
             train_i.index = range(0, len(train_i))
             self.Ctrains.append(train_i)
             self.base_score_list.append(self.get_base_score(i))
@@ -143,6 +145,9 @@ class PPO_psm(object):
                     tmp = ids[i]
                     worker = sample_workers[tmp[1]]
                     worker.score_list = tmp[0]
+                    if np.mean(worker.score_list) > best_best_best:
+                        best_best_best = np.mean(worker.score_list)
+                        print(f"{best_best_best}???????????????")
                     worker.rep_num = tmp[2]
                     worker.fe_num = tmp[3]
 
@@ -187,11 +192,9 @@ class PPO_psm(object):
                 score_reward_minmax = []
                 for reward in score_reward:
                     if reward < 0:
-                        min_max_reward = -(abs(reward) - min_reward) / \
-                                         (max_reward - min_reward + 1e-6)
+                        min_max_reward = -(abs(reward) - min_reward) / (max_reward - min_reward + 1e-6)
                     elif reward >= 0:
-                        min_max_reward = (abs(reward) - min_reward) / \
-                                         (max_reward - min_reward + 1e-6)
+                        min_max_reward = (abs(reward) - min_reward) / (max_reward - min_reward + 1e-6)
                     else:
                         min_max_reward = None
                         print('error')

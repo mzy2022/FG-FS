@@ -1,0 +1,32 @@
+2024-03-23 13:28:21,536 AutoFE.py:30 __init__ INFO | Namespace(cuda='0', epochs=100, ppo_epochs=20, episodes=3, file_name='Openml_586', mode='regression', model='rf', metric='rae', seed=1, train_size=0.7, cv=5, shuffle=False, d_model=128, d_k=32, d_v=32, d_ff=64, n_heads=6, worker=1, steps_num=3, lr=0.0001, entropy_weight=0.0001, baseline_weight=0.95, gama=0.9, gae_lambda=0.95, batch_size=4, c_columns=['oz1', 'oz2', 'oz3', 'oz4', 'oz5', 'oz6', 'oz7', 'oz8', 'oz9', 'oz10', 'oz11', 'oz12', 'oz13', 'oz14', 'oz15', 'oz16', 'oz17', 'oz18', 'oz19', 'oz20', 'oz21', 'oz22', 'oz23', 'oz24', 'oz25'], d_columns=[], target='oz26')
+2024-03-23 13:28:21,536 AutoFE.py:31 __init__ INFO | File name: Openml_586
+2024-03-23 13:28:21,536 AutoFE.py:32 __init__ INFO | Data shape: (1000, 26)
+2024-03-23 13:28:22,009 AutoFE.py:85 set_cuda INFO | Use device: 0, cuda:0, NVIDIA GeForce RTX 4060 Laptop GPU
+2024-03-23 13:28:22,009 AutoFE.py:75 __init__ INFO | Done AutoFE initialization.
+2024-03-23 13:28:22,015 main_ppo.py:80 <module> INFO | Traceback (most recent call last):
+  File "D:\python files\pythonProject3\PPO_transformer_lstm1\main_ppo.py", line 76, in <module>
+    autofe.fit_attention(args)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm1\AutoFE.py", line 97, in fit_attention
+    score_b, scores_b = self._get_cv_baseline(new_df, args, mode, model, metric)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm1\AutoFE.py", line 191, in _get_cv_baseline
+    X = df.drop(columns=[target])
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\util\_decorators.py", line 331, in wrapper
+    return func(*args, **kwargs)
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\core\frame.py", line 5399, in drop
+    return super().drop(
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\util\_decorators.py", line 331, in wrapper
+    return func(*args, **kwargs)
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\core\generic.py", line 4505, in drop
+    obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\core\generic.py", line 4546, in _drop_axis
+    new_axis = axis.drop(labels, errors=errors)
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\core\indexes\base.py", line 6934, in drop
+    raise KeyError(f"{list(labels[mask])} not found in axis")
+KeyError: "['oz26'] not found in axis"
+
+2024-03-23 13:28:22,015 main_ppo.py:82 <module> INFO | Total cost time: 0.4802 s.
+2024-03-23 13:28:36,235 AutoFE.py:30 __init__ INFO | Namespace(cuda='0', epochs=100, ppo_epochs=20, episodes=3, file_name='Openml_586', mode='regression', model='rf', metric='rae', seed=1, train_size=0.7, cv=5, shuffle=False, d_model=128, d_k=32, d_v=32, d_ff=64, n_heads=6, worker=1, steps_num=3, lr=0.0001, entropy_weight=0.0001, baseline_weight=0.95, gama=0.9, gae_lambda=0.95, batch_size=4, c_columns=['oz1', 'oz2', 'oz3', 'oz4', 'oz5', 'oz6', 'oz7', 'oz8', 'oz9', 'oz10', 'oz11', 'oz12', 'oz13', 'oz14', 'oz15', 'oz16', 'oz17', 'oz18', 'oz19', 'oz20', 'oz21', 'oz22', 'oz23', 'oz24', 'oz25'], d_columns=[], target='oz26')
+2024-03-23 13:28:36,235 AutoFE.py:31 __init__ INFO | File name: Openml_586
+2024-03-23 13:28:36,235 AutoFE.py:32 __init__ INFO | Data shape: (1000, 26)
+2024-03-23 13:28:37,750 AutoFE.py:85 set_cuda INFO | Use device: 0, cuda:0, NVIDIA GeForce RTX 4060 Laptop GPU
+2024-03-23 13:28:37,750 AutoFE.py:75 __init__ INFO | Done AutoFE initialization.

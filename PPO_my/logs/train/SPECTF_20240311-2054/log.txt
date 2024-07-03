@@ -1,0 +1,22 @@
+2024-03-11 20:54:15,641 AutoFE.py:35 __init__ INFO | Namespace(cuda='0', epochs=300, ppo_epochs=20, episodes=3, file_name='SPECTF', mode='classify', model='xgb', metric='f1', seed=1, train_size=0.7, cv=5, shuffle=False, d_model=128, d_k=32, d_v=32, d_ff=64, n_heads=6, worker=1, steps_num=10, lr=0.0001, entropy_weight=0.0001, baseline_weight=0.95, gama=0.9, gae_lambda=0.95, batch_size=4, c_columns=['V0', 'V1', 'V2', 'V3', 'V4', 'V5', 'V6', 'V7', 'V8', 'V9', 'V10', 'V11', 'V12', 'V13', 'V14', 'V15', 'V16', 'V17', 'V18', 'V19', 'V20', 'V21', 'V22', 'V23', 'V24', 'V25', 'V26', 'V27', 'V28', 'V29', 'V30', 'V31', 'V32', 'V33', 'V34', 'V35', 'V36', 'V37', 'V38', 'V39', 'V40', 'V41', 'V42', 'V43'], d_columns=[], target='label')
+2024-03-11 20:54:15,641 AutoFE.py:36 __init__ INFO | File name: SPECTF
+2024-03-11 20:54:15,641 AutoFE.py:37 __init__ INFO | Data shape: (267, 45)
+2024-03-11 20:54:16,121 AutoFE.py:90 set_cuda INFO | Use device: 0, cuda:0, NVIDIA GeForce RTX 4060 Laptop GPU
+2024-03-11 20:54:16,121 AutoFE.py:80 __init__ INFO | Done AutoFE initialization.
+2024-03-11 20:54:16,323 AutoFE.py:103 fit_attention INFO | score_b=0.7976939203354297, scores_b=[0.83333333 0.77777778 0.77358491 0.75471698 0.8490566 ]
+2024-03-11 20:56:12,955 main_ppo.py:80 <module> INFO | Traceback (most recent call last):
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\main_ppo.py", line 76, in <module>
+    autofe.fit_attention(args)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\AutoFE.py", line 148, in fit_attention
+    w_c = sample(args, self.ppo, pipline_args_train, df_c_encode, df_d_encode, df_t_norm, c_ops,d_ops,epoch, i, self.device)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\feature_engineer\training_ops.py", line 37, in sample
+    actions_ops, log_ops_probs, actions_otp, log_otp_probs = ppo.choose_action(state, step, epoch,c_ops)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\feature_engineer\ppo.py", line 41, in choose_action
+    ops_softmax, otp_softmax = self.actor(input_c.to(self.device), step)
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\torch\nn\modules\module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\feature_engineer\self_attention_rnn.py", line 21, in forward
+    h_c_t_list = res_h_c_t_list
+UnboundLocalError: local variable 'res_h_c_t_list' referenced before assignment
+
+2024-03-11 20:56:13,779 main_ppo.py:82 <module> INFO | Total cost time: 117.685 s.

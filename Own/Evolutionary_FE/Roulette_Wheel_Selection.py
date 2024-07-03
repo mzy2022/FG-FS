@@ -6,8 +6,8 @@ import numpy as np
 sys.path.append("..")
 import pandas as pd
 
-from feature_cluster import cluster_features, cluster_features_1
-from DNA_Fitness import fitness_score
+from Own.feature_eng.feature_cluster import cluster_features, cluster_features_1
+from Own.Evolutionary_FE.DNA_Fitness import fitness_score
 
 
 """
@@ -15,28 +15,35 @@ from DNA_Fitness import fitness_score
 """
 
 
-def wheel_selection(ori_df, y, task_type):
-    cluster_dict = cluster_features(ori_df)
-    new_cluster_dict = dict()
-    f_score_dict = dict()
-    for k, v in cluster_dict.items():
-        new_data = ori_df.iloc[:, v]
-        score = fitness_score(new_data,y, task_type)
-        f_score_dict[k] = score
-    n = len(cluster_dict)
+# def wheel_selection(ori_df, y, task_type):
+#     """
+#
+#     :param ori_df: 原始特征集，为dataframe格式
+#     :param y:
+#     :param task_type:
+#     :return:
+#     """
+#     cluster_dict = cluster_features_1(ori_df)
+#     new_cluster_dict = dict()
+#     f_score_dict = dict()
+#     for k, v in cluster_dict.items():
+#         new_data = ori_df.iloc[:, v]
+#         score = fitness_score(new_data,y, task_type)
+#         f_score_dict[k] = score
+#     n = len(cluster_dict)
 
 
-    if n < 3:
-        return cluster_dict
-    elif n > 10:
-        new_cluster_list = generate_new_cluster(f_score_dict,n-2)
-    else:
-        new_cluster_list = generate_new_cluster(f_score_dict, n - 1)
-
-    for k,v in cluster_dict.items():
-        if k in new_cluster_list:
-            new_cluster_dict[k] = v
-    return new_cluster_dict
+    # if n < 3:
+    #     return cluster_dict
+    # elif n > 10:
+    #     new_cluster_list = generate_new_cluster(f_score_dict,n-2)
+    # else:
+    #     new_cluster_list = generate_new_cluster(f_score_dict, n - 1)
+    #
+    # for k,v in cluster_dict.items():
+    #     if k in new_cluster_list:
+    #         new_cluster_dict[k] = v
+    # return new_cluster_dict
 
 
 
@@ -66,8 +73,4 @@ def generate_new_cluster(f_score_dict,n):
         sorted_f_score_list = score_dict_list.copy()
     return new_cluster_list
 
-df = pd.read_csv('hepatitis.csv')
-X = df.iloc[:,:-1]
-y = df.iloc[:,-1]
-m = wheel_selection(X,y,'cls')
-print(m)
+

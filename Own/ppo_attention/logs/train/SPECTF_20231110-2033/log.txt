@@ -1,0 +1,15 @@
+2023-11-10 20:33:13,642 autofe.py:53 __init__ INFO | Namespace(cuda='0', train_size=0.7, epochs=120, ppo_epochs=20, episodes=10, lr=0.0001, entropy_weight=0.0001, baseline_weight=0.95, gama=0.9, gae_lambda=0.95, batch_size=4, d_model=128, d_k=32, d_v=32, d_ff=64, n_heads=6, worker=1, steps_num=3, combine=True, preprocess=False, seed=1, cv=5, cv_train_size=0.7, cv_seed=1, split_train_test=False, shuffle=False, enc_c_pth='', enc_d_pth='', mode='classify', model='xgb', metric='f1', file_name='SPECTF', c_columns=['V0', 'V1', 'V2', 'V3', 'V4', 'V5', 'V6', 'V7', 'V8', 'V9', 'V10', 'V11', 'V12', 'V13', 'V14', 'V15', 'V16', 'V17', 'V18', 'V19', 'V20', 'V21', 'V22', 'V23', 'V24', 'V25', 'V26', 'V27', 'V28', 'V29', 'V30', 'V31', 'V32', 'V33', 'V34', 'V35', 'V36', 'V37', 'V38', 'V39', 'V40', 'V41', 'V42', 'V43'], d_columns=[], target='label')
+2023-11-10 20:33:13,642 autofe.py:54 __init__ INFO | File name: SPECTF
+2023-11-10 20:33:13,642 autofe.py:55 __init__ INFO | Data shape: (267, 45)
+2023-11-10 20:33:15,167 autofe.py:123 set_cuda INFO | Use device: 0, cuda:0, NVIDIA GeForce RTX 4060 Laptop GPU
+2023-11-10 20:33:15,167 autofe.py:113 __init__ INFO | Done AutoFE initialization.
+2023-11-10 20:33:15,181 model_rl.py:14 __init__ INFO | Randomly initial encoder
+2023-11-10 20:33:15,256 model_rl.py:14 __init__ INFO | Randomly initial encoder
+2023-11-10 20:33:28,353 main_attention.py:90 <module> INFO | Traceback (most recent call last):
+  File "D:\python files\pythonProject3\FETCH\main_attention.py", line 87, in <module>
+    autofe.fit_attention(args)
+  File "D:\python files\pythonProject3\FETCH\autofe.py", line 293, in fit_attention
+    w_c, w_d = multiprocess_reward(args, worker_c, worker_d, c_columns, d_columns, scores_b, mode,
+NameError: name 'scores_b' is not defined
+
+2023-11-10 20:33:28,377 main_attention.py:92 <module> INFO | Total cost time: 14.736 s.

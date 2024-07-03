@@ -1,0 +1,17 @@
+2023-11-06 22:57:54,594 autofe.py:53 __init__ INFO | Namespace(cuda='0', train_size=0.7, epochs=120, ppo_epochs=20, episodes=10, lr=0.0001, entropy_weight=0.0001, baseline_weight=0.95, gama=0.9, gae_lambda=0.95, batch_size=4, d_model=128, d_k=32, d_v=32, d_ff=64, n_heads=6, worker=1, steps_num=3, combine=True, preprocess=False, seed=1, cv=5, cv_train_size=0.7, cv_seed=1, split_train_test=False, shuffle=False, enc_c_pth='', enc_d_pth='', mode='classify', model='xgb', metric='f1', file_name='fertility_Diagnosis', c_columns=['V1', 'V6', 'V8'], d_columns=['V0', 'V2', 'V3', 'V4', 'V5', 'V7'], target='label')
+2023-11-06 22:57:54,594 autofe.py:54 __init__ INFO | File name: fertility_Diagnosis
+2023-11-06 22:57:54,594 autofe.py:55 __init__ INFO | Data shape: (100, 10)
+2023-11-06 22:57:54,609 autofe.py:123 set_cuda INFO | Use device: 0, cuda:0, NVIDIA GeForce RTX 4060 Laptop GPU
+2023-11-06 22:57:54,609 autofe.py:113 __init__ INFO | Done AutoFE initialization.
+2023-11-06 22:57:54,616 autofe.py:436 _get_cv_baseline INFO | Start getting CV baseline...
+2023-11-06 22:57:55,042 autofe.py:143 fit_attention INFO | score_b=0.8145574057029166, scores_b=[0.74117647 0.85263158 0.94234234 0.75555556 0.78108108]
+2023-11-06 22:57:55,044 model_rl.py:14 __init__ INFO | Randomly initial encoder
+2023-11-06 22:57:55,193 model_rl.py:14 __init__ INFO | Randomly initial encoder
+2023-11-06 22:57:55,201 main_attention.py:90 <module> INFO | Traceback (most recent call last):
+  File "D:\python files\pythonProject3\FETCH\main_attention.py", line 87, in <module>
+    autofe.fit_attention(args)
+  File "D:\python files\pythonProject3\FETCH\autofe.py", line 197, in fit_attention
+    init_state_c = torch.from_numpy(df_c_encode.values).float().transpose(0, 1)
+TypeError: can't convert np.ndarray of type numpy.object_. The only supported types are: float64, float32, float16, complex64, complex128, int64, int32, int16, int8, uint8, and bool.
+
+2023-11-06 22:57:55,208 main_attention.py:92 <module> INFO | Total cost time: 0.615 s.

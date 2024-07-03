@@ -1,0 +1,35 @@
+2024-03-13 14:47:46,273 AutoFE.py:35 __init__ INFO | Namespace(cuda='0', epochs=100, ppo_epochs=20, episodes=4, file_name='credit_a', mode='classify', model='rf', metric='f1', seed=1, train_size=0.7, cv=5, shuffle=False, d_model=128, d_k=32, d_v=32, d_ff=64, n_heads=6, worker=1, steps_num=5, lr=0.0001, entropy_weight=0.0001, baseline_weight=0.95, gama=0.9, gae_lambda=0.95, batch_size=4, c_columns=['A2', 'A3', 'A8', 'A11', 'A14', 'A15'], d_columns=['A1', 'A4', 'A5', 'A6', 'A7', 'A9', 'A10', 'A12', 'A13'], target='label')
+2024-03-13 14:47:46,273 AutoFE.py:36 __init__ INFO | File name: credit_a
+2024-03-13 14:47:46,273 AutoFE.py:37 __init__ INFO | Data shape: (690, 16)
+2024-03-13 14:47:47,790 AutoFE.py:90 set_cuda INFO | Use device: 0, cuda:0, NVIDIA GeForce RTX 4060 Laptop GPU
+2024-03-13 14:47:47,791 AutoFE.py:80 __init__ INFO | Done AutoFE initialization.
+2024-03-13 14:47:47,868 AutoFE.py:103 fit_attention INFO | score_b=0.8130434782608695, scores_b=[0.63043478 0.91304348 0.89130435 0.73188406 0.89855072]
+2024-03-13 14:47:49,238 main_ppo.py:80 <module> INFO | Traceback (most recent call last):
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\core\indexes\base.py", line 3802, in get_loc
+    return self._engine.get_loc(casted_key)
+  File "pandas\_libs\index.pyx", line 138, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\index.pyx", line 144, in pandas._libs.index.IndexEngine.get_loc
+TypeError: '[3]' is an invalid key
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\main_ppo.py", line 76, in <module>
+    autofe.fit_attention(args)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\AutoFE.py", line 146, in fit_attention
+    w_c = sample(args, self.ppo, pipline_args_train, df_c_encode, df_d_encode, df_t_norm, c_ops,d_ops,epoch, i, self.device)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\feature_engineer\training_ops.py", line 44, in sample
+    df_c_encode, df_d_encode = pipline_ff.process_data(fe)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\process_data\pipeline_data.py", line 65, in process_data
+    self.delete()
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\process_data\pipeline_data.py", line 70, in delete
+    drop_indices = [self.continuous.columns.get_loc(col) for col in self.continuous_drop_list]
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\process_data\pipeline_data.py", line 70, in <listcomp>
+    drop_indices = [self.continuous.columns.get_loc(col) for col in self.continuous_drop_list]
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\core\indexes\base.py", line 3809, in get_loc
+    self._check_indexing_error(key)
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\core\indexes\base.py", line 5925, in _check_indexing_error
+    raise InvalidIndexError(key)
+pandas.errors.InvalidIndexError: [3]
+
+2024-03-13 14:47:49,239 main_ppo.py:82 <module> INFO | Total cost time: 2.9686 s.

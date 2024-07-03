@@ -1,0 +1,6 @@
+2024-03-13 19:36:52,849 AutoFE.py:35 __init__ INFO | Namespace(cuda='0', epochs=100, ppo_epochs=20, episodes=1, file_name='lymphography', mode='classify', model='rf', metric='f1', seed=1, train_size=0.7, cv=5, shuffle=False, d_model=128, d_k=32, d_v=32, d_ff=64, n_heads=6, worker=1, steps_num=4, lr=0.0001, entropy_weight=0.0001, baseline_weight=0.95, gama=0.9, gae_lambda=0.95, batch_size=4, c_columns=['V0', 'V1', 'V2', 'V3', 'V4', 'V5', 'V6', 'V7', 'V8', 'V9', 'V10', 'V11', 'V12', 'V13', 'V14', 'V15', 'V16', 'V17'], d_columns=[], target='label')
+2024-03-13 19:36:52,849 AutoFE.py:36 __init__ INFO | File name: lymphography
+2024-03-13 19:36:52,849 AutoFE.py:37 __init__ INFO | Data shape: (148, 19)
+2024-03-13 19:36:54,372 AutoFE.py:90 set_cuda INFO | Use device: 0, cuda:0, NVIDIA GeForce RTX 4060 Laptop GPU
+2024-03-13 19:36:54,372 AutoFE.py:80 __init__ INFO | Done AutoFE initialization.
+2024-03-13 19:36:54,497 AutoFE.py:103 fit_attention INFO | score_b=0.8041379310344826, scores_b=[0.76666667 0.86666667 0.76666667 0.75862069 0.86206897]

@@ -1,0 +1,36 @@
+2024-03-12 17:02:14,450 AutoFE.py:35 __init__ INFO | Namespace(cuda='0', epochs=300, ppo_epochs=20, episodes=10, file_name='SPECTF', mode='classify', model='xgb', metric='f1', seed=1, train_size=0.7, cv=5, shuffle=False, d_model=128, d_k=32, d_v=32, d_ff=64, n_heads=6, worker=1, steps_num=5, lr=0.0001, entropy_weight=0.0001, baseline_weight=0.95, gama=0.9, gae_lambda=0.95, batch_size=4, c_columns=['V0', 'V1', 'V2', 'V3', 'V4', 'V5', 'V6', 'V7', 'V8', 'V9', 'V10', 'V11', 'V12', 'V13', 'V14', 'V15', 'V16', 'V17', 'V18', 'V19', 'V20', 'V21', 'V22', 'V23', 'V24', 'V25', 'V26', 'V27', 'V28', 'V29', 'V30', 'V31', 'V32', 'V33', 'V34', 'V35', 'V36', 'V37', 'V38', 'V39', 'V40', 'V41', 'V42', 'V43'], d_columns=[], target='label')
+2024-03-12 17:02:14,450 AutoFE.py:36 __init__ INFO | File name: SPECTF
+2024-03-12 17:02:14,450 AutoFE.py:37 __init__ INFO | Data shape: (267, 45)
+2024-03-12 17:02:14,916 AutoFE.py:90 set_cuda INFO | Use device: 0, cuda:0, NVIDIA GeForce RTX 4060 Laptop GPU
+2024-03-12 17:02:14,916 AutoFE.py:80 __init__ INFO | Done AutoFE initialization.
+2024-03-12 17:02:15,026 AutoFE.py:103 fit_attention INFO | score_b=0.7976939203354297, scores_b=[0.83333333 0.77777778 0.77358491 0.75471698 0.8490566 ]
+2024-03-12 17:02:29,096 AutoFE.py:35 __init__ INFO | Namespace(cuda='0', epochs=300, ppo_epochs=20, episodes=10, file_name='SPECTF', mode='classify', model='f1', metric='f1', seed=1, train_size=0.7, cv=5, shuffle=False, d_model=128, d_k=32, d_v=32, d_ff=64, n_heads=6, worker=1, steps_num=5, lr=0.0001, entropy_weight=0.0001, baseline_weight=0.95, gama=0.9, gae_lambda=0.95, batch_size=4, c_columns=['V0', 'V1', 'V2', 'V3', 'V4', 'V5', 'V6', 'V7', 'V8', 'V9', 'V10', 'V11', 'V12', 'V13', 'V14', 'V15', 'V16', 'V17', 'V18', 'V19', 'V20', 'V21', 'V22', 'V23', 'V24', 'V25', 'V26', 'V27', 'V28', 'V29', 'V30', 'V31', 'V32', 'V33', 'V34', 'V35', 'V36', 'V37', 'V38', 'V39', 'V40', 'V41', 'V42', 'V43'], d_columns=[], target='label')
+2024-03-12 17:02:29,096 AutoFE.py:36 __init__ INFO | File name: SPECTF
+2024-03-12 17:02:29,096 AutoFE.py:37 __init__ INFO | Data shape: (267, 45)
+2024-03-12 17:02:29,573 AutoFE.py:90 set_cuda INFO | Use device: 0, cuda:0, NVIDIA GeForce RTX 4060 Laptop GPU
+2024-03-12 17:02:29,574 AutoFE.py:80 __init__ INFO | Done AutoFE initialization.
+2024-03-12 17:02:29,605 main_ppo.py:80 <module> INFO | Traceback (most recent call last):
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\main_ppo.py", line 76, in <module>
+    autofe.fit_attention(args)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\AutoFE.py", line 102, in fit_attention
+    score_b, scores_b = self._get_cv_baseline(new_df, args, mode, model, metric)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\AutoFE.py", line 186, in _get_cv_baseline
+    model = model_fuctions[f"{model}_{mode}"]()
+KeyError: 'f1_classify'
+
+2024-03-12 17:02:29,606 main_ppo.py:82 <module> INFO | Total cost time: 0.5094 s.
+2024-03-12 17:02:47,667 AutoFE.py:35 __init__ INFO | Namespace(cuda='0', epochs=300, ppo_epochs=20, episodes=10, file_name='SPECTF', mode='classify', model='f1', metric='f1', seed=1, train_size=0.7, cv=5, shuffle=False, d_model=128, d_k=32, d_v=32, d_ff=64, n_heads=6, worker=1, steps_num=5, lr=0.0001, entropy_weight=0.0001, baseline_weight=0.95, gama=0.9, gae_lambda=0.95, batch_size=4, c_columns=['V0', 'V1', 'V2', 'V3', 'V4', 'V5', 'V6', 'V7', 'V8', 'V9', 'V10', 'V11', 'V12', 'V13', 'V14', 'V15', 'V16', 'V17', 'V18', 'V19', 'V20', 'V21', 'V22', 'V23', 'V24', 'V25', 'V26', 'V27', 'V28', 'V29', 'V30', 'V31', 'V32', 'V33', 'V34', 'V35', 'V36', 'V37', 'V38', 'V39', 'V40', 'V41', 'V42', 'V43'], d_columns=[], target='label')
+2024-03-12 17:02:47,667 AutoFE.py:36 __init__ INFO | File name: SPECTF
+2024-03-12 17:02:47,667 AutoFE.py:37 __init__ INFO | Data shape: (267, 45)
+2024-03-12 17:02:49,186 AutoFE.py:90 set_cuda INFO | Use device: 0, cuda:0, NVIDIA GeForce RTX 4060 Laptop GPU
+2024-03-12 17:02:49,186 AutoFE.py:80 __init__ INFO | Done AutoFE initialization.
+2024-03-12 17:02:52,234 main_ppo.py:80 <module> INFO | Traceback (most recent call last):
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\main_ppo.py", line 76, in <module>
+    autofe.fit_attention(args)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\AutoFE.py", line 102, in fit_attention
+    score_b, scores_b = self._get_cv_baseline(new_df, args, mode, model, metric)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\AutoFE.py", line 186, in _get_cv_baseline
+    model = model_fuctions[f"{model}_{mode}"]()
+KeyError: 'f1_classify'
+
+2024-03-12 17:02:52,234 main_ppo.py:82 <module> INFO | Total cost time: 4.5671 s.

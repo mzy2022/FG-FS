@@ -1,0 +1,149 @@
+2024-03-14 07:08:02,052 AutoFE.py:35 __init__ INFO | Namespace(cuda='0', epochs=100, ppo_epochs=20, episodes=1, file_name='SPECTF', mode='classify', model='rf', metric='f1', seed=1, train_size=0.7, cv=5, shuffle=False, d_model=128, d_k=32, d_v=32, d_ff=64, n_heads=6, worker=1, steps_num=3, lr=0.0001, entropy_weight=0.0001, baseline_weight=0.95, gama=0.9, gae_lambda=0.95, batch_size=4, c_columns=['V0', 'V1', 'V2', 'V3', 'V4', 'V5', 'V6', 'V7', 'V8', 'V9', 'V10', 'V11', 'V12', 'V13', 'V14', 'V15', 'V16', 'V17', 'V18', 'V19', 'V20', 'V21', 'V22', 'V23', 'V24', 'V25', 'V26', 'V27', 'V28', 'V29', 'V30', 'V31', 'V32', 'V33', 'V34', 'V35', 'V36', 'V37', 'V38', 'V39', 'V40', 'V41', 'V42', 'V43'], d_columns=[], target='label')
+2024-03-14 07:08:02,052 AutoFE.py:36 __init__ INFO | File name: SPECTF
+2024-03-14 07:08:02,052 AutoFE.py:37 __init__ INFO | Data shape: (267, 45)
+2024-03-14 07:08:03,575 AutoFE.py:90 set_cuda INFO | Use device: 0, cuda:0, NVIDIA GeForce RTX 4060 Laptop GPU
+2024-03-14 07:08:03,575 AutoFE.py:80 __init__ INFO | Done AutoFE initialization.
+2024-03-14 07:08:03,672 AutoFE.py:103 fit_attention INFO | score_b=0.8277428371767994, scores_b=[0.7962963  0.85185185 0.88679245 0.71698113 0.88679245]
+2024-03-14 07:08:05,099 main_ppo.py:80 <module> INFO | Traceback (most recent call last):
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\main_ppo.py", line 76, in <module>
+    autofe.fit_attention(args)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\AutoFE.py", line 146, in fit_attention
+    w_c = sample(args, self.ppo, pipline_args_train, df_c_encode, df_d_encode, df_t_norm, c_ops,d_ops,epoch, i, self.device)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\feature_engineer\training_ops.py", line 41, in sample
+    actions_ops, log_ops_probs, actions_otp, log_otp_probs,res_h_c_t_list = ppo.choose_action(state, step, epoch,c_ops,res_h_c_t_list)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\feature_engineer\ppo.py", line 41, in choose_action
+    ops_softmax, otp_softmax,res_h_c_t_list = self.actor(input_c.to(self.device), step,res_h_c_t_list)
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\torch\nn\modules\module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\feature_engineer\self_attention_rnn.py", line 29, in forward
+    res_h_c_t_list, ops_logits, otp_logits = self.select_operation(encoder_output,h_c_t_list)
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\torch\nn\modules\module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\feature_engineer\self_attention_rnn.py", line 99, in forward
+    for j in range(rnn_times):
+NameError: name 'rnn_times' is not defined
+
+2024-03-14 07:08:05,099 main_ppo.py:82 <module> INFO | Total cost time: 3.0477 s.
+2024-03-14 07:08:16,706 AutoFE.py:35 __init__ INFO | Namespace(cuda='0', epochs=100, ppo_epochs=20, episodes=1, file_name='SPECTF', mode='classify', model='rf', metric='f1', seed=1, train_size=0.7, cv=5, shuffle=False, d_model=128, d_k=32, d_v=32, d_ff=64, n_heads=6, worker=1, steps_num=3, lr=0.0001, entropy_weight=0.0001, baseline_weight=0.95, gama=0.9, gae_lambda=0.95, batch_size=4, c_columns=['V0', 'V1', 'V2', 'V3', 'V4', 'V5', 'V6', 'V7', 'V8', 'V9', 'V10', 'V11', 'V12', 'V13', 'V14', 'V15', 'V16', 'V17', 'V18', 'V19', 'V20', 'V21', 'V22', 'V23', 'V24', 'V25', 'V26', 'V27', 'V28', 'V29', 'V30', 'V31', 'V32', 'V33', 'V34', 'V35', 'V36', 'V37', 'V38', 'V39', 'V40', 'V41', 'V42', 'V43'], d_columns=[], target='label')
+2024-03-14 07:08:16,706 AutoFE.py:36 __init__ INFO | File name: SPECTF
+2024-03-14 07:08:16,707 AutoFE.py:37 __init__ INFO | Data shape: (267, 45)
+2024-03-14 07:08:18,227 AutoFE.py:90 set_cuda INFO | Use device: 0, cuda:0, NVIDIA GeForce RTX 4060 Laptop GPU
+2024-03-14 07:08:18,228 AutoFE.py:80 __init__ INFO | Done AutoFE initialization.
+2024-03-14 07:08:18,322 AutoFE.py:103 fit_attention INFO | score_b=0.8277428371767994, scores_b=[0.7962963  0.85185185 0.88679245 0.71698113 0.88679245]
+2024-03-14 07:08:20,417 AutoFE.py:155 fit_attention INFO | worker1 ,results:[0.5799, 0.641, 0.4223],cv:[-0.05555556 -0.03703704 -0.09433962 -0.05660377 -0.09433962],
+2024-03-14 07:08:20,433 AutoFE.py:172 fit_attention INFO | epoch:0,baseline:[0.5799 0.641  0.4223],score_b:0.8277428371767994,scores_b:[0.7962963  0.85185185 0.88679245 0.71698113 0.88679245]
+2024-03-14 07:08:20,433 AutoFE.py:178 fit_attention INFO | top_1:score:0.809014675052411
+2024-03-14 07:08:20,433 AutoFE.py:178 fit_attention INFO | top_2:score:0.7864430468204053
+2024-03-14 07:08:20,779 ppo.py:174 update INFO | total_loss_c:-0.3862999975681305,actor_loss:0.0,entory_loss:-0.3862999975681305
+2024-03-14 07:08:23,172 ppo.py:174 update INFO | total_loss_c:-0.38631224632263184,actor_loss:0.0,entory_loss:-0.38631224632263184
+2024-03-14 07:08:23,838 ppo.py:174 update INFO | total_loss_c:-0.3863237798213959,actor_loss:0.0,entory_loss:-0.3863237798213959
+2024-03-14 07:08:24,502 ppo.py:174 update INFO | total_loss_c:-0.3863345682621002,actor_loss:0.0,entory_loss:-0.3863345682621002
+2024-03-14 07:08:25,140 ppo.py:174 update INFO | total_loss_c:-0.3863446116447449,actor_loss:0.0,entory_loss:-0.3863446116447449
+2024-03-14 07:08:25,767 ppo.py:174 update INFO | total_loss_c:-0.3863540291786194,actor_loss:0.0,entory_loss:-0.3863540291786194
+2024-03-14 07:08:26,451 ppo.py:174 update INFO | total_loss_c:-0.38636279106140137,actor_loss:0.0,entory_loss:-0.38636279106140137
+2024-03-14 07:08:27,060 ppo.py:174 update INFO | total_loss_c:-0.3863709270954132,actor_loss:0.0,entory_loss:-0.3863709270954132
+2024-03-14 07:08:27,702 ppo.py:174 update INFO | total_loss_c:-0.38637852668762207,actor_loss:0.0,entory_loss:-0.38637852668762207
+2024-03-14 07:08:28,334 ppo.py:174 update INFO | total_loss_c:-0.38638561964035034,actor_loss:0.0,entory_loss:-0.38638561964035034
+2024-03-14 07:08:28,903 ppo.py:174 update INFO | total_loss_c:-0.38639217615127563,actor_loss:0.0,entory_loss:-0.38639217615127563
+2024-03-14 07:08:29,521 ppo.py:174 update INFO | total_loss_c:-0.3863983154296875,actor_loss:0.0,entory_loss:-0.3863983154296875
+2024-03-14 07:08:30,170 ppo.py:174 update INFO | total_loss_c:-0.3864041268825531,actor_loss:0.0,entory_loss:-0.3864041268825531
+2024-03-14 07:08:30,750 ppo.py:174 update INFO | total_loss_c:-0.3864095211029053,actor_loss:0.0,entory_loss:-0.3864095211029053
+2024-03-14 07:08:31,334 ppo.py:174 update INFO | total_loss_c:-0.3864145278930664,actor_loss:0.0,entory_loss:-0.3864145278930664
+2024-03-14 07:08:31,935 ppo.py:174 update INFO | total_loss_c:-0.3864193260669708,actor_loss:0.0,entory_loss:-0.3864193260669708
+2024-03-14 07:08:32,540 ppo.py:174 update INFO | total_loss_c:-0.386423796415329,actor_loss:0.0,entory_loss:-0.386423796415329
+2024-03-14 07:08:33,097 ppo.py:174 update INFO | total_loss_c:-0.3864280581474304,actor_loss:0.0,entory_loss:-0.3864280581474304
+2024-03-14 07:08:33,708 ppo.py:174 update INFO | total_loss_c:-0.38643208146095276,actor_loss:0.0,entory_loss:-0.38643208146095276
+2024-03-14 07:08:34,279 ppo.py:174 update INFO | total_loss_c:-0.386435866355896,actor_loss:0.0,entory_loss:-0.386435866355896
+2024-03-14 07:08:35,351 AutoFE.py:155 fit_attention INFO | worker1 ,results:[0.6022, 0.4717, 0.6351],cv:[ 0.          0.05555556 -0.03773585 -0.05660377 -0.0754717 ],
+2024-03-14 07:08:35,352 AutoFE.py:172 fit_attention INFO | epoch:1,baseline:[0.6022 0.4717 0.6351],score_b:0.8277428371767994,scores_b:[0.7962963  0.85185185 0.88679245 0.71698113 0.88679245]
+2024-03-14 07:08:35,352 AutoFE.py:178 fit_attention INFO | top_1:score:0.809014675052411
+2024-03-14 07:08:35,352 AutoFE.py:178 fit_attention INFO | top_2:score:0.8087351502445843
+2024-03-14 07:08:35,687 ppo.py:174 update INFO | total_loss_c:-76.43582116265948,actor_loss:-76.05876307388003,entory_loss:-0.37705808877944946
+2024-03-14 07:08:36,303 ppo.py:174 update INFO | total_loss_c:-76.60936531689694,actor_loss:-76.23230725791981,entory_loss:-0.3770580589771271
+2024-03-14 07:08:36,984 ppo.py:174 update INFO | total_loss_c:-76.84613770875359,actor_loss:-76.46907979878807,entory_loss:-0.37705790996551514
+2024-03-14 07:08:37,600 ppo.py:174 update INFO | total_loss_c:-77.12481048671631,actor_loss:-76.74775302378563,entory_loss:-0.3770574629306793
+2024-03-14 07:08:38,231 ppo.py:174 update INFO | total_loss_c:-77.43576820607016,actor_loss:-77.0587114285929,entory_loss:-0.3770567774772644
+2024-03-14 07:08:38,820 ppo.py:174 update INFO | total_loss_c:-77.77279876242181,actor_loss:-77.39574302802583,entory_loss:-0.37705573439598083
+2024-03-14 07:08:39,403 ppo.py:174 update INFO | total_loss_c:-78.12491697387291,actor_loss:-77.74786269979073,entory_loss:-0.37705427408218384
+2024-03-14 07:08:40,018 ppo.py:174 update INFO | total_loss_c:-78.48411737135942,actor_loss:-78.1070649152189,entory_loss:-0.3770524561405182
+2024-03-14 07:08:40,633 ppo.py:174 update INFO | total_loss_c:-78.8526086875074,actor_loss:-78.47555849634338,entory_loss:-0.3770501911640167
+2024-03-14 07:08:41,236 ppo.py:174 update INFO | total_loss_c:-79.2204287006181,actor_loss:-78.84338116186078,entory_loss:-0.3770475387573242
+2024-03-14 07:08:41,837 ppo.py:174 update INFO | total_loss_c:-79.58450261962577,actor_loss:-79.20745812070533,entory_loss:-0.3770444989204407
+2024-03-14 07:08:42,398 ppo.py:174 update INFO | total_loss_c:-79.94269096036328,actor_loss:-79.56564985890759,entory_loss:-0.3770411014556885
+2024-03-14 07:08:42,954 ppo.py:174 update INFO | total_loss_c:-80.29807774643778,actor_loss:-79.92104034047007,entory_loss:-0.3770374059677124
+2024-03-14 07:08:43,540 ppo.py:174 update INFO | total_loss_c:-80.64905110954929,actor_loss:-80.27201775669742,entory_loss:-0.3770333528518677
+2024-03-14 07:08:44,147 ppo.py:174 update INFO | total_loss_c:-80.98797488998655,actor_loss:-80.61094588827375,entory_loss:-0.3770290017127991
+2024-03-14 07:08:44,695 ppo.py:174 update INFO | total_loss_c:-81.31834155917117,actor_loss:-80.94131714701602,entory_loss:-0.37702441215515137
+2024-03-14 07:08:45,265 ppo.py:174 update INFO | total_loss_c:-81.63197026442728,actor_loss:-81.25495068024836,entory_loss:-0.37701958417892456
+2024-03-14 07:08:45,881 ppo.py:174 update INFO | total_loss_c:-81.92074539097474,actor_loss:-81.54373075398134,entory_loss:-0.3770146369934082
+2024-03-14 07:08:46,494 ppo.py:174 update INFO | total_loss_c:-82.20209955856494,actor_loss:-81.82508998796634,entory_loss:-0.3770095705986023
+2024-03-14 07:08:47,067 ppo.py:174 update INFO | total_loss_c:-82.4707526032067,actor_loss:-82.09374815860755,entory_loss:-0.3770044445991516
+2024-03-14 07:08:48,154 AutoFE.py:155 fit_attention INFO | worker1 ,results:[0.561, 0.6405, 0.5952],cv:[ 0.07407407 -0.07407407 -0.01886792 -0.09433962 -0.01886792],
+2024-03-14 07:08:48,155 AutoFE.py:172 fit_attention INFO | epoch:2,baseline:[0.561  0.6405 0.5952],score_b:0.8277428371767994,scores_b:[0.7962963  0.85185185 0.88679245 0.71698113 0.88679245]
+2024-03-14 07:08:48,155 AutoFE.py:178 fit_attention INFO | top_1:score:0.809014675052411
+2024-03-14 07:08:48,155 AutoFE.py:178 fit_attention INFO | top_2:score:0.8089447938504544
+2024-03-14 07:08:48,485 ppo.py:174 update INFO | total_loss_c:-101.3408647057127,actor_loss:-100.97011165586224,entory_loss:-0.37075304985046387
+2024-03-14 07:08:49,062 ppo.py:174 update INFO | total_loss_c:-101.44544400072172,actor_loss:-101.07469536161497,entory_loss:-0.3707486391067505
+2024-03-14 07:08:49,687 ppo.py:174 update INFO | total_loss_c:-101.61480529665201,actor_loss:-101.24406085967271,entory_loss:-0.3707444369792938
+2024-03-14 07:08:50,285 ppo.py:174 update INFO | total_loss_c:-101.83152550269409,actor_loss:-101.46078502942368,entory_loss:-0.37074047327041626
+2024-03-14 07:08:50,912 ppo.py:174 update INFO | total_loss_c:-102.0839286183631,actor_loss:-101.7131920193946,entory_loss:-0.37073659896850586
+2024-03-14 07:08:51,518 ppo.py:174 update INFO | total_loss_c:-102.36636390741104,actor_loss:-101.99563106353516,entory_loss:-0.370732843875885
+2024-03-14 07:08:52,206 ppo.py:174 update INFO | total_loss_c:-102.67505889170864,actor_loss:-102.30432965391377,entory_loss:-0.3707292377948761
+2024-03-14 07:08:52,876 ppo.py:174 update INFO | total_loss_c:-103.00787360541622,actor_loss:-102.63714797370235,entory_loss:-0.3707256317138672
+2024-03-14 07:08:53,456 ppo.py:174 update INFO | total_loss_c:-103.34957703143235,actor_loss:-102.97885500579949,entory_loss:-0.3707220256328583
+2024-03-14 07:08:54,045 ppo.py:174 update INFO | total_loss_c:-103.70096202367205,actor_loss:-103.3302436041202,entory_loss:-0.37071841955184937
+2024-03-14 07:08:54,661 ppo.py:174 update INFO | total_loss_c:-104.0616046051022,actor_loss:-103.69088982143369,entory_loss:-0.37071478366851807
+2024-03-14 07:08:55,289 ppo.py:174 update INFO | total_loss_c:-104.43147333876831,actor_loss:-104.06076225058777,entory_loss:-0.370711088180542
+2024-03-14 07:08:55,877 ppo.py:174 update INFO | total_loss_c:-104.8101956610963,actor_loss:-104.43948838761303,entory_loss:-0.37070727348327637
+2024-03-14 07:08:56,451 ppo.py:174 update INFO | total_loss_c:-105.18798307043872,actor_loss:-104.81727970105968,entory_loss:-0.3707033693790436
+2024-03-14 07:08:57,799 ppo.py:174 update INFO | total_loss_c:-105.56756600162774,actor_loss:-105.19686674496918,entory_loss:-0.3706992566585541
+2024-03-14 07:08:59,092 ppo.py:174 update INFO | total_loss_c:-105.94783378244527,actor_loss:-105.5771387577165,entory_loss:-0.370695024728775
+2024-03-14 07:09:00,371 ppo.py:174 update INFO | total_loss_c:-106.32788421364717,actor_loss:-105.9571935996621,entory_loss:-0.37069061398506165
+2024-03-14 07:09:01,787 ppo.py:174 update INFO | total_loss_c:-106.70269330072125,actor_loss:-106.33200727629384,entory_loss:-0.37068602442741394
+2024-03-14 07:09:03,137 ppo.py:174 update INFO | total_loss_c:-107.0736293755633,actor_loss:-106.70294805990282,entory_loss:-0.3706813156604767
+2024-03-14 07:09:04,612 ppo.py:174 update INFO | total_loss_c:-107.44315294088682,actor_loss:-107.07247651280721,entory_loss:-0.3706764280796051
+2024-03-14 07:09:06,983 AutoFE.py:155 fit_attention INFO | worker1 ,results:[0.6919, 0.6775, 0.5994],cv:[ 0.07407407 -0.09259259 -0.01886792  0.01886792 -0.09433962],
+2024-03-14 07:09:06,983 AutoFE.py:172 fit_attention INFO | epoch:3,baseline:[0.6919 0.6775 0.5994],score_b:0.8277428371767994,scores_b:[0.7962963  0.85185185 0.88679245 0.71698113 0.88679245]
+2024-03-14 07:09:06,983 AutoFE.py:178 fit_attention INFO | top_1:score:0.809014675052411
+2024-03-14 07:09:06,983 AutoFE.py:178 fit_attention INFO | top_2:score:0.8089447938504544
+2024-03-14 07:09:07,762 ppo.py:174 update INFO | total_loss_c:-134.51930976242292,actor_loss:-134.14863446683157,entory_loss:-0.37067529559135437
+2024-03-14 07:09:09,174 ppo.py:174 update INFO | total_loss_c:-134.6460286075691,actor_loss:-134.27535775252377,entory_loss:-0.3706708550453186
+2024-03-14 07:09:10,536 ppo.py:174 update INFO | total_loss_c:-134.87054721152532,actor_loss:-134.49988055860746,entory_loss:-0.37066665291786194
+2024-03-14 07:09:11,890 ppo.py:174 update INFO | total_loss_c:-135.1704772557584,actor_loss:-134.79981468575872,entory_loss:-0.3706625699996948
+2024-03-14 07:09:13,248 ppo.py:174 update INFO | total_loss_c:-135.52725550849834,actor_loss:-135.1565968724052,entory_loss:-0.37065863609313965
+2024-03-14 07:09:14,434 ppo.py:174 update INFO | total_loss_c:-135.93238387719774,actor_loss:-135.56172905580186,entory_loss:-0.370654821395874
+2024-03-14 07:09:15,685 ppo.py:174 update INFO | total_loss_c:-136.3815657582963,actor_loss:-136.01091469199304,entory_loss:-0.3706510663032532
+2024-03-14 07:09:16,763 ppo.py:174 update INFO | total_loss_c:-136.86699811592194,actor_loss:-136.49635086431596,entory_loss:-0.37064725160598755
+2024-03-14 07:09:18,006 ppo.py:174 update INFO | total_loss_c:-137.3833772016986,actor_loss:-137.01273382439453,entory_loss:-0.37064337730407715
+2024-03-14 07:09:19,315 ppo.py:174 update INFO | total_loss_c:-137.92006239300395,actor_loss:-137.5494230688157,entory_loss:-0.3706393241882324
+2024-03-14 07:09:20,497 ppo.py:174 update INFO | total_loss_c:-138.4732563111474,actor_loss:-138.10262124869126,entory_loss:-0.370635062456131
+2024-03-14 07:09:21,746 ppo.py:174 update INFO | total_loss_c:-139.03680329362578,actor_loss:-138.66617276112265,entory_loss:-0.37063053250312805
+2024-03-14 07:09:22,989 ppo.py:174 update INFO | total_loss_c:-139.59626870590424,actor_loss:-139.22564300137734,entory_loss:-0.37062570452690125
+2024-03-14 07:09:24,212 ppo.py:174 update INFO | total_loss_c:-140.15418125955756,actor_loss:-139.7835606512278,entory_loss:-0.37062060832977295
+2024-03-14 07:09:25,483 ppo.py:174 update INFO | total_loss_c:-140.7109699004697,actor_loss:-140.34035462675564,entory_loss:-0.37061527371406555
+2024-03-14 07:09:26,738 ppo.py:174 update INFO | total_loss_c:-141.25048226176904,actor_loss:-140.87987259089158,entory_loss:-0.37060967087745667
+2024-03-14 07:09:27,966 ppo.py:174 update INFO | total_loss_c:-141.78302514527812,actor_loss:-141.41242134545817,entory_loss:-0.3706037998199463
+2024-03-14 07:09:29,237 ppo.py:174 update INFO | total_loss_c:-142.30110749712193,actor_loss:-141.9305098365804,entory_loss:-0.3705976605415344
+2024-03-14 07:09:30,491 ppo.py:174 update INFO | total_loss_c:-142.80975988164317,actor_loss:-142.4391685689963,entory_loss:-0.37059131264686584
+2024-03-14 07:09:31,323 ppo.py:174 update INFO | total_loss_c:-143.3106338954724,actor_loss:-142.94004922874342,entory_loss:-0.3705846667289734
+2024-03-14 07:09:32,441 AutoFE.py:155 fit_attention INFO | worker1 ,results:[0.6351, 0.7483, 0.6884],cv:[ 0.03703704 -0.01851852 -0.03773585  0.05660377 -0.0754717 ],
+2024-03-14 07:09:32,448 AutoFE.py:172 fit_attention INFO | epoch:4,baseline:[0.6351 0.7483 0.6884],score_b:0.8277428371767994,scores_b:[0.7962963  0.85185185 0.88679245 0.71698113 0.88679245]
+2024-03-14 07:09:32,448 AutoFE.py:178 fit_attention INFO | top_1:score:0.823759608665269
+2024-03-14 07:09:32,449 AutoFE.py:178 fit_attention INFO | top_2:score:0.820125786163522
+2024-03-14 07:09:32,880 ppo.py:174 update INFO | total_loss_c:-210.72057386371807,actor_loss:-210.32916980120854,entory_loss:-0.39140406250953674
+2024-03-14 07:09:33,513 ppo.py:174 update INFO | total_loss_c:-210.9241794489142,actor_loss:-210.5327814064738,entory_loss:-0.39139804244041443
+2024-03-14 07:09:34,184 ppo.py:174 update INFO | total_loss_c:-211.3138064300582,actor_loss:-210.92241375203582,entory_loss:-0.39139267802238464
+2024-03-14 07:09:34,802 ppo.py:174 update INFO | total_loss_c:-211.84395918524677,actor_loss:-211.45257136500294,entory_loss:-0.39138782024383545
+2024-03-14 07:09:35,393 ppo.py:174 update INFO | total_loss_c:-212.49162283215017,actor_loss:-212.1002393630454,entory_loss:-0.39138346910476685
+2024-03-14 07:09:36,026 ppo.py:174 update INFO | total_loss_c:-213.24012426730374,actor_loss:-212.8487449407218,entory_loss:-0.39137932658195496
+2024-03-14 07:09:36,643 ppo.py:174 update INFO | total_loss_c:-214.0583032769638,actor_loss:-213.6669278842884,entory_loss:-0.3913753926753998
+2024-03-14 07:09:37,264 ppo.py:174 update INFO | total_loss_c:-214.9330759490776,actor_loss:-214.54170437109946,entory_loss:-0.39137157797813416
+2024-03-14 07:09:37,889 ppo.py:174 update INFO | total_loss_c:-215.84219050808542,actor_loss:-215.45082283421152,entory_loss:-0.39136767387390137
+2024-03-14 07:09:38,528 ppo.py:174 update INFO | total_loss_c:-216.7671802630073,actor_loss:-216.37581661244693,entory_loss:-0.39136365056037903
+2024-03-14 07:09:39,163 ppo.py:174 update INFO | total_loss_c:-217.67212654649492,actor_loss:-217.2807669788527,entory_loss:-0.3913595676422119
+2024-03-14 07:09:39,835 ppo.py:174 update INFO | total_loss_c:-218.55867434893614,actor_loss:-218.1673188642121,entory_loss:-0.3913554847240448
+2024-03-14 07:09:40,517 ppo.py:174 update INFO | total_loss_c:-219.43334449817604,actor_loss:-219.04199309637016,entory_loss:-0.3913514018058777
+2024-03-14 07:09:41,164 ppo.py:174 update INFO | total_loss_c:-220.2930172574366,actor_loss:-219.90166993854888,entory_loss:-0.39134731888771057
+2024-03-14 07:09:41,795 ppo.py:174 update INFO | total_loss_c:-221.1383281026658,actor_loss:-220.74698495610323,entory_loss:-0.3913431465625763
+2024-03-14 07:09:42,432 ppo.py:174 update INFO | total_loss_c:-221.9663523042804,actor_loss:-221.57501341944993,entory_loss:-0.39133888483047485
+2024-03-14 07:09:43,114 ppo.py:174 update INFO | total_loss_c:-222.77276472406766,actor_loss:-222.38143030958554,entory_loss:-0.3913344144821167

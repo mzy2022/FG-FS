@@ -1,0 +1,56 @@
+2023-10-16 19:02:26,043 autofe.py:51 __init__ INFO | Namespace(cuda='0', train_size=0.7, epochs=300, ppo_epochs=10, episodes=24, lr=0.0001, entropy_weight=0.0001, baseline_weight=0.95, gama=0.9, gae_lambda=0.95, batch_size=4, d_model=128, d_k=32, d_v=32, d_ff=64, n_heads=6, worker=12, steps_num=3, combine=True, preprocess=False, seed=1, cv=5, cv_train_size=0.7, cv_seed=1, split_train_test=False, shuffle=False, enc_c_pth='', enc_d_pth='', mode='regression', model='rf', metric='rae', file_name='airfoil', c_columns=['V0', 'V1', 'V2', 'V3', 'V4'], d_columns=[], target='label')
+2023-10-16 19:02:26,043 autofe.py:52 __init__ INFO | File name: airfoil
+2023-10-16 19:02:26,043 autofe.py:53 __init__ INFO | Data shape: (1503, 6)
+2023-10-16 19:02:27,563 autofe.py:120 set_cuda INFO | Use device: 0, cuda:0, NVIDIA GeForce RTX 4060 Laptop GPU
+2023-10-16 19:02:27,563 autofe.py:110 __init__ INFO | Done AutoFE initialization.
+2023-10-16 19:02:27,618 autofe.py:437 _get_cv_baseline INFO | Start getting CV baseline...
+2023-10-16 19:02:27,918 autofe.py:140 fit_attention INFO | score_b=0.5067697886469436, scores_b=[0.61519082 0.64949063 0.52346915 0.28065758 0.46504076]
+2023-10-16 19:02:27,924 model_rl.py:14 __init__ INFO | Randomly initial encoder
+2023-10-16 19:02:27,978 model_rl.py:14 __init__ INFO | Randomly initial encoder
+2023-10-16 19:14:32,147 main_attention.py:91 <module> INFO | multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\core\frame.py", line 4243, in _ensure_valid_index
+    value = Series(value)
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\core\series.py", line 470, in __init__
+    data = sanitize_array(data, index, dtype, copy)
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\core\construction.py", line 647, in sanitize_array
+    subarr = _sanitize_ndim(subarr, data, dtype, index, allow_2d=allow_2d)
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\core\construction.py", line 698, in _sanitize_ndim
+    raise ValueError("Data must be 1-dimensional")
+ValueError: Data must be 1-dimensional
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\software\anaconda\envs\pytorch\lib\multiprocessing\pool.py", line 125, in worker
+    result = (True, func(*args, **kwds))
+  File "C:\Users\11030\Desktop\特征生成\FETCH\FETCH-main\FETCH-main\feature_engineer\attention_searching\training_ops.py", line 149, in apply_actions
+    x_c_encode, x_c_combine = pipline_ff_c.process_continuous(fe_c)
+  File "C:\Users\11030\Desktop\特征生成\FETCH\FETCH-main\FETCH-main\process_data\feature_pipeline.py", line 359, in process_continuous
+    self.arithmetic_operations()
+  File "C:\Users\11030\Desktop\特征生成\FETCH\FETCH-main\FETCH-main\process_data\feature_pipeline.py", line 228, in arithmetic_operations
+    if not self.isvalid: Candidate_features[name] = new_fe
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\core\frame.py", line 3980, in __setitem__
+    self._set_item(key, value)
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\core\frame.py", line 4174, in _set_item
+    value = self._sanitize_column(value)
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\core\frame.py", line 4905, in _sanitize_column
+    self._ensure_valid_index(value)
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\core\frame.py", line 4245, in _ensure_valid_index
+    raise ValueError(
+ValueError: Cannot set a frame with no defined index and a value that cannot be converted to a Series
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\11030\Desktop\特征生成\FETCH\FETCH-main\FETCH-main\main_attention.py", line 88, in <module>
+    autofe.fit_attention(args)
+  File "C:\Users\11030\Desktop\特征生成\FETCH\FETCH-main\FETCH-main\autofe.py", line 272, in fit_attention
+    ret = p.get()
+  File "D:\software\anaconda\envs\pytorch\lib\multiprocessing\pool.py", line 774, in get
+    raise self._value
+ValueError: Cannot set a frame with no defined index and a value that cannot be converted to a Series
+
+2023-10-16 19:14:32,148 main_attention.py:93 <module> INFO | Total cost time: 726.105 s.

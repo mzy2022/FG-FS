@@ -1,0 +1,42 @@
+2024-03-09 23:54:07,070 AutoFE.py:34 __init__ INFO | Namespace(cuda='0', epochs=300, ppo_epochs=20, episodes=3, file_name='SPECTF', mode='classify', model='xgb', metric='f1', seed=1, train_size=0.7, cv=5, shuffle=False, c_columns=['V0', 'V1', 'V2', 'V3', 'V4', 'V5', 'V6', 'V7', 'V8', 'V9', 'V10', 'V11', 'V12', 'V13', 'V14', 'V15', 'V16', 'V17', 'V18', 'V19', 'V20', 'V21', 'V22', 'V23', 'V24', 'V25', 'V26', 'V27', 'V28', 'V29', 'V30', 'V31', 'V32', 'V33', 'V34', 'V35', 'V36', 'V37', 'V38', 'V39', 'V40', 'V41', 'V42', 'V43'], d_columns=[], target='label')
+2024-03-09 23:54:07,070 AutoFE.py:35 __init__ INFO | File name: SPECTF
+2024-03-09 23:54:07,070 AutoFE.py:36 __init__ INFO | Data shape: (267, 45)
+2024-03-09 23:54:08,600 AutoFE.py:90 set_cuda INFO | Use device: 0, cuda:0, NVIDIA GeForce RTX 4060 Laptop GPU
+2024-03-09 23:54:08,604 AutoFE.py:80 __init__ INFO | Done AutoFE initialization.
+2024-03-09 23:54:10,165 main_ppo.py:66 <module> INFO | Traceback (most recent call last):
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\main_ppo.py", line 62, in <module>
+    autofe.fit_attention(args)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\AutoFE.py", line 103, in fit_attention
+    score_b, scores_b = self._get_cv_baseline(df, args, mode, model, metric)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\AutoFE.py", line 218, in _get_cv_baseline
+    scores = cross_val_score(model, X, y, scoring='f1_micro', cv=my_cv, error_score="raise")
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\sklearn\model_selection\_validation.py", line 560, in cross_val_score
+    scorer = check_scoring(estimator, scoring=scoring)
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\sklearn\utils\_param_validation.py", line 201, in wrapper
+    validate_parameter_constraints(
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\sklearn\utils\_param_validation.py", line 95, in validate_parameter_constraints
+    raise InvalidParameterError(
+sklearn.utils._param_validation.InvalidParameterError: The 'estimator' parameter of check_scoring must be an object implementing 'fit'. Got <function xgb_classify at 0x00000181EE4D30A0> instead.
+
+2024-03-09 23:54:10,165 main_ppo.py:68 <module> INFO | Total cost time: 3.0951 s.
+2024-03-09 23:54:45,345 AutoFE.py:34 __init__ INFO | Namespace(cuda='0', epochs=300, ppo_epochs=20, episodes=3, file_name='SPECTF', mode='classify', model='xgb', metric='f1', seed=1, train_size=0.7, cv=5, shuffle=False, c_columns=['V0', 'V1', 'V2', 'V3', 'V4', 'V5', 'V6', 'V7', 'V8', 'V9', 'V10', 'V11', 'V12', 'V13', 'V14', 'V15', 'V16', 'V17', 'V18', 'V19', 'V20', 'V21', 'V22', 'V23', 'V24', 'V25', 'V26', 'V27', 'V28', 'V29', 'V30', 'V31', 'V32', 'V33', 'V34', 'V35', 'V36', 'V37', 'V38', 'V39', 'V40', 'V41', 'V42', 'V43'], d_columns=[], target='label')
+2024-03-09 23:54:45,345 AutoFE.py:35 __init__ INFO | File name: SPECTF
+2024-03-09 23:54:45,345 AutoFE.py:36 __init__ INFO | Data shape: (267, 45)
+2024-03-09 23:54:46,872 AutoFE.py:90 set_cuda INFO | Use device: 0, cuda:0, NVIDIA GeForce RTX 4060 Laptop GPU
+2024-03-09 23:54:46,872 AutoFE.py:80 __init__ INFO | Done AutoFE initialization.
+2024-03-09 23:55:01,771 main_ppo.py:66 <module> INFO | Traceback (most recent call last):
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\main_ppo.py", line 62, in <module>
+    autofe.fit_attention(args)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\AutoFE.py", line 103, in fit_attention
+    score_b, scores_b = self._get_cv_baseline(df, args, mode, model, metric)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\AutoFE.py", line 218, in _get_cv_baseline
+    scores = cross_val_score(model, X, y, scoring='f1_micro', cv=my_cv, error_score="raise")
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\sklearn\model_selection\_validation.py", line 560, in cross_val_score
+    scorer = check_scoring(estimator, scoring=scoring)
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\sklearn\utils\_param_validation.py", line 201, in wrapper
+    validate_parameter_constraints(
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\sklearn\utils\_param_validation.py", line 95, in validate_parameter_constraints
+    raise InvalidParameterError(
+sklearn.utils._param_validation.InvalidParameterError: The 'estimator' parameter of check_scoring must be an object implementing 'fit'. Got <function xgb_classify at 0x0000015E0A9C3130> instead.
+
+2024-03-09 23:55:02,646 main_ppo.py:68 <module> INFO | Total cost time: 16.8643 s.

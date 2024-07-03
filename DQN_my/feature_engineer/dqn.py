@@ -1,0 +1,175 @@
+import math
+
+import numpy as np
+import torch
+import torch.nn as nn
+import torch.optim as optim
+
+from .embedding_policy_network import Actor1, Actor2
+
+
+class DQN_ops(object):
+    def __init__(self, args, data_nums, feature_nums,operations_c, operations_d, d_model, d_k, d_v, d_ff, n_heads,
+                 memory,device,EPS_START=0.9, EPS_END=0.05, EPS_DECAY=200, dropout=None):
+        self.args = args
+        self.epochs = args.epochs
+        self.episodes = args.episodes
+        self.ppo_epochs = args.ppo_epochs
+        self.operations_c = operations_c
+        self.operations_d = operations_d
+        self.device = device
+        self.memory = memory
+        self.ops_c_num = operations_c
+        self.ops_d_num = operations_d
+        self.eps_end = EPS_END
+        self.eps_start = EPS_START
+        self.eps_decay = EPS_DECAY
+        self.TARGET_REPLACE_ITER = 20
+        self.batch_size = 8
+        self.gamma = 0.99
+        self.loss_func = nn.MSELoss()
+        self.learn_step_counter = 0
+        self.agent1 = Actor1(args, data_nums, feature_nums,operations_c, d_model, d_k, d_v, d_ff, n_heads, dropout=dropout).to(self.device)
+        self.agent1_opt = optim.Adam(params=self.agent1.parameters(), lr=args.lr)
+
+
+
+    def choose_action_ops(self, input, for_next,steps_done):
+        actions_ops = []
+
+        self.agent1.train()
+        ops_vals, state = self.agent1(input.to(self.device), for_next)
+        eps_threshold = self.eps_end + (self.eps_start - self.eps_end) * math.exp(-1.0 * steps_done / self.eps_decay)
+        ops_vals = ops_vals.detach()
+        for index, out in enumerate(ops_vals):
+            if for_next:
+                act = torch.argmax(out).item()
+            else:
+                if np.random.uniform() > eps_threshold:
+                    act = torch.argmax(out)
+                else:
+                    act = np.random.randint(0, self.ops_c_num)
+            actions_ops.append(int(act))
+
+        return actions_ops, state
+
+
+    def store_transition(self,args,workers):
+        for i in range(args.steps_num):
+            store_ops_list = []
+            for num, worker in enumerate(workers):
+                states_ops = worker.states_ops[i]
+                ops = worker.actions_ops[i]
+                reward = worker.rewards[i]
+                states_ops_ = worker.states_ops_[i]
+                ops_ = worker.actions_ops_[i]
+                store_ops_list.append([states_ops,ops,reward,states_ops_,ops_])
+            self.memory.store_transition(store_ops_list)
+
+
+
+    def learn(self, args, workers,device):
+        with torch.autograd.set_detect_anomaly(True):
+            if self.memory.memory_counter >= self.memory.memory_capacity:
+                if self.learn_step_counter % self.TARGET_REPLACE_ITER == 0:
+                    self.agent1.target_net.load_state_dict(self.agent1.eval_net.state_dict())
+                self.learn_step_counter += 1
+                loss = 0
+                worker_lists = self.memory.sample(args,device)
+
+                for memory_list in worker_lists:
+                    with torch.no_grad():
+                        q_next = self.agent1.target_net(memory_list[3])
+                        q_target = memory_list[2] + self.gamma * torch.max(q_next, dim=-1)[0]
+                    q_eval = self.agent1.eval_net(memory_list[0])
+                    yyy = torch.tensor(memory_list[1],dtype=torch.long).unsqueeze(0)
+                    q_eval_selected = q_eval.gather(1, yyy).squeeze(0)
+                    q_target = q_target.detach()
+                    loss = loss + self.loss_func(q_eval_selected, q_target)
+
+                loss /= len(worker_lists)
+                self.agent1_opt.zero_grad()
+                # loss.requires_grad_(True)
+                loss.backward()
+                self.agent1_opt.step()
+
+
+class DQN_otp(object):
+    def __init__(self, args,operations_c,hidden_size,d_model,memory,device,EPS_START=0.9, EPS_END=0.05, EPS_DECAY=200):
+        self.args = args
+        self.epochs = args.epochs
+        self.episodes = args.episodes
+        self.ppo_epochs = args.ppo_epochs
+        self.device = device
+        self.memory = memory
+        self.otp_nums = operations_c
+        self.eps_end =EPS_END
+        self.eps_start = EPS_START
+        self.eps_decay = EPS_DECAY
+        self.loss_func = nn.MSELoss()
+        self.learn_step_counter = 0
+        self.TARGET_REPLACE_ITER = 100
+        self.gamma = 0.99
+        self.batch_size = 8
+        self.agent2 = Actor2(args, operations_c,hidden_size,d_model).to(self.device)
+        self.agent2_opt = optim.Adam(params=self.agent2.parameters(), lr=args.lr)
+
+
+    def choose_action_otp(self, input, states_ops,for_next,steps_done):
+        input = torch.tensor(input)
+        actions_otp = []
+        self.agent2.train()
+        otp_vals, state = self.agent2(input.to(self.device),states_ops, for_next)
+        eps_threshold = self.eps_end + (self.eps_start - self.eps_end) * math.exp(-1.0 * steps_done / self.eps_decay)
+        otp_vals = otp_vals.detach()
+        for index, out in enumerate(otp_vals):
+            if for_next:
+                act = torch.argmax(out).item()
+            else:
+                if np.random.uniform() > eps_threshold:
+                    act = torch.argmax(out)
+                else:
+                    act = np.random.randint(0, self.otp_nums)
+            actions_otp.append(int(act))
+
+        return actions_otp, state
+
+    def store_transition(self,args,workers):
+        for i in range(args.steps_num):
+            store_otp_list = []
+            for num, worker in enumerate(workers):
+                states_otp = worker.states_otp[i]
+                otp = worker.actions_otp[i]
+                reward = worker.rewards[i]
+                states_otp_ = worker.states_otp_[i]
+                otp_ = worker.actions_otp_[i]
+                store_otp_list.append([states_otp, otp, reward, states_otp_, otp_])
+            self.memory.store_transition(store_otp_list)
+
+
+    def learn(self, args, workers,device):
+        if self.memory.memory_counter >= self.memory.memory_capacity:
+            if self.learn_step_counter % self.TARGET_REPLACE_ITER == 0:
+                self.agent2.target_net.load_state_dict(self.agent2.eval_net.state_dict())
+            self.learn_step_counter += 1
+            loss = 0
+            worker_lists = self.memory.sample(args, device)
+
+            for memory_list in worker_lists:
+                # with torch.no_grad():
+                q_next = self.agent2.target_net(memory_list[3])
+                q_target = memory_list[2] + self.gamma * torch.max(q_next, dim=-1)[0]
+                q_eval = self.agent2.eval_net(memory_list[0])
+                xxx = torch.tensor(memory_list[1])
+                yyy = xxx.unsqueeze(0)
+                q_eval = q_eval.gather(1, yyy).squeeze(0)
+                q_target = q_target.detach()
+                loss = loss + self.loss_func(q_eval, q_target)
+
+            loss /= len(worker_lists)
+            self.agent2_opt.zero_grad()
+            # loss.requires_grad_(True)
+            loss.backward()
+            self.agent2_opt.step()
+
+

@@ -1,0 +1,6 @@
+2024-03-23 18:12:57,959 AutoFE.py:30 __init__ INFO | Namespace(cuda='0', epochs=300, ppo_epochs=20, episodes=5, file_name='PimaIndian', mode='classify', model='rf', metric='f1', seed=1, train_size=0.7, cv=5, shuffle=False, d_model=128, d_k=32, d_v=32, d_ff=64, n_heads=6, worker=1, steps_num=5, lr=0.0001, entropy_weight=0.0001, baseline_weight=0.95, gama=0.9, gae_lambda=0.95, batch_size=4, c_columns=['C0', 'C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7'], d_columns=[], target='label')
+2024-03-23 18:12:57,959 AutoFE.py:31 __init__ INFO | File name: PimaIndian
+2024-03-23 18:12:57,959 AutoFE.py:32 __init__ INFO | Data shape: (768, 9)
+2024-03-23 18:12:59,487 AutoFE.py:85 set_cuda INFO | Use device: 0, cuda:0, NVIDIA GeForce RTX 4060 Laptop GPU
+2024-03-23 18:12:59,487 AutoFE.py:75 __init__ INFO | Done AutoFE initialization.
+2024-03-23 18:12:59,648 AutoFE.py:98 fit_attention INFO | score_b=0.7643663526016466, scores_b=[0.74675325 0.72727273 0.78571429 0.82352941 0.73856209]

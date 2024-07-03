@@ -1,0 +1,7 @@
+2024-04-08 14:00:43,465 ALL.py:30 __init__ INFO | Namespace(cuda='0', epochs=1000, steps_num=6, episodes=1, file_name='airfoil', model='rf', seed=1, cv=5, n_heads=6, lr=0.0001, memory=24, batch_size=8, hidden_size=8, train_size=0.8, shuffle=False, split_train_test=False, d_model=128, d_k=32, d_v=32, d_ff=64, metric='rae', mode='regression', c_columns=['V0', 'V1', 'V2', 'V3', 'V4'], d_columns=[], target='label')
+2024-04-08 14:00:43,465 ALL.py:31 __init__ INFO | File name: airfoil
+2024-04-08 14:00:43,465 ALL.py:32 __init__ INFO | Data shape: (1503, 6)
+2024-04-08 14:00:43,933 ALL.py:72 set_cuda INFO | Use device:cuda:0
+2024-04-08 14:00:44,270 ALL.py:114 fit_data INFO | score_b=0.5082536437890061
+2024-04-08 14:00:44,270 ALL.py:115 fit_data INFO | score_ori=0.5082536437890061
+2024-04-08 14:00:44,321 ALL.py:158 fit_data INFO | now_epoch0

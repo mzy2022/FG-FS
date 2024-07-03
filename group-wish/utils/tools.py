@@ -1,17 +1,20 @@
 from collections import defaultdict
 
+import lightgbm
 import numpy as np
 import pandas as pd
 import torch
 import torch.nn as nn
 import torch.utils.data as Data
+import xgboost
 from scipy.special import expit
 from sklearn import linear_model
 from sklearn.cluster import AgglomerativeClustering
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.ensemble import RandomForestRegressor
-from sklearn.feature_selection import SelectFromModel
+from sklearn.feature_selection import SelectFromModel, mutual_info_classif
 from sklearn.feature_selection import mutual_info_regression
+from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, average_precision_score, roc_auc_score
 from sklearn.metrics import f1_score
 from sklearn.metrics import make_scorer
@@ -27,7 +30,7 @@ from sklearn.model_selection import cross_val_score
 from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.preprocessing import StandardScaler, MinMaxScaler, QuantileTransformer
-from sklearn.svm import LinearSVC
+from sklearn.svm import LinearSVC, SVC
 
 
 def cube(x):
@@ -100,32 +103,49 @@ def _feature_state_generation_des(X):
 def relative_absolute_error(y_test, y_predict):
     y_test = np.array(y_test)
     y_predict = np.array(y_predict)
-    error = np.sum(np.abs(y_test - y_predict)) / np.sum(np.abs(np.mean(y_test) - y_test))
+    x = np.sum(np.abs(y_test - y_predict))
+    y = np.sum(np.abs(np.mean(y_test) - y_test))
+    error = x / y
     return error
 
+def sub_rae(y, y_hat):
+    y = np.array(y).reshape(-1)
+    y_hat = np.array(y_hat).reshape(-1)
+    y_mean = np.mean(y)
+    rae = np.sum([np.abs(y_hat[i] - y[i]) for i in range(len(y))]) / np.sum(
+        [np.abs(y_mean - y[i]) for i in range(len(y))])
+    res = 1 - rae
+    return res
 
 def downstream_task_new(data, task_type):
     X = data.iloc[:, :-1]
-    y = data.iloc[:, -1].astype(int)
+    y = data.iloc[:, -1]
+    X = X.apply(np.nan_to_num)
+    X = X.applymap(lambda x: 0 if (x > 1e15 or x < -1e15) else x)
     if task_type == 'cls':
-        clf = RandomForestClassifier(random_state=0)
-        f1_list = []
-        skf = StratifiedKFold(n_splits=5, random_state=0, shuffle=True)
-        for train, test in skf.split(X, y):
-            X_train, y_train, X_test, y_test = X.iloc[train, :], y.iloc[train], X.iloc[test, :], y.iloc[test]
-            clf.fit(X_train, y_train)
-            y_predict = clf.predict(X_test)
-            f1_list.append(f1_score(y_test, y_predict, average='weighted'))
+        # clf = RandomForestClassifier(n_estimators=10,random_state=0)
+        clf = lightgbm.LGBMClassifier(n_estimators=10, random_state=0)
+        f1_list = cross_val_score(clf, X, y, scoring='f1_micro', cv=5, error_score="raise")
+        # f1_list = []
+        # skf = StratifiedKFold(n_splits=5, random_state=0, shuffle=True)
+        # for train, test in skf.split(X, y):
+        #     X_train, y_train, X_test, y_test = X.iloc[train, :], y.iloc[train], X.iloc[test, :], y.iloc[test]
+        #     clf.fit(X_train, y_train)
+        #     y_predict = clf.predict(X_test)
+        #     f1_list.append(f1_score(y_test, y_predict, average='weighted'))
         return np.mean(f1_list)
     elif task_type == 'reg':
-        reg = RandomForestRegressor(random_state=0)
-        rae_list = []
-        kf = KFold(n_splits=5, random_state=0, shuffle=True)
-        for train, test in kf.split(X):
-            X_train, y_train, X_test, y_test = X.iloc[train, :], y.iloc[train], X.iloc[test, :], y.iloc[test]
-            reg.fit(X_train, y_train)
-            y_predict = reg.predict(X_test)
-            rae_list.append(1 - relative_absolute_error(y_test, y_predict))
+        # reg = RandomForestRegressor(random_state=0)
+        # rae_list = []
+        # kf = KFold(n_splits=5, random_state=0, shuffle=True)
+        # for train, test in kf.split(X):
+        #     X_train, y_train, X_test, y_test = X.iloc[train, :], y.iloc[train], X.iloc[test, :], y.iloc[test]
+        #     reg.fit(X_train, y_train)
+        #     y_predict = reg.predict(X_test)
+        #     rae_list.append(1 - relative_absolute_error(y_test, y_predict))
+        model = RandomForestRegressor(n_estimators=10, random_state=0)
+        rae_score1 = make_scorer(sub_rae, greater_is_better=True)
+        rae_list = cross_val_score(model, X, y, cv=5, scoring=rae_score1)
         return np.mean(rae_list)
     else:
         return -1
@@ -134,6 +154,7 @@ def downstream_task_new(data, task_type):
 def test_task_new(Dg, task='cls'):
     X = Dg.iloc[:, :-1]
     y = Dg.iloc[:, -1].astype(int)
+    X = X.apply(np.nan_to_num)
     if task == 'cls':
         clf = RandomForestClassifier(random_state=0)
         pre_list, rec_list, f1_list = [], [], []
@@ -163,7 +184,8 @@ def test_task_new(Dg, task='cls'):
 
 
 # 这是一个名为cluster_features的函数，用于对特征进行聚类分析，并返回聚类结果。
-def cluster_features(features, y, cluster_num=2, mode=''):
+def cluster_features(features, y, cluster_num=2, mode='c'):
+    features = np.nan_to_num(features)
     if mode == 'c':
         return _wocluster_features(features, y, cluster_num)
     else:
@@ -180,19 +202,32 @@ def _wocluster_features(features, y, cluster_num=2):
 
 # 用于将特征进行聚类，并返回聚类结果
 def _cluster_features(features, y, cluster_num=2):
+    features = np.nan_to_num(features)
     k = int(np.sqrt(features.shape[1]))
     features = feature_distance(features, y)
-    features = features.reshape(features.shape[0], -1)
-    clustering = AgglomerativeClustering(n_clusters=k, affinity='precomputed', linkage='single').fit(features)
+    clustering = AgglomerativeClustering(n_clusters=k, affinity=
+    'precomputed', linkage='single').fit(features)
     labels = clustering.labels_
     clusters = defaultdict(list)
     for ind, item in enumerate(labels):
         clusters[item].append(ind)
     return clusters
+    # k = int(np.sqrt(features.shape[1]))
+    # features = feature_distance(features, y)
+    # features = features.reshape(features.shape[0], -1)
+    # clustering = AgglomerativeClustering(n_clusters=k, affinity='precomputed', linkage='single').fit(features)
+    # labels = clustering.labels_
+    # clusters = defaultdict(list)
+    # for ind, item in enumerate(labels):
+    #     clusters[item].append(ind)
+    # return clusters
 
 
 def feature_distance(feature, y):
-    return mi_feature_distance(feature, y)
+    r = torch.tensor(feature)
+    return torch.cdist(r.transpose(-1, 0), r.transpose(-1, 0),
+                       p=2.0, compute_mode='use_mm_for_euclid_dist_if_necessary').numpy()
+    # return mi_feature_distance(feature, y)
 
 
 def mi_feature_distance(features, y):
@@ -200,10 +235,12 @@ def mi_feature_distance(features, y):
     for i in range(features.shape[1]):
         tmp = []
         for j in range(features.shape[1]):
-            tmp.append(np.abs(mutual_info_regression(features[:, i].reshape(-1, 1), y) - mutual_info_regression(
-                features[:, j].reshape(-1, 1), y))[0] / (
-                               mutual_info_regression(features[:, i].reshape(-1, 1), features[:, j].reshape(-1, 1))[
-                                   0] + 1e-05))
+            tmp.append(np.abs(mutual_info_regression(features[:, i].reshape
+                                                     (-1, 1), y) - mutual_info_regression(features[:, j].reshape
+                                                                                          (-1, 1), y))[0] / (
+                                   mutual_info_regression(features[:, i].
+                                                          reshape(-1, 1), features[:, j].reshape(-1, 1))[0] + 1e-05))
         dis_mat.append(np.array(tmp))
     dis_mat = np.array(dis_mat)
     return dis_mat
+

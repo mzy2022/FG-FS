@@ -12,7 +12,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.svm import SVC
 from sklearn.ensemble import RandomForestClassifier
 
-from autofeat import AutoFeatClassifier
+from .autofeat import AutoFeatClassifier
 
 datasets = ["iris", "wine", "breast_cancer"]
 

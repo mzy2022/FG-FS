@@ -1,0 +1,14 @@
+2024-03-10 17:10:24,763 AutoFE.py:35 __init__ INFO | Namespace(cuda='0', epochs=300, ppo_epochs=20, episodes=3, file_name='SPECTF', mode='classify', model='xgb', metric='f1', seed=1, train_size=0.7, cv=5, shuffle=False, c_columns=['V0', 'V1', 'V2', 'V3', 'V4', 'V5', 'V6', 'V7', 'V8', 'V9', 'V10', 'V11', 'V12', 'V13', 'V14', 'V15', 'V16', 'V17', 'V18', 'V19', 'V20', 'V21', 'V22', 'V23', 'V24', 'V25', 'V26', 'V27', 'V28', 'V29', 'V30', 'V31', 'V32', 'V33', 'V34', 'V35', 'V36', 'V37', 'V38', 'V39', 'V40', 'V41', 'V42', 'V43'], d_columns=[], target='label')
+2024-03-10 17:10:24,763 AutoFE.py:36 __init__ INFO | File name: SPECTF
+2024-03-10 17:10:24,763 AutoFE.py:37 __init__ INFO | Data shape: (267, 45)
+2024-03-10 17:10:26,286 AutoFE.py:91 set_cuda INFO | Use device: 0, cuda:0, NVIDIA GeForce RTX 4060 Laptop GPU
+2024-03-10 17:10:26,291 AutoFE.py:81 __init__ INFO | Done AutoFE initialization.
+2024-03-10 17:11:32,836 AutoFE.py:104 fit_attention INFO | score_b=0.7976939203354297, scores_b=[0.83333333 0.77777778 0.77358491 0.75471698 0.8490566 ]
+2024-03-10 18:25:04,728 main_ppo.py:66 <module> INFO | Traceback (most recent call last):
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\main_ppo.py", line 62, in <module>
+    autofe.fit_attention(args)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\AutoFE.py", line 113, in fit_attention
+    d_model = args.d_model
+AttributeError: 'Namespace' object has no attribute 'd_model'
+
+2024-03-10 18:25:05,489 main_ppo.py:68 <module> INFO | Total cost time: 4480.3046 s.

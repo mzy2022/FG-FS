@@ -1,0 +1,15 @@
+2024-03-19 18:02:42,046 AutoFE.py:37 __init__ INFO | Namespace(cuda='0', epochs=100, ppo_epochs=20, episodes=3, file_name='SPECTF', mode='classify', model='rf', metric='f1', seed=1, train_size=0.7, cv=5, shuffle=False, d_model=128, d_k=32, d_v=32, d_ff=64, n_heads=6, worker=1, steps_num=3, lr=0.0001, memory=8, batch_size=8, hidden_size=8, c_columns=['V0', 'V1', 'V2', 'V3', 'V4', 'V5', 'V6', 'V7', 'V8', 'V9', 'V10', 'V11', 'V12', 'V13', 'V14', 'V15', 'V16', 'V17', 'V18', 'V19', 'V20', 'V21', 'V22', 'V23', 'V24', 'V25', 'V26', 'V27', 'V28', 'V29', 'V30', 'V31', 'V32', 'V33', 'V34', 'V35', 'V36', 'V37', 'V38', 'V39', 'V40', 'V41', 'V42', 'V43'], d_columns=[], target='label')
+2024-03-19 18:02:42,046 AutoFE.py:38 __init__ INFO | File name: SPECTF
+2024-03-19 18:02:42,047 AutoFE.py:39 __init__ INFO | Data shape: (267, 45)
+2024-03-19 18:02:42,556 AutoFE.py:88 set_cuda INFO | Use device: 0, cuda:0, NVIDIA GeForce RTX 4060 Laptop GPU
+2024-03-19 18:02:42,751 AutoFE.py:100 fit_attention INFO | score_b=0.8277428371767994, scores_b=[0.7962963  0.85185185 0.88679245 0.71698113 0.88679245]
+2024-03-19 18:02:47,590 DQN_main.py:77 <module> INFO | Traceback (most recent call last):
+  File "D:\python files\pythonProject3\DQN-2agents\DQN_main.py", line 73, in <module>
+    autofe.fit_attention(args)
+  File "D:\python files\pythonProject3\DQN-2agents\AutoFE.py", line 120, in fit_attention
+    self.dqn_otp = DQN_otp(args, feature_nums,hidden_size,self.memory_otp, self.device)
+  File "D:\python files\pythonProject3\DQN-2agents\feature_engineer\dqn.py", line 94, in __init__
+    self.otp_nums = len(feature_nums)
+TypeError: object of type 'int' has no len()
+
+2024-03-19 18:02:48,438 DQN_main.py:79 <module> INFO | Total cost time: 6.051 s.

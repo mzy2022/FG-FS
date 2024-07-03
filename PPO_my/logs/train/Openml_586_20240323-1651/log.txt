@@ -1,0 +1,13 @@
+2024-03-23 16:51:40,686 AutoFE.py:30 __init__ INFO | Namespace(cuda='0', epochs=100, ppo_epochs=20, episodes=3, file_name='Openml_586', mode='regression', model='rf', metric='rae', seed=1, train_size=0.7, cv=5, shuffle=False, d_model=128, d_k=32, d_v=32, d_ff=64, n_heads=6, worker=1, steps_num=3, lr=0.0001, entropy_weight=0.0001, baseline_weight=0.95, gama=0.9, gae_lambda=0.95, batch_size=4, c_columns=['oz1', 'oz2', 'oz3', 'oz4', 'oz5', 'oz6', 'oz7', 'oz8', 'oz9', 'oz10', 'oz11', 'oz12', 'oz13', 'oz14', 'oz15', 'oz16', 'oz17', 'oz18', 'oz19', 'oz20', 'oz21', 'oz22', 'oz23', 'oz24', 'oz25'], d_columns=[], target='oz26')
+2024-03-23 16:51:40,686 AutoFE.py:31 __init__ INFO | File name: Openml_586
+2024-03-23 16:51:40,686 AutoFE.py:32 __init__ INFO | Data shape: (1000, 26)
+2024-03-23 16:51:42,206 AutoFE.py:85 set_cuda INFO | Use device: 0, cuda:0, NVIDIA GeForce RTX 4060 Laptop GPU
+2024-03-23 16:51:42,206 AutoFE.py:75 __init__ INFO | Done AutoFE initialization.
+2024-03-23 16:51:43,576 AutoFE.py:98 fit_attention INFO | score_b=0.6564013697200729, scores_b=[0.61525552 0.66099783 0.64293122 0.6797     0.68312227]
+2024-03-23 16:59:20,617 AutoFE.py:153 fit_attention INFO | worker1 ,results:[0.534, 0.5167, 0.4717],cv:[-0.03811693 -0.05350333 -0.01675459 -0.03392176 -0.01165941],
+2024-03-23 16:59:20,631 AutoFE.py:153 fit_attention INFO | worker2 ,results:[0.548, 0.4599, 0.4455],cv:[-0.00093916 -0.04977908 -0.02463666 -0.05301357 -0.04742172],
+2024-03-23 16:59:20,641 AutoFE.py:153 fit_attention INFO | worker3 ,results:[0.5899, 0.5672, 0.512],cv:[ 0.00214139 -0.03294302 -0.03622388 -0.02359519 -0.02789012],
+2024-03-23 16:59:20,649 AutoFE.py:170 fit_attention INFO | epoch:0,baseline:[0.5573 0.5146 0.4764],score_b:0.6564013697200729,scores_b:[0.61525552 0.66099783 0.64293122 0.6797     0.68312227]
+2024-03-23 16:59:20,649 AutoFE.py:176 fit_attention INFO | top_1:score:0.6462230036060617
+2024-03-23 16:59:20,649 AutoFE.py:176 fit_attention INFO | top_2:score:0.641764001311641
+2024-03-23 17:05:22,385 ppo.py:150 update INFO | total_loss_c:-0.7057160721763707,actor_loss:-0.6706911249999937,entory_loss:-0.03502494841814041

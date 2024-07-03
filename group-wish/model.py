@@ -34,14 +34,16 @@ def fanin_init(size, fanin=None):
 
 
 class ClusterNet(nn.Module):
-    def __init__(self, STATE_DIM, ACTION_DIM, HIDDEN_DIM=100, init_w=0.1):
+    def __init__(self, STATE_DIM, ACTION_DIM, HIDDEN_DIM=100, init_w=0.1,device=None):
         super(ClusterNet, self).__init__()
         self.fc1 = nn.Linear(STATE_DIM + ACTION_DIM, HIDDEN_DIM)
         self.fc1.weight.data = fanin_init(self.fc1.weight.data.size())
         self.out = nn.Linear(HIDDEN_DIM, 1)
         self.out.weight.data.normal_(-init_w, init_w)
+        self.device = device
 
     def forward(self, x):
+        x = x.to(self.device)
         x = self.fc1(x)
         x = F.relu(x)
         action_value = self.out(x)
@@ -163,6 +165,7 @@ class DQNNetwork(nn.Module):
         raise NotImplementedError()
 
 
+
 class ClusterDQNNetwork(DQNNetwork):
     def __init__(self, state_dim, cluster_state_dim, hidden_dim, memory: Replay, ent_weight,
                  select='head', gamma=0.99, EPS_START=0.9, EPS_END=0.05, EPS_DECAY=200, device=None, init_w=1e-6):
@@ -172,8 +175,8 @@ class ClusterDQNNetwork(DQNNetwork):
         assert select in {'head', 'tail'}
         self.select_mode = select == 'head'
         self.eval_net, self.target_net = ClusterNet(self.state_dim, self.cluster_state_dim, HIDDEN_DIM=self.hidden_dim,
-                                                    init_w=self.init_w), \
-            ClusterNet(self.state_dim, self.cluster_state_dim, HIDDEN_DIM=self.hidden_dim, init_w=self.init_w)
+                                                    init_w=self.init_w,device=device), \
+            ClusterNet(self.state_dim, self.cluster_state_dim, HIDDEN_DIM=self.hidden_dim, init_w=self.init_w,device=device)
 
     def get_q_value(self, state_emb, action):
         return self.eval_net(torch.cat((state_emb, action)))
@@ -265,7 +268,7 @@ class ClusterDQNNetwork(DQNNetwork):
         f_cluster = X[:,list(clusters[acts])]
         action_emb = select_cluster_state_list[acts]
         f_names = np.array(features_names)[list(clusters[acts])]
-        info('current select feature name :' + str(f_names))
+        # info('current select feature name :' + str(f_names))
         return acts, action_emb, f_names, f_cluster, select_cluster_state_list, state_op_emb
 
     def _select_tail(self,clusters,X,feature_names,op,cached_state_embed,cached_cluster_state,for_next=False,steps_done=0):
@@ -288,7 +291,7 @@ class ClusterDQNNetwork(DQNNetwork):
         f_cluster = X[:,list(clusters[acts])]
         action_emb = select_cluster_state_list[acts]
         f_names = np.array(feature_names)[list(clusters[acts])]
-        info('current select feature name : ' + str(f_names))
+        # info('current select feature name : ' + str(f_names))
         return acts, action_emb, f_names, f_cluster, select_cluster_state_list, state_op_emb
 
     # 𝐿 =∑𝑙𝑜𝑔𝜋𝜃(𝑠𝑡, 𝑎𝑡)(𝑟 + 𝛾𝑉(𝑠𝑡 + 1)−𝑉(𝑠𝑡))
@@ -301,6 +304,8 @@ class ClusterDQNNetwork(DQNNetwork):
         q_eval = self.eval_net(net_input)
         net_input_ = torch.cat((b_s_, b_a_),axis=1)
         q_next = self.target_net(net_input_)
+        q_next = q_next.detach()
+        b_r = b_r.cuda()
         q_target = b_r + self.GAMMA * q_next.view(self.BATCH_SIZE,1)
         loss = self.loss_func(q_eval,q_target)
         optimizer.zero_grad()
@@ -309,14 +314,16 @@ class ClusterDQNNetwork(DQNNetwork):
 
 
 class OpNet(nn.Module):
-    def __init__(self,N_STATES,N_ACTIONS,N_HIDDEN,init_w):
+    def __init__(self,N_STATES,N_ACTIONS,N_HIDDEN,init_w,device):
         super(OpNet,self).__init__()
         self.fc1 = nn.Linear(N_STATES,N_HIDDEN)
         self.fc1.weight.data.normal_(0,init_w)
         self.out = nn.Linear(N_HIDDEN,N_ACTIONS)
         self.out.weight.data.normal_(0,init_w)
+        self.device = device
 
     def forward(self,x):
+        x = x.to(self.device)
         x = self.fc1(x)
         x = F.relu(x)
         action_value = self.out(x)
@@ -326,8 +333,8 @@ class OpNet(nn.Module):
 class OpDQNNetwork(DQNNetwork):
     def __init__(self,state_dim,cluster_state_dim,hidden_dim,memory:Replay,ent_weight,gamma=0.99,device=None,EPS_START=0.9,EPS_END=0.05,EPS_DECAY=200,init_w=1e-6):
         super(OpDQNNetwork, self).__init__(state_dim, cluster_state_dim, hidden_dim, gamma, device,memory, ent_weight, EPS_START=EPS_START, EPS_END=EPS_END,EPS_DECAY=EPS_DECAY, init_w=init_w)
-        self.eval_net = OpNet(self.state_dim, OP_DIM, self.hidden_dim, init_w)
-        self.target_net = OpNet(self.state_dim, OP_DIM, self.hidden_dim, init_w)
+        self.eval_net = OpNet(self.state_dim, OP_DIM, self.hidden_dim, init_w,device)
+        self.target_net = OpNet(self.state_dim, OP_DIM, self.hidden_dim, init_w,device)
 
     def forward(self, cluster_state, for_next=False):
         if for_next:
@@ -340,14 +347,15 @@ class OpDQNNetwork(DQNNetwork):
         eps_threshold = self.EPS_END + (self.EPS_START - self.EPS_END) * math.exp(-1.0 * steps_done / self.EPS_DECAY)
         q_vals = q_vals.detach()
         if for_next:
-            acts = np.argmax(q_vals)
+            acts = np.argmax(q_vals.cpu())
         else:
             if np.random.uniform() > eps_threshold:
-                acts = np.argmax(q_vals)
+                acts = np.argmax(q_vals.cpu())
             else:
                 acts = np.random.randint(0, OP_DIM)
+        acts = int(acts)
         op_name = operation_set[acts]
-        info('current select op : ' + str(op_name))
+        # info('current select op : ' + str(op_name))
         return acts, op_name
 
     def store_transition(self, s1, op, r, s2):
@@ -359,8 +367,13 @@ class OpDQNNetwork(DQNNetwork):
             self.target_net.load_state_dict(self.eval_net.state_dict())
         self.learn_step_counter += 1
         b_s, b_a, b_r, b_s_ = self.memory.sample()
+        b_s = b_s.cuda()
+        b_a = b_a.cuda()
+        b_s_ = b_s_.cuda()
+        b_r = b_r.cuda()
         q_eval = self.eval_net(b_s).gather(1, b_a)
         q_next = self.target_net(b_s_).detach()
+
         q_target = b_r + self.GAMMA * q_next.max(1)[0].view(self.BATCH_SIZE, 1)
         loss = self.loss_func(q_eval, q_target)
         optimizer.zero_grad()

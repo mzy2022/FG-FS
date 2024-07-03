@@ -28,7 +28,7 @@ class ModelBase(object):
 
     @staticmethod
     def rf_classify(random_state=None):
-        model = RandomForestClassifier(random_state=0, n_estimators=10, n_jobs=-1)
+        model = RandomForestClassifier(random_state=0, n_estimators=10)
         return model
 
     @staticmethod

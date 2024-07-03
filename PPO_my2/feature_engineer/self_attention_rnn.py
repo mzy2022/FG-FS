@@ -1,0 +1,259 @@
+import numpy as np
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+
+
+def weight_init(m):
+    if isinstance(m, nn.Linear):
+        nn.init.xavier_normal_(m.weight)
+        # nn.init.kaiming_normal_(m.weight, mode='fan_out', nonlinearity='relu')
+        nn.init.constant_(m.bias, 0)
+    # 也可以判断是否为conv2d，使用相应的初始化方式
+    elif isinstance(m, nn.Conv1d):
+        nn.init.kaiming_normal_(m.weight, mode='fan_out', nonlinearity='relu')
+     # 是否为批归一化层
+    elif isinstance(m, nn.BatchNorm2d):
+        nn.init.constant_(m.weight, 1)
+        nn.init.constant_(m.bias, 0)
+
+def fanin_init(size, fanin=None):
+    fanin = fanin or size[0]
+    v = 1 / np.sqrt(fanin)
+    return torch.Tensor(size).uniform_(-v, v)
+
+class Actor1(nn.Module):
+    def __init__(self, args, data_nums, feature_nums,operations_c,d_model, d_k, d_v, d_ff, n_heads,device, dropout=None):
+        super(Actor1, self).__init__()
+        self.args = args
+        self.reduction_dimension = ReductionDimension(data_nums, d_model)
+        self.encoder = EncoderLayer(d_model, d_k, d_v, d_ff, n_heads, dropout)
+        self.select_ops = Select_ops(d_model, operations_c)
+        self.layernorm = nn.LayerNorm(data_nums)
+        self.feature_nums = feature_nums
+        self.device = device
+
+    def forward(self, input,con_or_dis):
+        pos_emb = get_pos_emb(input, con_or_dis)
+        pos_emb = torch.tensor(pos_emb).unsqueeze(0).to(self.device).to(torch.float32)
+        input_norm = self.layernorm(input)
+        data_reduction_dimension = self.reduction_dimension(input_norm)
+        data_reduction_dimension = torch.where(torch.isnan(data_reduction_dimension),torch.full_like(data_reduction_dimension, 0), data_reduction_dimension)
+        # encoder_output = data_reduction_dimension.squeeze(0)[:-1]
+        # data_reduction_dimension = (data_reduction_dimension + pos_emb)
+        encoder_output = self.encoder(data_reduction_dimension)
+        encoder_output = torch.where(torch.isnan(encoder_output), torch.full_like(encoder_output, 0), encoder_output).squeeze(0)
+        # encoder_mean = self.mean(encoder_output,self.feature_nums)
+        encoder_mean = encoder_output
+        ops_logits = self.select_ops(encoder_mean)
+        ops_logits = torch.where(torch.isnan(ops_logits), torch.full_like(ops_logits, 0), ops_logits)
+        operation_softmax = torch.softmax(ops_logits, dim=-1)
+        return operation_softmax, encoder_mean
+
+    def mean(self,encoder_output,feature_nums):
+        num_groups = len(encoder_output) // feature_nums
+        result = []
+        for i in range(feature_nums):
+            if i != feature_nums - 1:
+                group = encoder_output[i * num_groups: (i + 1) * num_groups]
+            else:
+                group = encoder_output[i * num_groups: ]
+            group_avg = torch.mean(group,dim=0)
+            result.append(group_avg)
+        result = torch.stack(result)
+        return result
+
+
+
+class Actor2(nn.Module):
+    def __init__(self, args,operations_c, hidden_size,d_model,sample_nums):
+        super(Actor2, self).__init__()
+        self.args = args
+        self.linner = nn.Linear(sample_nums,d_model)
+        self.select_otp = Select_otp(d_model, 2)
+
+
+    def forward(self, input,emb_ops):
+
+        embedding_output = self.linner(input)
+        embedding_output = torch.where(torch.isnan(embedding_output), torch.full_like(embedding_output, 0), embedding_output).squeeze(0)
+        # all_embedding = torch.cat((embedding_output,emb_ops),dim=1)
+        otp_logits = self.select_otp(embedding_output)
+        otp_logits = torch.where(torch.isnan(otp_logits), torch.full_like(otp_logits, 0), otp_logits)
+        operation_softmax = torch.softmax(otp_logits, dim=-1)
+        return operation_softmax, embedding_output
+
+
+class Select_ops(nn.Module):
+    def __init__(self, state_dim, action_dim, hidden_dim=128, init_w=0.1,device=None):
+        super(Select_ops, self).__init__()
+        self.fc1 = nn.Linear(state_dim, action_dim)
+        self.fc1.weight.data = fanin_init(self.fc1.weight.data.size())
+        self.out = nn.Linear(hidden_dim, action_dim)
+        self.out.weight.data.normal_(-init_w, init_w)
+        self.device = device
+
+    def forward(self, x):
+        x = self.fc1(x)
+        # x = F.relu(x)
+        # action_value = self.out(x)
+        return x
+
+class Select_otp(nn.Module):
+    def __init__(self, state_dim, action_dim, hidden_dim=128, init_w=0.1,device=None):
+        super(Select_otp, self).__init__()
+        self.fc1 = nn.Linear(state_dim, action_dim)
+        self.fc1.weight.data = fanin_init(self.fc1.weight.data.size())
+        self.out = nn.Linear(hidden_dim, action_dim)
+        self.out.weight.data.normal_(-init_w, init_w)
+        self.device = device
+
+    def forward(self, x):
+        x = x.to(self.device)
+        x = self.fc1(x)
+        # x = F.relu(x)
+        # action_value = self.out(x)
+        return x
+
+
+class ScaledDotProductAttention(nn.Module):
+    def __init__(self, d_k, dropout=None):
+        super(ScaledDotProductAttention, self).__init__()
+        self.scale_factor = np.sqrt(d_k)
+        self.softmax = nn.Softmax(dim=-1)
+        self.dropout_sign = dropout
+        if self.dropout_sign:
+            self.dropout = nn.Dropout(dropout, inplace=True)
+
+    def forward(self, q, k, v, attn_mask=None):
+        scores = torch.matmul(q, k.transpose(-1, -2)) / self.scale_factor
+        if attn_mask is not None:
+            assert attn_mask.size() == scores.size()
+            scores.masked_fill_(attn_mask, -1e9)
+        if self.dropout_sign:
+            attn = self.dropout(self.softmax(scores))
+        else:
+            attn = self.softmax(scores)
+        context = torch.matmul(attn, v)
+        return context, attn
+
+class _MultiHeadAttention(nn.Module):
+    def __init__(self, d_model, d_k, d_v, n_heads, dropout):
+        # d_model = 128,d_k=d_v = 32,n_heads = 4
+        super(_MultiHeadAttention, self).__init__()
+        self.d_k = d_k
+        self.d_v = d_v
+        self.d_model = d_model
+        self.n_heads = n_heads
+        self.w_q = nn.Linear(d_model, d_k * n_heads)
+        self.w_k = nn.Linear(d_model, d_k * n_heads)
+        self.w_v = nn.Linear(d_model, d_v * n_heads)
+
+        self.attention = ScaledDotProductAttention(d_k, dropout)
+
+    def forward(self, q, k, v, attn_mask):
+        b_size = q.size(0)
+        q_s = self.w_q(q).view(b_size, -1, self.n_heads, self.d_k).transpose(1, 2)
+        k_s = self.w_k(k).view(b_size, -1, self.n_heads, self.d_k).transpose(1, 2)
+        v_s = self.w_v(v).view(b_size, -1, self.n_heads, self.d_v).transpose(1, 2)
+
+        if attn_mask:  # attn_mask: [b_size x len_q x len_k]
+            attn_mask = attn_mask.unsqueeze(1).repeat(1, self.n_heads, 1, 1)
+        context, attn = self.attention(q_s, k_s, v_s, attn_mask=attn_mask)
+        context = context.transpose(1, 2).contiguous().view(b_size, -1, self.n_heads * self.d_v)
+        return context, attn
+
+
+class MultiHeadAttention(nn.Module):
+    def __init__(self, d_model, d_k, d_v, n_heads, dropout=None):
+        super(MultiHeadAttention, self).__init__()
+        self.n_heads = n_heads
+        self.multihead_attn = _MultiHeadAttention(d_model, d_k, d_v, n_heads, dropout)
+        self.proj = nn.Linear(n_heads * d_v, d_model)
+        self.layer_norm = nn.LayerNorm(d_model)
+        self.dropout_sign = dropout
+        if self.dropout_sign:
+            self.dropout = nn.Dropout(dropout, inplace=True)
+
+    def forward(self, q, k, v, attn_mask=None):
+        residual = q
+        context, attn = self.multihead_attn(q, k, v, attn_mask=attn_mask)
+        context = torch.where(torch.isnan(context), torch.full_like(context, 0), context)
+        attn = torch.where(torch.isnan(attn), torch.full_like(attn, 0), attn)
+        if self.dropout_sign:
+            output = self.dropout(self.proj(context))
+        else:
+            output = self.proj(context)
+
+        ro = residual + output
+        no = self.layer_norm(ro)
+        if torch.isnan(no).any() and not torch.isnan(ro).any():
+            return ro, attn
+        return no, attn
+
+class PoswiseFeedForwardNet(nn.Module):
+    def __init__(self, d_model, d_ff, dropout=None):
+        super(PoswiseFeedForwardNet, self).__init__()
+        self.relu = nn.ReLU()
+        self.conv1 = nn.Conv1d(in_channels=d_model, out_channels=d_ff, kernel_size=1)
+        self.conv2 = nn.Conv1d(in_channels=d_ff, out_channels=d_model, kernel_size=1)
+        self.layer_norm = nn.LayerNorm(d_model)
+        self.dropout_sign = dropout
+        if self.dropout_sign:
+            self.dropout = nn.Dropout(dropout, inplace=True)
+
+    def forward(self, inputs):
+        # inputs: [b_size x len_q x d_model]
+        residual = inputs
+        output = self.relu(self.conv1(inputs.transpose(1, 2)))
+
+        # outputs: [b_size x len_q x d_model]
+        output = self.conv2(output).transpose(1, 2)
+        if self.dropout_sign:
+            output = self.dropout(output)
+
+        return self.layer_norm(residual + output)
+
+class EncoderLayer(nn.Module):
+    def __init__(self, d_model, d_k, d_v, d_ff, n_heads, dropout=None):
+        super(EncoderLayer, self).__init__()
+        self.enc_self_attn = MultiHeadAttention(d_model, d_k, d_v, n_heads, dropout)
+        self.pos_ffn = PoswiseFeedForwardNet(d_model, d_ff, dropout)
+
+    def forward(self, enc_inputs, self_attn_mask=None):
+        enc_outputs, attn = self.enc_self_attn(enc_inputs, enc_inputs,
+                                               enc_inputs, attn_mask=self_attn_mask)
+        enc_outputs = self.pos_ffn(enc_outputs)
+
+        return enc_outputs
+
+
+
+class ReductionDimension(nn.Module):
+    def __init__(self, statistic_nums, d_model):
+        super(ReductionDimension, self).__init__()
+        self.layer = nn.Sequential(
+            nn.BatchNorm1d(statistic_nums),
+            nn.Linear(statistic_nums, d_model),
+            nn.BatchNorm1d(d_model),
+        )
+
+    def forward(self, input):
+        out = self.layer(input).unsqueeze(dim=0)
+        return out
+
+def get_pos_emb(input_data,con_or_dis):
+
+    #
+    # 获取位置索引，并扩展维度以进行计算
+    position = np.array(con_or_dis).reshape(-1, 1)
+    # 计算分母中的项
+    div_term = 10 * np.exp(np.arange(0, 128, 1) * -(np.log(10.0) / 128))
+    # 将正弦应用于偶数索引
+    pos_encoding = np.sin(position * div_term) / 10
+    # 将余弦应用于奇数索引
+    # pos_encoding = np.zeros((input_data.shape[0], 128))
+    # pos_encoding[:, 0::2] = np.sin(position * div_term) / 10
+    # pos_encoding[:, 1::2] = np.cos(position * div_term) / 10
+
+    return pos_encoding

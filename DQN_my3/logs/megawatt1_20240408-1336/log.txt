@@ -1,0 +1,7 @@
+2024-04-08 13:36:49,243 ALL.py:30 __init__ INFO | Namespace(cuda='0', epochs=1000, steps_num=6, episodes=1, file_name='megawatt1', model='rf', seed=1, cv=5, n_heads=6, lr=0.0001, memory=24, batch_size=8, hidden_size=8, train_size=0.8, shuffle=False, split_train_test=False, d_model=128, d_k=32, d_v=32, d_ff=64, metric='f1', mode='classify', c_columns=['V1', 'V2', 'V3', 'V4', 'V5', 'V6', 'V7', 'V8', 'V9', 'V10', 'V11', 'V12', 'V13', 'V14', 'V15', 'V16', 'V17', 'V18', 'V19', 'V20', 'V21', 'V22', 'V23', 'V24', 'V25', 'V26', 'V27', 'V28', 'V29', 'V30', 'V31', 'V32', 'V33', 'V34'], d_columns=['D1', 'D2', 'D3'], target='def')
+2024-04-08 13:36:49,243 ALL.py:31 __init__ INFO | File name: megawatt1
+2024-04-08 13:36:49,243 ALL.py:32 __init__ INFO | Data shape: (253, 38)
+2024-04-08 13:36:49,743 ALL.py:72 set_cuda INFO | Use device:cuda:0
+2024-04-08 13:36:50,042 ALL.py:114 fit_data INFO | score_b=0.8734901960784314
+2024-04-08 13:36:50,042 ALL.py:115 fit_data INFO | score_ori=0.8654901960784314
+2024-04-08 13:36:50,096 ALL.py:157 fit_data INFO | now_epoch0

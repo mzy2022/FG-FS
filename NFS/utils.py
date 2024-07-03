@@ -24,7 +24,6 @@ def mod_column(c1, c2):
 
 
 def evaluate(X, y, args):
-    global model, s
     if args.task == 'regression':
         if args.model == 'LR':
             model = Lasso()
@@ -50,7 +49,7 @@ def evaluate(X, y, args):
         elif args.model == 'SVM':
             model = svm.SVC()
         if args.evaluate == 'f_score':
-            s = cross_val_score(model, X, y, scoring='f1', cv=5).mean()
+            s = cross_val_score(model, X, y, scoring='f1_micro', cv=5).mean()
         elif args.evaluate == 'auc':
             model = RandomForestClassifier(max_depth=10, random_state=0)
             split_pos = X.shape[0] // 10

@@ -1,0 +1,6 @@
+2024-03-12 21:12:03,811 AutoFE.py:35 __init__ INFO | Namespace(cuda='0', epochs=300, ppo_epochs=20, episodes=5, file_name='airfoil', mode='regression', model='rf', metric='rae', seed=1, train_size=0.7, cv=5, shuffle=False, d_model=128, d_k=32, d_v=32, d_ff=64, n_heads=6, worker=1, steps_num=3, lr=0.0001, entropy_weight=0.0001, baseline_weight=0.95, gama=0.9, gae_lambda=0.95, batch_size=4, c_columns=['V0', 'V1', 'V2', 'V3', 'V4'], d_columns=[], target='label')
+2024-03-12 21:12:03,811 AutoFE.py:36 __init__ INFO | File name: airfoil
+2024-03-12 21:12:03,811 AutoFE.py:37 __init__ INFO | Data shape: (1503, 6)
+2024-03-12 21:12:04,283 AutoFE.py:90 set_cuda INFO | Use device: 0, cuda:0, NVIDIA GeForce RTX 4060 Laptop GPU
+2024-03-12 21:12:04,283 AutoFE.py:80 __init__ INFO | Done AutoFE initialization.
+2024-03-12 21:12:20,897 AutoFE.py:103 fit_attention INFO | score_b=0.5082536437890061, scores_b=[0.61519569 0.63651844 0.53160598 0.27777502 0.48017309]

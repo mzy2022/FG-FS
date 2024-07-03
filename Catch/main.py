@@ -43,7 +43,7 @@ def log_config(args):
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Catch')
-    parser.add_argument('--data', type=str, default="winequality_red", help='dataset name')
+    parser.add_argument('--data', type=str, default="spectf", help='dataset name')
     parser.add_argument('--model', type=str, default="rf")
     parser.add_argument('--cuda', type=int, default=0, help='which gpu to use')  # -1 represent cpu-only
     parser.add_argument('--coreset', type=int, default=0,help='whether to use coreset')  # 1 represent work with coreset
@@ -172,10 +172,10 @@ def main():
             new_df['label'] = label
             exp_log_dir_csv = log_config(_args) / 'log.csv'
             new_df.to_csv(exp_log_dir_csv,index=False)
-            new_f1_score = calculate_f1_score(new_df,_args.target_col,_args.model, _args.task_type)
-            ori_f1_score = calculate_f1_score(all_data,_args.target_col,_args.model,_args.task_type)
-            print(new_f1_score)
-            print(ori_f1_score)
+            # new_f1_score = calculate_f1_score(new_df,_args.target_col,_args.model, _args.task_type)
+            # ori_f1_score = calculate_f1_score(all_data,_args.target_col,_args.model,_args.task_type)
+            # print(new_f1_score)
+            # print(ori_f1_score)
 
             #base
             base_score = get_reward_ins.k_fold_score(

@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 from sklearn.preprocessing import MinMaxScaler
 import warnings
-
+from tqdm import tqdm
 warnings.filterwarnings("ignore")
 import argparse
 from multiprocessing import Pool, cpu_count, Process
@@ -27,7 +27,7 @@ def parse_args():
     parser.add_argument('--max_order', type=int,
                         default=5, help='max order of feature operation')
     parser.add_argument('--num_batch', type=int,
-                        default=32, help='batch num')
+                        default=1, help='batch num')
     parser.add_argument('--optimizer', nargs='?',
                         default='adam', help='choose an optimizer')
     parser.add_argument('--lr', type=float,
@@ -35,11 +35,11 @@ def parse_args():
     parser.add_argument('--epochs', type=int,
                         default=100, help='training epochs')
     parser.add_argument('--evaluate', nargs='?',
-                        default='1-rae', help='choose evaluation method')
+                        default='f_score', help='f_score')
     parser.add_argument('--task', nargs='?',
-                        default='regression', help='choose between classification and regression')
+                        default='classification', help='choose between classification and regression')
     parser.add_argument('--dataset', nargs='?',
-                        default='BMI', help='choose dataset to run')
+                        default='SPECTF', help='choose dataset to run')
     parser.add_argument('--model', nargs='?',
                         default='RF', help='choose a model')
     parser.add_argument('--alpha', type=float,
@@ -51,13 +51,13 @@ def parse_args():
     parser.add_argument('--reg', type=float,
                         default=1e-5, help='regularization')
     parser.add_argument('--controller', nargs='?',
-                        default='pure', help='choose a controller')
+                        default='rnn', help='choose a controller')
     parser.add_argument('--num_random_sample', type=int,
                         default=5, help='sample num of random beseline')
     parser.add_argument('--lambd', type=float,
                         default=0.4, help='TD lambd')
     parser.add_argument('--multiprocessing', type=bool,
-                        default=True, help='whether get reward using multiprocess')
+                        default=False, help='whether get reward using multiprocess')
     parser.add_argument('--package', nargs='?',
                         default='sklearn', help='choose sklearn or weka to evaluate')
     return parser.parse_args()
@@ -229,7 +229,7 @@ def train(model, l=None, p=None):
 
     model_result = -10000.0
     train_set, values = [], []
-    for epoch_count in range(args.epochs):
+    for epoch_count in tqdm(range(args.epochs)):
         concat_action = []
         probs_action = torch.nn.functional.softmax(model.concat_output, dim=1).detach().numpy()
         for batch_count in range(args.num_batch):

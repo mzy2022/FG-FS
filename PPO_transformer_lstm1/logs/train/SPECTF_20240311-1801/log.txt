@@ -1,0 +1,41 @@
+2024-03-11 18:01:39,223 AutoFE.py:35 __init__ INFO | Namespace(cuda='0', epochs=300, ppo_epochs=20, episodes=3, file_name='SPECTF', mode='classify', model='xgb', metric='f1', seed=1, train_size=0.7, cv=5, shuffle=False, d_model=128, d_k=32, d_v=32, d_ff=64, n_heads=6, worker=1, steps_num=10, lr=0.0001, entropy_weight=0.0001, baseline_weight=0.95, gama=0.9, gae_lambda=0.95, batch_size=4, c_columns=['V0', 'V1', 'V2', 'V3', 'V4', 'V5', 'V6', 'V7', 'V8', 'V9', 'V10', 'V11', 'V12', 'V13', 'V14', 'V15', 'V16', 'V17', 'V18', 'V19', 'V20', 'V21', 'V22', 'V23', 'V24', 'V25', 'V26', 'V27', 'V28', 'V29', 'V30', 'V31', 'V32', 'V33', 'V34', 'V35', 'V36', 'V37', 'V38', 'V39', 'V40', 'V41', 'V42', 'V43'], d_columns=[], target='label')
+2024-03-11 18:01:39,223 AutoFE.py:36 __init__ INFO | File name: SPECTF
+2024-03-11 18:01:39,223 AutoFE.py:37 __init__ INFO | Data shape: (267, 45)
+2024-03-11 18:01:40,744 AutoFE.py:91 set_cuda INFO | Use device: 0, cuda:0, NVIDIA GeForce RTX 4060 Laptop GPU
+2024-03-11 18:01:40,744 AutoFE.py:81 __init__ INFO | Done AutoFE initialization.
+2024-03-11 18:01:40,953 AutoFE.py:104 fit_attention INFO | score_b=0.7976939203354297, scores_b=[0.83333333 0.77777778 0.77358491 0.75471698 0.8490566 ]
+2024-03-11 18:02:48,963 main_ppo.py:80 <module> INFO | Traceback (most recent call last):
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\core\frame.py", line 4243, in _ensure_valid_index
+    value = Series(value)
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\core\series.py", line 470, in __init__
+    data = sanitize_array(data, index, dtype, copy)
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\core\construction.py", line 647, in sanitize_array
+    subarr = _sanitize_ndim(subarr, data, dtype, index, allow_2d=allow_2d)
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\core\construction.py", line 698, in _sanitize_ndim
+    raise ValueError("Data must be 1-dimensional")
+ValueError: Data must be 1-dimensional
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\main_ppo.py", line 76, in <module>
+    autofe.fit_attention(args)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\AutoFE.py", line 149, in fit_attention
+    w_c = sample(args, self.ppo, pipline_args_train, df_c_encode, df_d_encode, df_t_norm, c_ops,d_ops,epoch, i, self.device)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\feature_engineer\training_ops.py", line 40, in sample
+    x_c, x_d = pipline_ff.process_data(fe)
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\process_data\pipeline_data.py", line 113, in process_data
+    self.arithmetic_operations()
+  File "D:\python files\pythonProject3\PPO_transformer_lstm\process_data\pipeline_data.py", line 148, in arithmetic_operations
+    Candidate_features[name] = new_fe
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\core\frame.py", line 3980, in __setitem__
+    self._set_item(key, value)
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\core\frame.py", line 4174, in _set_item
+    value = self._sanitize_column(value)
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\core\frame.py", line 4905, in _sanitize_column
+    self._ensure_valid_index(value)
+  File "D:\software\anaconda\envs\pytorch\lib\site-packages\pandas\core\frame.py", line 4245, in _ensure_valid_index
+    raise ValueError(
+ValueError: Cannot set a frame with no defined index and a value that cannot be converted to a Series
+
+2024-03-11 18:02:49,672 main_ppo.py:82 <module> INFO | Total cost time: 70.1218 s.

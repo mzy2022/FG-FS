@@ -1,0 +1,6 @@
+2023/11/02 16:15:28 - INFO : args : Namespace(data='fertility_Diagnosis', model='rf', cuda=0, is_select=50, seed=0, target_col='label', dataset_path='data/fertility_Diagnosis.csv', task_type='cls', continuous_col=['V1', 'V6', 'V8'], discrete_col=['V0', 'V2', 'V3', 'V4', 'V5', 'V7'], eval_method='f1_score', f1_average='micro', exp_log_dir=WindowsPath('Catch_log/search_fertility_Diagnosis_20231102-161528'))
+2023-11-02 16:15:28,812 - INFO : args : Namespace(data='fertility_Diagnosis', model='rf', cuda=0, is_select=50, seed=0, target_col='label', dataset_path='data/fertility_Diagnosis.csv', task_type='cls', continuous_col=['V1', 'V6', 'V8'], discrete_col=['V0', 'V2', 'V3', 'V4', 'V5', 'V7'], eval_method='f1_score', f1_average='micro', exp_log_dir=WindowsPath('Catch_log/search_fertility_Diagnosis_20231102-161528'))
+2023/11/02 16:15:50 - INFO : epoch: 0, loss: 300937.5
+2023-11-02 16:15:50,975 - INFO : epoch: 0, loss: 300937.5
+2023/11/02 16:16:07 - INFO : epoch: 1, loss: 301031.1875
+2023-11-02 16:16:07,441 - INFO : epoch: 1, loss: 301031.1875

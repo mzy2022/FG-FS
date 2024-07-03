@@ -1,0 +1,6 @@
+2024-03-13 14:56:09,326 AutoFE.py:35 __init__ INFO | Namespace(cuda='0', epochs=100, ppo_epochs=20, episodes=4, file_name='credit_a', mode='classify', model='rf', metric='f1', seed=1, train_size=0.7, cv=5, shuffle=False, d_model=128, d_k=32, d_v=32, d_ff=64, n_heads=6, worker=1, steps_num=5, lr=0.0001, entropy_weight=0.0001, baseline_weight=0.95, gama=0.9, gae_lambda=0.95, batch_size=4, c_columns=['A2', 'A3', 'A8', 'A11', 'A14', 'A15'], d_columns=['A1', 'A4', 'A5', 'A6', 'A7', 'A9', 'A10', 'A12', 'A13'], target='label')
+2024-03-13 14:56:09,326 AutoFE.py:36 __init__ INFO | File name: credit_a
+2024-03-13 14:56:09,326 AutoFE.py:37 __init__ INFO | Data shape: (690, 16)
+2024-03-13 14:56:10,840 AutoFE.py:90 set_cuda INFO | Use device: 0, cuda:0, NVIDIA GeForce RTX 4060 Laptop GPU
+2024-03-13 14:56:10,840 AutoFE.py:80 __init__ INFO | Done AutoFE initialization.
+2024-03-13 14:56:10,990 AutoFE.py:103 fit_attention INFO | score_b=0.8130434782608695, scores_b=[0.63043478 0.91304348 0.89130435 0.73188406 0.89855072]

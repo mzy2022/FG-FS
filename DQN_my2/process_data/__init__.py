@@ -1,0 +1,1 @@
+from .feature_type_recognition import Feature_type_recognition
